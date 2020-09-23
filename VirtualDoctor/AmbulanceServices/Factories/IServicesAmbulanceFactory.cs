@@ -15,8 +15,6 @@ namespace AmbulanceServices.Factories
         IDoctorService CreateIDoctorService();
         IMedicalRecordService CreateIMedicalRecordService();
         IPlaceService CreateIPlaceService();
-        IPrescriptionService CreateIPrescriptionService();
-        ITestResultsService CreateITestResultsService();
         IMedicalTitleService CreateIMedicalTitleService();
         IUserAuthenticationService CreateIUserAuthenticationService();
         ILocalAccountRoleService CreateILocalAccountRoleService();

@@ -98,10 +98,8 @@
     <Compile Include="Context\SelectWithPrimaryKeyCommand.cs" />
     <Compile Include="Context\UpdateCommand.cs" />
     <Compile Include="Entities\Clinic.cs" />
-    <Compile Include="Entities\Disease.cs" />
     <Compile Include="Entities\Doctor.cs" />
     <Compile Include="Entities\DoctorMedicalTitle.cs" />
-    <Compile Include="Entities\FamilyDisease.cs" />
     <Compile Include="Entities\IDeleteable.cs" />
     <Compile Include="Entities\IDbTableAssociate.cs" />
     <Compile Include="Entities\IUniquelyIdentifiable.cs" />
@@ -109,12 +107,8 @@
     <Compile Include="Entities\LocalAccountRole.cs" />
     <Compile Include="Entities\MedicalRecord.cs" />
     <Compile Include="Entities\MedicalTitle.cs" />
-    <Compile Include="Entities\PatientDisease.cs" />
-    <Compile Include="Entities\PatientTestResults.cs" />
     <Compile Include="Entities\Place.cs" />
-    <Compile Include="Entities\Prescription.cs" />
     <Compile Include="Entities\Role.cs" />
-    <Compile Include="Entities\TestResults.cs" />
     <Compile Include="ErrorCodeHandling\ErrorCodeHandler.cs" />
     <Compile Include="ErrorCodeHandling\ErrorHandlerFactory.cs" />
     <Compile Include="ErrorCodeHandling\IErrorHandling.cs" />

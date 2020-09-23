@@ -52,19 +52,9 @@ namespace AmbulanceServices.Factories
             return new PlaceService();
         }
 
-        public IPrescriptionService CreateIPrescriptionService()
-        {
-            return new PrescriptionService();
-        }
-
         public IRoleService CreateIRoleService()
         {
             return new RoleService();
-        }
-
-        public ITestResultsService CreateITestResultsService()
-        {
-            return new TestResultsService();
         }
 
         public IUserAuthenticationService CreateIUserAuthenticationService()
