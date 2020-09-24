@@ -265,8 +265,8 @@
     <Compile Include="Shared\Controls\TranslateControl.xaml.cs">
       <DependentUpon>TranslateControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Shared\Controls\VirtualAssistantControl.xaml.cs">
-      <DependentUpon>VirtualAssistantControl.xaml</DependentUpon>
+    <Compile Include="Shared\Controls\ThemeSelectorControl.xaml.cs">
+      <DependentUpon>ThemeSelectorControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Shared\Helpers\ButtonContentHelper.cs" />
     <Compile Include="Shared\Helpers\LabelHelper.cs" />
@@ -467,7 +467,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Shared\Controls\VirtualAssistantControl.xaml">
+    <Page Include="Shared\Controls\ThemeSelectorControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

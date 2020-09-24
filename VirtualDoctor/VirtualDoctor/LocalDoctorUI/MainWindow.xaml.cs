@@ -27,7 +27,7 @@ namespace VirtualDoctor.LocalDoctorUI
             InitializeButton(PatientControl, language.PatientControl);
             InitializeButton(Doctors, language.Doctors);
             InitializeButton(MedicalRecordsReview, language.MedicalRecordsReview);
-            VirtualAssistantControl.InitializeAssistent(VirtualAssistant, Count, Height, language.VirtualAssistant);
+            ThemeSelectorControl.InitializeAssistent(VirtualAssistant, Count, Height, language.VirtualAssistant);
 
         }
         private void InitializeButton(RoundButtonControl control, string buttonContent)

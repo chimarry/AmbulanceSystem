@@ -38,7 +38,7 @@
             </StackPanel>
 
         </StackPanel>
-        <my:VirtualAssistantControl x:Name="VirtualAssistant" Height="168" VerticalAlignment="Top" Grid.Column="1"/>
+        <my:ThemeSelectorControl x:Name="VirtualAssistant" Height="168" VerticalAlignment="Top" Grid.Column="1"/>
         <my:TranslateControl Grid.Column="1" HorizontalAlignment="Right" Height="33"  Grid.Row="1" VerticalAlignment="Bottom" Width="100"/>
         <Label Foreground="Red" FontWeight="Bold"   x:Name="ErrorLabel" HorizontalAlignment="Left" Margin="395,77,0,0" Grid.Row="1" VerticalAlignment="Top" Width="323" Height="125" Grid.ColumnSpan="2">
             <TextBlock x:Name="TextBlock" TextWrapping="Wrap"></TextBlock>

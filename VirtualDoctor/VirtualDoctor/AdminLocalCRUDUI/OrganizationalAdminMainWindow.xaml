@@ -31,7 +31,7 @@
         <my:RoundButtonControl   x:Name="Place" Grid.Column="2" Grid.Row="2" MouseDoubleClick="Place_MouseDoubleClick" />
         <my:RoundButtonControl   x:Name="Doctor" Grid.Column="2" Grid.Row="1" MouseDoubleClick="Doctor_MouseDoubleClick" />
         <my:RoundButtonControl   x:Name="MedicalTitle" Grid.Column="0" Grid.Row="1" MouseDoubleClick="MedicalTitle_MouseDoubleClick" />
-        <my:VirtualAssistantControl x:Name="VirtualAssistant" Grid.Column="4" Grid.RowSpan="2" Grid.Row="0" />
+        <my:ThemeSelectorControl x:Name="VirtualAssistant" Grid.Column="4" Grid.RowSpan="2" Grid.Row="0" />
         <my:TranslateControl x:Name="Translate" Grid.Column="3" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
     </Grid>
 

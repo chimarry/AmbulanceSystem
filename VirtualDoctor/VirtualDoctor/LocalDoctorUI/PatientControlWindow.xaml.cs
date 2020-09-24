@@ -23,7 +23,7 @@ namespace VirtualDoctor.LocalDoctorUI
             InitializeItsComponents();
             InitializeButton(GiveReceipt.RoundButton, language.GiveReceipt, CountOptionsGrid);
             InitializeButton(PutInRecord.RoundButton, language.PutInRecord, CountOptionsGrid);
-            VirtualAssistantControl.InitializeAssistent(VirtualAssistant, CountOptionsGrid, this.Height, language.VirtualAssistant);
+            ThemeSelectorControl.InitializeAssistent(VirtualAssistant, CountOptionsGrid, this.Height, language.VirtualAssistant);
         }
         private void InitializeItsComponents()
         {

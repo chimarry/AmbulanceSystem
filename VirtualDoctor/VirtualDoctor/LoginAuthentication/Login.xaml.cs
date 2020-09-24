@@ -33,7 +33,7 @@ namespace VirtualDoctor.LoginAuthentication
 
         private void InitializeComponents()
         {
-            VirtualAssistantControl.InitializeAssistent(VirtualAssistant, Grid.RowDefinitions.Count, this.Height * Grid.RowDefinitions.First().Height.Value, language.VirtualAssistant);
+            ThemeSelectorControl.InitializeAssistent(VirtualAssistant, Grid.RowDefinitions.Count, this.Height * Grid.RowDefinitions.First().Height.Value, language.VirtualAssistant);
             InitializeLabels();
             InitializeButtons();
 

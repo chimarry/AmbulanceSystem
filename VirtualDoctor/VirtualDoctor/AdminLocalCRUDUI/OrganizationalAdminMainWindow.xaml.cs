@@ -37,7 +37,7 @@ namespace VirtualDoctor.AdminLocalCRUDUI
             InitializeButton(Clinic, language.Clinics);
             InitializeButton(Place, language.Places);
             InitializeButton(Doctor, language.Doctors);
-            VirtualAssistantControl.InitializeAssistent(VirtualAssistant, Count, Height, language.VirtualAssistant);
+            ThemeSelectorControl.InitializeAssistent(VirtualAssistant, Count, Height, language.VirtualAssistant);
 
         }
         private void InitializeButton(RoundButtonControl control, string buttonContent)

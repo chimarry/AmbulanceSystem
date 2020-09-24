@@ -37,7 +37,7 @@
 
             <my:RoundButtonControl   x:Name="PutInRecord" Grid.Column="0" Grid.Row="1" />
             <my:RoundButtonControl   x:Name="GiveReceipt" Grid.Column="0" Grid.Row="0" />
-            <my:VirtualAssistantControl x:Name="VirtualAssistant" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"/>
+            <my:ThemeSelectorControl x:Name="VirtualAssistant" Grid.Column="2" Grid.Row="0" Grid.RowSpan="2"/>
             <my:TranslateControl x:Name="Translate" Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
         </Grid>
     </Grid>

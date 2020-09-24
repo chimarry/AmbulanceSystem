@@ -24,7 +24,7 @@
         </Grid.Background>
 
         <my:RoundButtonControl   x:Name="MedicalRecord" Grid.Column="1" Grid.Row="1"  MouseDoubleClick="MedicalRecord_MouseDoubleClick"  Margin="82,10.333,82,29.333"/>
-        <my:VirtualAssistantControl x:Name="VirtualAssistant" Grid.Column="4" Grid.RowSpan="2" Grid.Row="0" />
+        <my:ThemeSelectorControl x:Name="VirtualAssistant" Grid.Column="4" Grid.RowSpan="2" Grid.Row="0" />
         <my:TranslateControl x:Name="Translate" Grid.Column="3" Grid.Row="3" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
     </Grid>
 </Window>
