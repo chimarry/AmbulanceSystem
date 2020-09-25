@@ -259,6 +259,9 @@
       <DependentUpon>IndexControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Shared\Controls\IndexControl\IndexControlElement.cs" />
+    <Compile Include="Shared\Controls\NavigationMenu.xaml.cs">
+      <DependentUpon>NavigationMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Shared\Controls\RoundButtonControl.xaml.cs">
       <DependentUpon>RoundButtonControl.xaml</DependentUpon>
     </Compile>
@@ -456,6 +459,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Shared\Controls\IndexControl\IndexControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shared\Controls\NavigationMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
