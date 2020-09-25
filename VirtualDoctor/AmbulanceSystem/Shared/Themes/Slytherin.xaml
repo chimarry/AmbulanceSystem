@@ -3,6 +3,8 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Shared/Themes/BaseTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+    <!--Define fonts-->
+    <FontFamily x:Key="DefaultFontFamily">Dante</FontFamily>
     <!--Define colors-->
     <Color x:Key="PrimaryColor">#9e9997</Color>
     <Color x:Key="SecondaryColor">#234723</Color>
@@ -17,7 +19,8 @@
     </LinearGradientBrush>
     <!--Design menu-->
     <Style x:Key="MenuDesign" TargetType="Menu">
-        <Setter Property="Background" Value="{StaticResource MainGradient}">
-        </Setter>
+        <Setter Property="Background" Value="{StaticResource MainGradient}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
 </ResourceDictionary>

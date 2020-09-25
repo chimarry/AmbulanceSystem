@@ -21,5 +21,7 @@
     <!--Design menu-->
     <Style x:Key="MenuDesign" TargetType="Menu">
         <Setter Property="Background" Value="{StaticResource MainGradient}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        <Setter Property="Foreground" Value="White"/>
     </Style>
 </ResourceDictionary>

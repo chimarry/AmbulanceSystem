@@ -149,10 +149,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Shared\Images\GoBackGryffindor.png" />
-    <Resource Include="Shared\Images\GoBackHufflepuf.png" />
-    <Resource Include="Shared\Images\GoBackRevenclaw.png" />
-    <Resource Include="Shared\Images\GoBackSlytherin.png" />
     <Content Include="Shared\Images\Gryffindor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -179,9 +175,6 @@
     </Content>
     <Resource Include="Ambulance.ico" />
     <Resource Include="Shared\Images\Ambulance.ico" />
-    <Content Include="Shared\Images\Ambulance.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />

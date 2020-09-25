@@ -25,21 +25,21 @@
         <Viewbox Stretch="Uniform">
             <Menu Style="{DynamicResource MenuDesign}">
                 <!--Go back-->
-                <MenuItem x:Name="GoBackItem" Header="Go back" Foreground="White"/>
+                <MenuItem x:Name="GoBackItem" Header="Go back"/>
                 <!--About-->
-                <MenuItem x:Name="AboutItem" Header="About" Foreground="White">
+                <MenuItem x:Name="AboutItem" Header="About">
                     <MenuItem.ToolTip>
                         <ToolTip>About the app</ToolTip>
                     </MenuItem.ToolTip>
                 </MenuItem>
                 <!--Language-->
-                <MenuItem x:Name="SwitchLanguageItem" Header="Switch to Serbian" Foreground="White">
+                <MenuItem x:Name="SwitchLanguageItem" Header="Switch to Serbian">
                     <MenuItem.ToolTip>
                         <ToolTip x:Name="LanguageToolTip">Change language</ToolTip>
                     </MenuItem.ToolTip>
                 </MenuItem>
                 <!--Theme-->
-                <MenuItem x:Name="SwitchThemeItem" Header="Theme" Foreground="White">
+                <MenuItem x:Name="SwitchThemeItem" Header="Theme">
                     <MenuItem.ToolTip>
                         <ToolTip x:Name="ThemeToolTip">Change theme</ToolTip>
                     </MenuItem.ToolTip>
