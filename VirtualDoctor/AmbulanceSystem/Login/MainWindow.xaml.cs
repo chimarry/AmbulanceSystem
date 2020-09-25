@@ -5,9 +5,9 @@ namespace AmbulanceSystem.Login
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class LoginWindow : Window
+    public partial class MainWindow : Window
     {
-        public LoginWindow()
+        public MainWindow()
         {
             InitializeComponent();
         }

@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AmbulanceSystem.Shared.Config" GeneratedClassName="Properties">
+  <Profiles />
+  <Settings>
+    <Setting Name="LanguageClass" Type="System.String" Scope="User">
+      <Value Profile="(Default)">en-EN</Value>
+    </Setting>
+    <Setting Name="TranslateText" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Switch to Serbian</Value>
+    </Setting>
+    <Setting Name="NumberOfRecordsPerPage" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="Language" Type="System.String" Scope="User">
+      <Value Profile="(Default)">en-EN</Value>
+    </Setting>
+    <Setting Name="Theme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Gryffindor</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
