@@ -358,4 +358,13 @@ not be given.</value>
   <data name="Doctors" xml:space="preserve">
     <value>Doctors</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="Translate" xml:space="preserve">
+    <value>Switch to Serbian</value>
+  </data>
 </root>

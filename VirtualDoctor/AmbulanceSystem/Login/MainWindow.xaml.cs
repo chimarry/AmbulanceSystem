@@ -1,4 +1,7 @@
-﻿using AmbulanceSystem.Shared.Themes;
+﻿using AmbulanceSystem.Pages.LoginAuthentication;
+using AmbulanceSystem.Shared.Config;
+using AmbulanceSystem.Shared.Themes;
+using AmbulanceSystem.Utils;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,10 +14,12 @@ namespace AmbulanceSystem.Login
     public partial class MainWindow : Window, IThemeChangeable
     {
         public Theme CurrentTheme { get; set; }
+        private Page PreviousPage { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
+            InitializeMenu();
             CurrentTheme = Theme.Gryffindor;
         }
 
@@ -38,6 +43,20 @@ namespace AmbulanceSystem.Login
             MenuItem clickedTheme = (MenuItem)sender;
             Theme newTheme = (Theme)Enum.Parse(typeof(Theme), clickedTheme.Header.ToString());
             bool isChanged = ChangeThemeTo(newTheme);
+        }
+
+        private void SwitchLanguage_Click(object sender, RoutedEventArgs e)
+        {
+            LanguageLocalizer.SwitchLanguage();
+            InitializeMenu();
+        }
+
+        private void InitializeMenu()
+        {
+            AboutItem.Header = language.About;
+            SwitchThemeItem.Header = language.Theme;
+            GoBackItem.Header = language.GoBack;
+            SwitchLanguageItem.Header = language.Translate;
         }
     }
 }

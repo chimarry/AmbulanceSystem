@@ -33,7 +33,7 @@
                     </MenuItem.ToolTip>
                 </MenuItem>
                 <!--Language-->
-                <MenuItem x:Name="SwitchLanguageItem" Header="Switch to Serbian">
+                <MenuItem x:Name="SwitchLanguageItem" Header="Switch to Serbian" Click="SwitchLanguage_Click">
                     <MenuItem.ToolTip>
                         <ToolTip x:Name="LanguageToolTip">Change language</ToolTip>
                     </MenuItem.ToolTip>

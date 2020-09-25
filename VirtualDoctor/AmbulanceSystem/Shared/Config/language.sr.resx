@@ -357,4 +357,13 @@ Radi bezbjednosti naloga kom pokušavate da pristupite,
   <data name="Doctors" xml:space="preserve">
     <value>Doktori</value>
   </data>
+  <data name="About" xml:space="preserve">
+    <value>O aplikaciji</value>
+  </data>
+  <data name="Theme" xml:space="preserve">
+    <value>Tema</value>
+  </data>
+  <data name="Translate" xml:space="preserve">
+    <value>Prevedi na engleski</value>
+  </data>
 </root>

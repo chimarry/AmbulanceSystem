@@ -16,6 +16,7 @@ namespace VirtualDoctor.Shared.Controls
         private static readonly string ENGLISH_LANGUAGE = "en-EN";
         private static readonly string SWITCH_TO_SERBIAN = "Switch to Serbian";
         private static readonly string SWITCH_TO_ENGLISH = "Prevedi na engleski";
+
         public TranslateControl()
         {
             InitializeComponent();
