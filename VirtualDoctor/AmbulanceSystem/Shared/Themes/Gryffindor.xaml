@@ -1,6 +1,25 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="/Shared/Themes/BaseTheme.xaml"/>
     </ResourceDictionary.MergedDictionaries>
+    <!--Define fonts-->
+    <FontFamily x:Key="DefaultFontFamily">Baskerville Old Face</FontFamily>
+    <!--Define colors-->
+    <Color x:Key="PrimaryColor">#f3c11b</Color>
+    <Color x:Key="SecondaryColor">#430404</Color>
+    <Color x:Key="TernaryColor">#4d0505</Color>
+    <Color x:Key="QuatenaryColor">#b79114</Color>
+
+    <!--Define color brushes-->
+    <SolidColorBrush x:Key="SecondaryColorBrush" Color="{StaticResource SecondaryColor}"/>
+    <LinearGradientBrush x:Key="MainGradient" EndPoint="0,1" StartPoint="0,0">
+        <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.528" />
+        <GradientStop Color="{StaticResource PrimaryColor}" Offset="0.1" />
+    </LinearGradientBrush>
+    <!--Design menu-->
+    <Style x:Key="MenuDesign" TargetType="Menu">
+        <Setter Property="Background" Value="{StaticResource MainGradient}"/>
+    </Style>
 </ResourceDictionary>

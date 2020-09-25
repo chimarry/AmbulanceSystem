@@ -5,11 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AmbulanceSystem.Login"
         mc:Ignorable="d"
-        Title="Ambulance System" Height="450" Width="800">
+        Title="Ambulance System" MinHeight="450" MinWidth="800" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary x:Name="CurrentDictionary">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Name="CurrentThemeDictionary" Source="/Shared/Themes/Gryffindor.xaml"/>
+                <ResourceDictionary Source="/Shared/Themes/BaseTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
     <Grid x:Name="MainGrid">
+        <Grid.Background>
+            <ImageBrush x:Name="MainImageBrush" ImageSource="/Shared/Images/Gryffindor.png"></ImageBrush>
+        </Grid.Background>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.08*"/>
+            <RowDefinition Height="0.07*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Viewbox Stretch="Uniform">
+            <Menu Style="{DynamicResource MenuDesign}">
+                <!--Go back-->
+                <MenuItem x:Name="GoBackItem" Header="Go back" Foreground="White"/>
+                <!--About-->
+                <MenuItem x:Name="AboutItem" Header="About" Foreground="White">
+                    <MenuItem.ToolTip>
+                        <ToolTip>About the app</ToolTip>
+                    </MenuItem.ToolTip>
+                </MenuItem>
+                <!--Language-->
+                <MenuItem x:Name="SwitchLanguageItem" Header="Switch to Serbian" Foreground="White">
+                    <MenuItem.ToolTip>
+                        <ToolTip x:Name="LanguageToolTip">Change language</ToolTip>
+                    </MenuItem.ToolTip>
+                </MenuItem>
+                <!--Theme-->
+                <MenuItem x:Name="SwitchThemeItem" Header="Theme" Foreground="White">
+                    <MenuItem.ToolTip>
+                        <ToolTip x:Name="ThemeToolTip">Change theme</ToolTip>
+                    </MenuItem.ToolTip>
+                    <MenuItem x:Name="GryffindorThemeItem" Header="Gryffindor" Background="DarkRed" Foreground="Yellow" Click="SwitchTheme_Click" >
+                        <MenuItem.Icon>
+                            <Image Source="/Shared/Images/GryffindorEmblem.png" Width="20" Height="20"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="RevenclawThemeItem" Header="Revenclaw" Background="#a67a53" Foreground="DarkBlue" Click="SwitchTheme_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/Shared/Images/RevenclawEmblem.png" Width="20" Height="20"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="HufflepufThemeItem" Header="Hufflepuf" Background="Yellow" Foreground="Black" Click="SwitchTheme_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/Shared/Images/HufflepuffEmblem.png" Width="20" Height="20"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem x:Name="SlytherinThemeItem"  Header="Slytherin" Background="#9e9997" Foreground="Green" Click="SwitchTheme_Click">
+                        <MenuItem.Icon>
+                            <Image Source="/Shared/Images/SlytherinEmblem.png" Width="20" Height="20"></Image>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </Viewbox>
+        <Frame x:Name="MainFrame" Grid.Row="1"></Frame>
     </Grid>
 </Window>
