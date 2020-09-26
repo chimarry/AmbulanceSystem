@@ -13,13 +13,11 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="White"/>
         <Setter Property="TextAlignment" Value="Center"/>
     </Style>
     <!--Design password box-->
     <Style x:Key="BasePasswordBoxStyle" TargetType="PasswordBox">
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="White"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -30,6 +28,19 @@
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="1"/>
-        <Setter Property="Foreground" Value="White"/>
+    </Style>
+    <!--Design list box-->
+    <Style x:Key="BaseListBoxStyle" TargetType="ListBox">
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+    </Style>
+    <Style x:Key="BaseListBoxItemStyle" TargetType="ListBoxItem">
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="5"/>
+            </Style>
+        </Style.Resources>
+        <Setter Property="FontSize" Value="16"/>
     </Style>
 </ResourceDictionary>

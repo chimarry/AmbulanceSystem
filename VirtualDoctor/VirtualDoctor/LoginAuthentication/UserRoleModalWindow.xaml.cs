@@ -28,6 +28,7 @@ namespace VirtualDoctor.LoginAuthentication
                 RolesListBox.Items.Add(role);
             }
         }
+
         private void InitializeButtons()
         {
             ButtonContentHelper.SetContent(LogInButton, language.Login);

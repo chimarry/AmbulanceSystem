@@ -41,14 +41,17 @@
     <Style x:Key="MainTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource BaseTextBoxStyle}">
         <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
         <Setter Property="BorderBrush" Value="{StaticResource PrimaryColorBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
     </Style>
     <!--Design password box-->
     <Style x:Key="PasswordBoxStyle" TargetType="PasswordBox" BasedOn="{StaticResource BasePasswordBoxStyle}">
         <Setter Property="BorderBrush" Value="{StaticResource PrimaryColorBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
     </Style>
 
     <!--Design button-->
     <Style x:Key="RoundCornerButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseRoundCornerButton}">
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -106,5 +109,79 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style x:Key="CancelCornerButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseRoundCornerButton}">
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="{StaticResource PrimaryColorBrush}" BorderThickness="0.5">
+                            <Border.Background>
+                                <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterX="0.5" CenterY="0.5" 
+                                                        ScaleX="1.5" ScaleY="1.5"/>
+                                            <TranslateTransform X="0.02" Y="0.3"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="2.6" Color="{StaticResource TernaryColor}"/>
+                                    <GradientStop Offset="0." Color="Red"/>
+                                </RadialGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.FontWeight="Bold">
+                            </ContentPresenter>
+                        </Border>
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border">
+                                <Setter.Value>
+                                    <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                        <RadialGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                                <TranslateTransform X="0.02" Y="0.3"/>
+                                            </TransformGroup>
+                                        </RadialGradientBrush.RelativeTransform>
+                                        <GradientStop Offset="2.6" Color="{StaticResource SecondaryColor}"/>
+                                        <GradientStop Offset="0." Color="Red"/>
+                                    </RadialGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                            <Setter Property="RenderTransform">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="grid" Value="0.7"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Design list box-->
+    <Style x:Key="ListBoxStyle" TargetType="ListBox" BasedOn="{StaticResource BaseListBoxStyle}">
+        <Setter Property="Background" Value="{StaticResource PrimaryColorBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource QuatenaryColorBrush}"/>
+    </Style>
+    <Style x:Key="ListBoxItemStyle" TargetType="ListBoxItem" BasedOn="{StaticResource BaseListBoxItemStyle}">
+        <Setter Property="Background" Value="{StaticResource SecondaryColorBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource SecondaryColorBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
     </Style>
 </ResourceDictionary>

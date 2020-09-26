@@ -20,9 +20,17 @@ namespace AmbulanceSystem.Login
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            SetUser();
             SwitchLanguage();
             CurrentTheme = Theme.Gryffindor;
             MainFrame.Content = new LoginPage();
+        }
+
+        public void SetUser()
+        {
+            CustomPrincipal customPrincipal = new CustomPrincipal();
+            AppDomain.CurrentDomain.SetThreadPrincipal(customPrincipal);
         }
 
         public bool ChangeThemeTo(Theme newTheme)

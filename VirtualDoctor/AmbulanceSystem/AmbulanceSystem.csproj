@@ -64,6 +64,9 @@
     <Compile Include="Pages\LoginAuthentication\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LoginAuthentication\UserRoleModalWindow.xaml.cs">
+      <DependentUpon>UserRoleModalWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Shared\ILanguageLocalizable.cs" />
     <Compile Include="Shared\Themes\IThemeChangeable.cs" />
     <Compile Include="Shared\Config\language.Designer.cs">
@@ -97,6 +100,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\LoginAuthentication\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LoginAuthentication\UserRoleModalWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,6 +198,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AmbulanceDatabase\DatabaseAmbulance.csproj">
+      <Project>{50BF236A-6213-4143-B90E-BD835D4C4D66}</Project>
+      <Name>DatabaseAmbulance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AmbulanceServices\ServicesAmbulance.csproj">
+      <Project>{BA2F9C00-EB67-4B83-9E8B-8FA7E5E791CB}</Project>
+      <Name>ServicesAmbulance</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
