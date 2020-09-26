@@ -10,9 +10,14 @@
     <Color x:Key="SecondaryColor">#725438</Color>
     <Color x:Key="TernaryColor">#a67a53</Color>
     <Color x:Key="PrimaryColor">#0b304a</Color>
+    <Color x:Key="FontColor">#ffffff</Color>
 
     <!--Define color brushes-->
+    <SolidColorBrush x:Key="PrimaryColorBrush" Color="{StaticResource PrimaryColor}"/>
     <SolidColorBrush x:Key="SecondaryColorBrush" Color="{StaticResource SecondaryColor}"/>
+    <SolidColorBrush x:Key="TernaryColorBrush" Color="{StaticResource TernaryColor}"/>
+    <SolidColorBrush x:Key="QuatenaryColorBrush" Color="{StaticResource QuatenaryColor}"/>
+    <SolidColorBrush x:Key="FontColorBrush" Color="{StaticResource FontColor}"/>
     <LinearGradientBrush x:Key="MainGradient" EndPoint="0,1" StartPoint="0,0">
         <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.528" />
         <GradientStop Color="{StaticResource PrimaryColor}" Offset="0.01" />
@@ -21,6 +26,82 @@
     <Style x:Key="MenuDesign" TargetType="Menu">
         <Setter Property="Background" Value="{StaticResource MainGradient}"/>
         <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
+    </Style>
+    <!--Design border-->
+    <Style x:Key="BorderStyle" TargetType="Border" BasedOn="{StaticResource BaseBorderStyle}">
+        <Setter Property="Background" Value="{StaticResource SecondaryColorBrush}"/>
+    </Style>
+    <!--Design text block-->
+    <Style x:Key="MainTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
+    </Style>
+    <!--Design text box-->
+    <Style x:Key="MainTextBoxStyle" TargetType="TextBox" BasedOn="{StaticResource BaseTextBoxStyle}">
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryColorBrush}"/>
+    </Style>
+    <!--Design password box-->
+    <Style x:Key="PasswordBoxStyle" TargetType="PasswordBox" BasedOn="{StaticResource BasePasswordBoxStyle}">
+        <Setter Property="BorderBrush" Value="{StaticResource PrimaryColorBrush}"/>
+    </Style>
+    <!--Design button-->
+    <Style x:Key="RoundCornerButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseRoundCornerButton}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid">
+                        <Border x:Name="border" CornerRadius="8" BorderBrush="{StaticResource PrimaryColorBrush}" BorderThickness="0.5">
+                            <Border.Background>
+                                <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                    <RadialGradientBrush.RelativeTransform>
+                                        <TransformGroup>
+                                            <ScaleTransform CenterX="0.5" CenterY="0.5" 
+                                                        ScaleX="1.5" ScaleY="1.5"/>
+                                            <TranslateTransform X="0.02" Y="0.3"/>
+                                        </TransformGroup>
+                                    </RadialGradientBrush.RelativeTransform>
+                                    <GradientStop Offset="2.6" Color="{StaticResource TernaryColor}"/>
+                                    <GradientStop Offset="0." Color="{StaticResource PrimaryColor}"/>
+                                </RadialGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"
+                                          TextElement.FontWeight="Bold">
+                            </ContentPresenter>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background" TargetName="border">
+                                <Setter.Value>
+                                    <RadialGradientBrush GradientOrigin="0.496,1.052">
+                                        <RadialGradientBrush.RelativeTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform CenterX="0.5" CenterY="0.5" ScaleX="1.5" ScaleY="1.5"/>
+                                                <TranslateTransform X="0.02" Y="0.3"/>
+                                            </TransformGroup>
+                                        </RadialGradientBrush.RelativeTransform>
+                                        <GradientStop Offset="2.6" Color="{StaticResource SecondaryColor}"/>
+                                        <GradientStop Offset="0." Color="{StaticResource QuatenaryColor}"/>
+                                    </RadialGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                            <Setter Property="RenderTransform">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="grid" Value="0.7"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 </ResourceDictionary>

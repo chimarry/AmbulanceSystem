@@ -367,4 +367,7 @@ not be given.</value>
   <data name="Translate" xml:space="preserve">
     <value>Switch to Serbian</value>
   </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome!</value>
+  </data>
 </root>

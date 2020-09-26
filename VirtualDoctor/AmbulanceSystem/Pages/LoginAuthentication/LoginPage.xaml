@@ -7,6 +7,14 @@
       mc:Ignorable="d" Title="loginPage"
       MinWidth="800" MinHeight="450"
       HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Page.Resources>
+        <ResourceDictionary x:Name="CurrentDictionary">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Name="CurrentThemeDictionary" Source="/Shared/Themes/Gryffindor.xaml"/>
+                <ResourceDictionary Source="/Shared/Themes/BaseTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid>
         <Grid.Background>
             <SolidColorBrush Color="Transparent"/>
@@ -18,20 +26,22 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="1.5*"></ColumnDefinition>
-            <ColumnDefinition Width="1.5*"></ColumnDefinition>
+            <ColumnDefinition Width="1.2*"></ColumnDefinition>
+            <ColumnDefinition Width="1.2*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Border Background="#1f262a" CornerRadius="10" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">
-            <StackPanel Margin="30">
-                <TextBlock Text="Welcome!" Foreground="#fff" HorizontalAlignment="Center" FontSize="20"/>
-                <Separator Margin="0 5 0 5"></Separator>
-                <TextBlock Text="Username:" Foreground="#fff"/>
-                <TextBox x:Name="UsernameBox" FontSize="16" Foreground="#eee" Background="#1f262a" Margin="0 8 0 0" Height="29"/>
-                <TextBlock Text="Password:" Foreground="#fff" Margin="0 5 0 0"/>
-                <PasswordBox x:Name="PasswordBox" FontSize="16" Foreground="#eee" Background="#1f262a" Margin="0 8 0 0" Height="29"/>
-                <Button x:Name="SubmitButton" IsDefault="True"  Content="Log in" FontSize="16" Foreground="#fff" Background="#1f262a" Margin="60 20 " Height="33" />
-            </StackPanel>
+        <Border Style="{DynamicResource BorderStyle}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1">
+            <Viewbox Stretch="Uniform">
+                <StackPanel>
+                    <TextBlock Style="{DynamicResource MainTextBlockStyle}" Foreground="{DynamicResource PrimaryColorBrush}" x:Name="WelcomeTextBlock" Text="Welcome!" HorizontalAlignment="Center" FontSize="25"/>
+                    <Separator Margin="0 5 0 5"></Separator>
+                    <TextBlock Style="{DynamicResource MainTextBlockStyle}" FontSize="16" x:Name="UsernameBlock" Text="Username:" Margin="10,10"/>
+                    <TextBox Style="{DynamicResource MainTextBoxStyle}"  MinWidth="410" x:Name="UsernameBox" MinHeight="33" FontSize="16" Margin="10,0"/>
+                    <TextBlock Style="{DynamicResource MainTextBlockStyle}" FontSize="16" x:Name="PasswordBlock" Text="Password:" Margin="10,10"/>
+                    <PasswordBox Style="{DynamicResource PasswordBoxStyle}" MinWidth="410" x:Name="PasswordBox" MinHeight="33" FontSize="16" Margin="10,0"/>
+                    <Button x:Name="LoginButton" Width="200" Height="33" Margin="0,20" Style="{DynamicResource RoundCornerButton}" IsDefault="True"  Content="Log in" FontSize="16" Click="LoginButton_Click"/>
+                </StackPanel>
+            </Viewbox>
         </Border>
     </Grid>
 </Page>

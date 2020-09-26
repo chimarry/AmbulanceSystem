@@ -1,4 +1,5 @@
 ﻿using AmbulanceSystem.Pages.LoginAuthentication;
+using AmbulanceSystem.Shared;
 using AmbulanceSystem.Shared.Config;
 using AmbulanceSystem.Shared.Themes;
 using AmbulanceSystem.Utils;
@@ -11,7 +12,7 @@ namespace AmbulanceSystem.Login
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, IThemeChangeable
+    public partial class MainWindow : Window, IThemeChangeable, ILanguageLocalizable
     {
         public Theme CurrentTheme { get; set; }
         private Page PreviousPage { get; set; }
@@ -19,8 +20,9 @@ namespace AmbulanceSystem.Login
         public MainWindow()
         {
             InitializeComponent();
-            InitializeMenu();
+            SwitchLanguage();
             CurrentTheme = Theme.Gryffindor;
+            MainFrame.Content = new LoginPage();
         }
 
         public bool ChangeThemeTo(Theme newTheme)
@@ -30,12 +32,22 @@ namespace AmbulanceSystem.Login
                 CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
                 MainImageBrush.ImageSource = newTheme.ToImage();
                 CurrentTheme = newTheme;
+                (MainFrame.Content as IThemeChangeable).ChangeThemeTo(newTheme);
+
                 return true;
             }
             catch (Exception)
             {
                 return false;
             }
+        }
+
+        public void SwitchLanguage()
+        {
+            AboutItem.Header = language.About;
+            SwitchThemeItem.Header = language.Theme;
+            GoBackItem.Header = language.GoBack;
+            SwitchLanguageItem.Header = language.Translate;
         }
 
         private void SwitchTheme_Click(object sender, RoutedEventArgs e)
@@ -48,15 +60,8 @@ namespace AmbulanceSystem.Login
         private void SwitchLanguage_Click(object sender, RoutedEventArgs e)
         {
             LanguageLocalizer.SwitchLanguage();
-            InitializeMenu();
-        }
-
-        private void InitializeMenu()
-        {
-            AboutItem.Header = language.About;
-            SwitchThemeItem.Header = language.Theme;
-            GoBackItem.Header = language.GoBack;
-            SwitchLanguageItem.Header = language.Translate;
+            SwitchLanguage();
+            (MainFrame.Content as ILanguageLocalizable).SwitchLanguage();
         }
     }
 }

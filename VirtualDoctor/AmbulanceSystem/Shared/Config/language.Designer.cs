@@ -767,6 +767,15 @@ namespace AmbulanceSystem.Shared.Config {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Welcome!.
+        /// </summary>
+        public static string Welcome {
+            get {
+                return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Work experience.
         /// </summary>
         public static string WorkExperience {

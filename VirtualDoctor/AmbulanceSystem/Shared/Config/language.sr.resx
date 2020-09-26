@@ -366,4 +366,7 @@ Radi bezbjednosti naloga kom pokušavate da pristupite,
   <data name="Translate" xml:space="preserve">
     <value>Prevedi na engleski</value>
   </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Dobrodošli!</value>
+  </data>
 </root>

@@ -64,6 +64,7 @@
     <Compile Include="Pages\LoginAuthentication\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Shared\ILanguageLocalizable.cs" />
     <Compile Include="Shared\Themes\IThemeChangeable.cs" />
     <Compile Include="Shared\Config\language.Designer.cs">
       <DependentUpon>language.resx</DependentUpon>
