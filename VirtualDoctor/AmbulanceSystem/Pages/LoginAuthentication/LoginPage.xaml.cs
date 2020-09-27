@@ -5,6 +5,7 @@ using AmbulanceServices.Services;
 using AmbulanceSystem.Shared;
 using AmbulanceSystem.Shared.Config;
 using AmbulanceSystem.Shared.Themes;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -46,12 +47,7 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
             CustomPrincipal customPrincipal = Thread.CurrentPrincipal as CustomPrincipal;
             customPrincipal.Identity = await GetUserPrincipal();
             if (customPrincipal.Identity.GetType() != typeof(AnonymousIdentity))
-            {
-                UserRoleModalWindow window = new UserRoleModalWindow(customPrincipal, currentTheme);
-                window.Top = (this.Height - window.Height) / 2;
-                window.Left = (this.Width - window.Width) / 2;
-                window.ShowDialog();
-            }
+                new UserRoleModalWindow(customPrincipal, Window.GetWindow(this), currentTheme).ShowDialog();
         }
 
         private async Task<CustomIdentity> GetUserPrincipal()
@@ -63,7 +59,7 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
             //    return new AnonymousIdentity();
             //}
 
-            var roleNames = localAccount.GetRoles();
+            List<Role> roleNames = localAccount.GetRoles();
             //if (roleNames == null)
             //{
             //    WindowHelper.WriteMessage(language.NoKnownRoles, ErrorLabel, false);

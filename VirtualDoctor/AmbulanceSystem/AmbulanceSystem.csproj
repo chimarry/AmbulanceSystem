@@ -58,6 +58,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\Administrator\AccountAdminMainPage.xaml.cs">
+      <DependentUpon>AccountAdminMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\OrganizationalAdminMainPage.xaml.cs">
+      <DependentUpon>OrganizationalAdminMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\PatientAdminMainPage.xaml.cs">
+      <DependentUpon>PatientAdminMainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LoginAuthentication\AnonymousIdentity.cs" />
     <Compile Include="Pages\LoginAuthentication\CustomIdentity.cs" />
     <Compile Include="Pages\LoginAuthentication\CustomPrincipal.cs" />
@@ -66,6 +75,9 @@
     </Compile>
     <Compile Include="Pages\LoginAuthentication\UserRoleModalWindow.xaml.cs">
       <DependentUpon>UserRoleModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MedicalStaff\DoctorMainPage.xaml.cs">
+      <DependentUpon>DoctorMainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Shared\ILanguageLocalizable.cs" />
     <Compile Include="Shared\Themes\IThemeChangeable.cs" />
@@ -99,11 +111,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Administrator\AccountAdminMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\OrganizationalAdminMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\PatientAdminMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LoginAuthentication\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\LoginAuthentication\UserRoleModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MedicalStaff\DoctorMainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

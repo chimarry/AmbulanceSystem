@@ -1,4 +1,7 @@
-﻿using AmbulanceSystem.Shared.Themes;
+﻿using AmbulanceSystem.Pages.Administrator;
+using AmbulanceSystem.Pages.MedicalStaff;
+using AmbulanceSystem.Shared.Themes;
+using AmbulanceSystem.Utils;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -9,8 +12,11 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
     /// </summary>
     public partial class UserRoleModalWindow : Window
     {
-        public UserRoleModalWindow(CustomPrincipal customPrincipal, Theme currentTheme)
+        private readonly Window mainWindow;
+
+        public UserRoleModalWindow(CustomPrincipal customPrincipal, Window mainWindow, Theme currentTheme)
         {
+            this.mainWindow = mainWindow;
             InitializeComponent();
             Initialize(currentTheme);
             InitializeRoles(customPrincipal.Identity.Roles);
@@ -18,7 +24,7 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
 
         public void InitializeRoles(string[] possibleRoles)
         {
-            foreach (var role in possibleRoles)
+            foreach (string role in possibleRoles)
             {
                 ListBoxItem roleItem = new ListBoxItem()
                 {
@@ -35,6 +41,31 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
         {
             CurrentDictionary.MergedDictionaries[0].Source = theme.ToUri();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            NextPage((RolesListBox.SelectedItem as ListBoxItem).Content.ToString());
+        }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void NextPage(string role)
+        {
+            Close();
+            Page nextPage;
+            switch (role)
+            {
+                case "Doctor": nextPage = new DoctorMainPage(); break;
+                case "OrganizationalAdmin": nextPage = new OrganizationalAdminMainPage(); break;
+                case "AccountsAdmin": nextPage = new AccountAdminMainPage(); break;
+                case "PatientAdmin": nextPage = new PatientAdminMainPage(); break;
+                default: nextPage = new LoginPage(); break;
+            }
+            mainWindow.NavigateToNextPage(nextPage);
         }
     }
 }

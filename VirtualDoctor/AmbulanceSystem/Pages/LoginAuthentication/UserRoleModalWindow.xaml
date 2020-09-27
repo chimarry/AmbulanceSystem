@@ -26,7 +26,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <ListBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" x:Name="RolesListBox" Style="{DynamicResource ListBoxStyle}"  MinWidth="300" MinHeight="300"/>
-        <Button Grid.Row="1" Grid.Column="1"  x:Name="LogInButton" HorizontalAlignment="Center" Style="{DynamicResource RoundCornerButton}" Content="Log in"  VerticalAlignment="Top" Width="109" Height="47"/>
-        <Button Grid.Row="1"  Grid.Column="2" x:Name="CancelButton"  Style="{DynamicResource CancelCornerButton}" Content="Cancel" HorizontalAlignment="Center" VerticalAlignment="Top" Width="109" Height="47"/>
+        <Button Grid.Row="1" Grid.Column="1"  x:Name="LoginButton" HorizontalAlignment="Center" Style="{DynamicResource RoundCornerButton}" Content="Log in"  VerticalAlignment="Top" Width="109" Height="47" Click="LoginButton_Click"/>
+        <Button Grid.Row="1"  Grid.Column="2" x:Name="CancelButton"  Style="{DynamicResource CancelCornerButton}" Content="Cancel" HorizontalAlignment="Center" VerticalAlignment="Top" Width="109" Height="47" Click="CancelButton_Click"/>
     </Grid>
 </Window>
