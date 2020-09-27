@@ -79,8 +79,9 @@
     <Compile Include="Pages\MedicalStaff\DoctorMainPage.xaml.cs">
       <DependentUpon>DoctorMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Shared\ButtonIcon.cs" />
     <Compile Include="Shared\ILanguageLocalizable.cs" />
-    <Compile Include="Shared\Themes\IThemeChangeable.cs" />
+    <Compile Include="Shared\IThemeChangeable.cs" />
     <Compile Include="Shared\Config\language.Designer.cs">
       <DependentUpon>language.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -96,7 +97,7 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Shared\Themes\Theme.cs" />
+    <Compile Include="Shared\Theme.cs" />
     <Compile Include="Utils\LanguageLocalizer.cs" />
     <Compile Include="Utils\PageUtil.cs" />
     <Page Include="Login\MainWindow.xaml">

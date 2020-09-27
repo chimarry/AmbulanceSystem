@@ -1,5 +1,4 @@
 ﻿using AmbulanceSystem.Shared;
-using AmbulanceSystem.Shared.Themes;
 using System;
 using System.Windows.Controls;
 

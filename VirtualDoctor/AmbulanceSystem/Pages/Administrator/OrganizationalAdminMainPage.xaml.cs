@@ -1,9 +1,7 @@
 ﻿using AmbulanceSystem.Shared;
 using AmbulanceSystem.Shared.Config;
-using AmbulanceSystem.Shared.Themes;
 using AmbulanceSystem.Utils;
 using System;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -78,11 +76,11 @@ namespace AmbulanceSystem.Pages.Administrator
         {
             if (IsLoaded)
             {
-                MedicalTitle.SetIconAndText(language.MedicalTitles, "Title.png");
-                Doctor.SetIconAndText(language.Doctors, "Doctor.png");
-                Role.SetIconAndText(language.Roles, "Roles.png");
-                Place.SetIconAndText(language.Places, "Place.png");
-                Clinic.SetIconAndText(language.Clinics, "Ambulance.png");
+                MedicalTitle.SetIconAndText(language.MedicalTitles, ButtonIcon.MedicalTitle);
+                Doctor.SetIconAndText(language.Doctors, ButtonIcon.Doctor);
+                Role.SetIconAndText(language.Roles, ButtonIcon.Roles);
+                Place.SetIconAndText(language.Places, ButtonIcon.Place);
+                Clinic.SetIconAndText(language.Clinics, ButtonIcon.Ambulance);
             }
         }
     }

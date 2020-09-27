@@ -1,12 +1,9 @@
 ﻿using AmbulanceSystem.Shared;
 using AmbulanceSystem.Shared.Config;
-using AmbulanceSystem.Shared.Themes;
 using AmbulanceSystem.Utils;
 using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace AmbulanceSystem.Pages.Administrator
 {
@@ -52,7 +49,7 @@ namespace AmbulanceSystem.Pages.Administrator
         private void OnLoaded()
         {
             if (IsLoaded)
-                AccountButton.SetIconAndText(language.Accounts, "Accounts.png");
+                AccountButton.SetIconAndText(language.Accounts, ButtonIcon.Accounts);
         }
     }
 }

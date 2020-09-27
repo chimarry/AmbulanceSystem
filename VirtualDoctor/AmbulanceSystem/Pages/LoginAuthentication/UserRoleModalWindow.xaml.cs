@@ -1,6 +1,6 @@
 ﻿using AmbulanceSystem.Pages.Administrator;
 using AmbulanceSystem.Pages.MedicalStaff;
-using AmbulanceSystem.Shared.Themes;
+using AmbulanceSystem.Shared;
 using AmbulanceSystem.Utils;
 using System.Windows;
 using System.Windows.Controls;

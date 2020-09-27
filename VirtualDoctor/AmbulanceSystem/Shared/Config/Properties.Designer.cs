@@ -82,5 +82,14 @@ namespace AmbulanceSystem.Shared.Config {
                 this["Theme"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("pack://application:,,,/Shared/Images/Buttons/")]
+        public string ButtonIconUriPrefix {
+            get {
+                return ((string)(this["ButtonIconUriPrefix"]));
+            }
+        }
     }
 }

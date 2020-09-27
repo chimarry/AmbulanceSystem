@@ -17,5 +17,8 @@
     <Setting Name="Theme" Type="System.String" Scope="User">
       <Value Profile="(Default)">Gryffindor</Value>
     </Setting>
+    <Setting Name="ButtonIconUriPrefix" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">pack://application:,,,/Shared/Images/Buttons/</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

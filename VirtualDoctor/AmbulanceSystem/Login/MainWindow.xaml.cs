@@ -1,7 +1,6 @@
 ﻿using AmbulanceSystem.Pages.LoginAuthentication;
 using AmbulanceSystem.Shared;
 using AmbulanceSystem.Shared.Config;
-using AmbulanceSystem.Shared.Themes;
 using AmbulanceSystem.Utils;
 using System;
 using System.Windows;
@@ -14,7 +13,6 @@ namespace AmbulanceSystem.Login
     /// </summary>
     public partial class MainWindow : Window, IThemeChangeable, ILanguageLocalizable
     {
-        public Theme CurrentTheme { get; set; }
         private Page PreviousPage { get; set; }
 
         public MainWindow()
@@ -23,7 +21,6 @@ namespace AmbulanceSystem.Login
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             SetUser();
             SwitchLanguage();
-            CurrentTheme = Theme.Gryffindor;
             MainFrame.Content = new LoginPage();
         }
 
@@ -37,7 +34,7 @@ namespace AmbulanceSystem.Login
         {
             CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
             MainImageBrush.ImageSource = newTheme.ToImage();
-            CurrentTheme = newTheme;
+            Shared.Config.Properties.Default.Theme = newTheme.ToString();
             (MainFrame.Content as IThemeChangeable).ChangeThemeTo(newTheme);
         }
 

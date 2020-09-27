@@ -1,6 +1,4 @@
-﻿using AmbulanceSystem.Shared.Themes;
-
-namespace AmbulanceSystem.Shared.Themes
+﻿namespace AmbulanceSystem.Shared
 {
     /// <summary>
     /// Defines type that is capable for changing design theme.

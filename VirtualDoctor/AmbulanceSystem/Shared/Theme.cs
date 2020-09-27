@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Windows;
 using System.Windows.Media.Imaging;
 
-namespace AmbulanceSystem.Shared.Themes
+namespace AmbulanceSystem.Shared
 {
     /// <summary>
     /// Enumerates currently supported themes.
