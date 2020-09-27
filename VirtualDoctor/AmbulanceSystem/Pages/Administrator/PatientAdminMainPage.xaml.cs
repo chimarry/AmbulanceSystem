@@ -1,5 +1,8 @@
 ﻿using AmbulanceSystem.Shared;
+using AmbulanceSystem.Shared.Config;
+using AmbulanceSystem.Utils;
 using System;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace AmbulanceSystem.Pages.Administrator
@@ -12,16 +15,40 @@ namespace AmbulanceSystem.Pages.Administrator
         public PatientAdminMainPage()
         {
             InitializeComponent();
+            SwitchLanguage();
+            ChangeTheme();
         }
 
         public void ChangeTheme()
         {
-            throw new NotImplementedException();
+            CurrentDictionary.MergedDictionaries[0].Source = ThemeChanger.GetCurrentTheme().ToUri();
         }
 
         public void SwitchLanguage()
         {
-            throw new NotImplementedException();
+            MedicalRecordButton.Content = language.MedicalRecordsReview;
+            OnLoaded();
+        }
+
+        private void MedicalRecordButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+        }
+
+        private void MedicalRecordButton_LayoutUpdated(object sender, EventArgs e)
+        {
+            OnLoaded();
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            OnLoaded();
+        }
+
+        private void OnLoaded()
+        {
+            if (IsLoaded)
+                MedicalRecordButton.SetIconAndText(language.MedicalRecordsReview, ButtonIcon.MedicalRecord);
         }
     }
 }

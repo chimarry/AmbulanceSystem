@@ -39,8 +39,7 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
 
         public void Initialize()
         {
-            Theme newTheme = ThemeChanger.GetCurrentTheme();
-            CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
+            CurrentDictionary.MergedDictionaries[0].Source = ThemeChanger.GetCurrentTheme().ToUri();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 

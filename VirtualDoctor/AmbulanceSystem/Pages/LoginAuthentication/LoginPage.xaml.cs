@@ -27,8 +27,7 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
 
         public void ChangeTheme()
         {
-            Theme newTheme = ThemeChanger.GetCurrentTheme();
-            CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
+            CurrentDictionary.MergedDictionaries[0].Source = ThemeChanger.GetCurrentTheme().ToUri();
         }
 
         public void SwitchLanguage()
