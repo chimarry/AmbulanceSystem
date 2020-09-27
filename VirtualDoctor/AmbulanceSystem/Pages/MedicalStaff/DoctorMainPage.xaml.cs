@@ -14,7 +14,7 @@ namespace AmbulanceSystem.Pages.MedicalStaff
             InitializeComponent();
         }
 
-        public void ChangeThemeTo(Theme newTheme)
+        public void ChangeTheme()
         {
             throw new NotImplementedException();
         }

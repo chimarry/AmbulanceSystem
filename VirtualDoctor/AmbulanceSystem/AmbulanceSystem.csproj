@@ -100,6 +100,7 @@
     <Compile Include="Shared\Theme.cs" />
     <Compile Include="Utils\LanguageLocalizer.cs" />
     <Compile Include="Utils\PageUtil.cs" />
+    <Compile Include="Utils\ThemeChanger.cs" />
     <Page Include="Login\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -204,7 +205,7 @@
     <Content Include="Shared\Images\Buttons\MedicalRecord.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Shared\Images\Buttons\Title.png">
+    <Content Include="Shared\Images\Buttons\MedicalTitle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Shared\Images\Buttons\Accounts.png">

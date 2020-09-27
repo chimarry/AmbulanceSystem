@@ -39,7 +39,7 @@ namespace AmbulanceSystem.Utils
         {
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
-            bitmapImage.UriSource = new Uri(imagePrefix + icon.ToString());
+            bitmapImage.UriSource = new Uri(imagePrefix + icon.MapString());
             bitmapImage.EndInit();
             return bitmapImage;
         }

@@ -11,7 +11,7 @@ namespace AmbulanceSystem.Login
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window, IThemeChangeable, ILanguageLocalizable
+    public partial class MainWindow : Window, ILanguageLocalizable
     {
         private Page PreviousPage { get; set; }
 
@@ -30,14 +30,6 @@ namespace AmbulanceSystem.Login
             AppDomain.CurrentDomain.SetThreadPrincipal(customPrincipal);
         }
 
-        public void ChangeThemeTo(Theme newTheme)
-        {
-            CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
-            MainImageBrush.ImageSource = newTheme.ToImage();
-            Shared.Config.Properties.Default.Theme = newTheme.ToString();
-            (MainFrame.Content as IThemeChangeable).ChangeThemeTo(newTheme);
-        }
-
         public void SwitchLanguage()
         {
             AboutItem.Header = language.About;
@@ -50,7 +42,11 @@ namespace AmbulanceSystem.Login
         {
             MenuItem clickedTheme = (MenuItem)sender;
             Theme newTheme = (Theme)Enum.Parse(typeof(Theme), clickedTheme.Header.ToString());
-            ChangeThemeTo(newTheme);
+
+            CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
+            MainImageBrush.ImageSource = newTheme.ToImage();
+            ThemeChanger.SetAsCurrentTheme(newTheme);
+            (MainFrame.Content as IThemeChangeable).ChangeTheme();
         }
 
         private void SwitchLanguage_Click(object sender, RoutedEventArgs e)

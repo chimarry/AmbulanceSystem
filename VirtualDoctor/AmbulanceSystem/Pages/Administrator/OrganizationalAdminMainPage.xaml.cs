@@ -12,19 +12,17 @@ namespace AmbulanceSystem.Pages.Administrator
     /// </summary>
     public partial class OrganizationalAdminMainPage : Page, IThemeChangeable, ILanguageLocalizable
     {
-        private Theme currentTheme;
-
-        public OrganizationalAdminMainPage(Theme currentTheme)
+        public OrganizationalAdminMainPage()
         {
             InitializeComponent();
             SwitchLanguage();
-            ChangeThemeTo(currentTheme);
+            ChangeTheme();
         }
 
-        public void ChangeThemeTo(Theme newTheme)
+        public void ChangeTheme()
         {
+            Theme newTheme = ThemeChanger.GetCurrentTheme();
             CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
-            currentTheme = newTheme;
         }
 
         public void SwitchLanguage()

@@ -7,7 +7,7 @@
 
     public static class ButtonIconExtensionMethods
     {
-        public static string ToString(this ButtonIcon icon)
+        public static string MapString(this ButtonIcon icon)
             => $"{icon}.png";
     }
 }

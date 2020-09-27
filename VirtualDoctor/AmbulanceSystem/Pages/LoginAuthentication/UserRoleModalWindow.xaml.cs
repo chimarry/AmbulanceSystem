@@ -13,13 +13,12 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
     public partial class UserRoleModalWindow : Window
     {
         private readonly Window mainWindow;
-        private Theme currentTheme;
 
-        public UserRoleModalWindow(CustomPrincipal customPrincipal, Window mainWindow, Theme currentTheme)
+        public UserRoleModalWindow(CustomPrincipal customPrincipal, Window mainWindow)
         {
             this.mainWindow = mainWindow;
             InitializeComponent();
-            Initialize(currentTheme);
+            Initialize();
             InitializeRoles(customPrincipal.Identity.Roles);
         }
 
@@ -38,10 +37,10 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
             }
         }
 
-        public void Initialize(Theme theme)
+        public void Initialize()
         {
-            CurrentDictionary.MergedDictionaries[0].Source = theme.ToUri();
-            currentTheme = theme;
+            Theme newTheme = ThemeChanger.GetCurrentTheme();
+            CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
@@ -62,8 +61,8 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
             switch (role)
             {
                 case "Doctor": nextPage = new DoctorMainPage(); break;
-                case "OrganizationalAdmin": nextPage = new OrganizationalAdminMainPage(currentTheme); break;
-                case "AccountAdmin": nextPage = new AccountAdminMainPage(currentTheme); break;
+                case "OrganizationalAdmin": nextPage = new OrganizationalAdminMainPage(); break;
+                case "AccountAdmin": nextPage = new AccountAdminMainPage(); break;
                 case "PatientAdmin": nextPage = new PatientAdminMainPage(); break;
                 default: nextPage = new LoginPage(); break;
             }

@@ -48,7 +48,6 @@ namespace AmbulanceSystem.Shared
                 case Theme.Revenclaw: return new BitmapImage(new Uri(imagePrefix + "Revenclaw.png"));
                 default: return new BitmapImage(new Uri(defaultImage));
             }
-
         }
     }
 }

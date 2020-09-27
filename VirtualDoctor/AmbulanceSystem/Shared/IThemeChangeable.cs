@@ -8,7 +8,6 @@
         /// <summary>
         /// Switches between current and the new theme.
         /// </summary>
-        /// <param name="newTheme">New theme.</param>
-        void ChangeThemeTo(Theme newTheme);
+        void ChangeTheme();
     }
 }

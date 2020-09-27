@@ -3,6 +3,7 @@ using AmbulanceServices.Factories;
 using AmbulanceServices.Interfaces;
 using AmbulanceSystem.Shared;
 using AmbulanceSystem.Shared.Config;
+using AmbulanceSystem.Utils;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -18,17 +19,16 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
     public partial class LoginPage : Page, IThemeChangeable, ILanguageLocalizable
     {
         private readonly IUserAuthenticationService userAuthenticationService = ServicesAmbulanceFactory.GetInstance().CreateIUserAuthenticationService();
-        private Theme currentTheme = Theme.Gryffindor;
 
         public LoginPage()
         {
             InitializeComponent();
         }
 
-        public void ChangeThemeTo(Theme newTheme)
+        public void ChangeTheme()
         {
+            Theme newTheme = ThemeChanger.GetCurrentTheme();
             CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
-            currentTheme = newTheme;
         }
 
         public void SwitchLanguage()
@@ -44,7 +44,7 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
             CustomPrincipal customPrincipal = Thread.CurrentPrincipal as CustomPrincipal;
             customPrincipal.Identity = await GetUserPrincipal();
             if (customPrincipal.Identity.GetType() != typeof(AnonymousIdentity))
-                new UserRoleModalWindow(customPrincipal, Window.GetWindow(this), currentTheme).ShowDialog();
+                new UserRoleModalWindow(customPrincipal, Window.GetWindow(this)).ShowDialog();
         }
 
         private async Task<CustomIdentity> GetUserPrincipal()

@@ -14,8 +14,8 @@
     <Setting Name="Language" Type="System.String" Scope="User">
       <Value Profile="(Default)">en-EN</Value>
     </Setting>
-    <Setting Name="Theme" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Gryffindor</Value>
+    <Setting Name="Theme" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="ButtonIconUriPrefix" Type="System.String" Scope="Application">
       <Value Profile="(Default)">pack://application:,,,/Shared/Images/Buttons/</Value>
