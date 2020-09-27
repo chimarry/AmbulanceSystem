@@ -5,6 +5,7 @@ using AmbulanceSystem.Utils;
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Navigation;
 
 namespace AmbulanceSystem.Login
 {
@@ -13,8 +14,6 @@ namespace AmbulanceSystem.Login
     /// </summary>
     public partial class MainWindow : Window, ILanguageLocalizable
     {
-        private Page PreviousPage { get; set; }
-
         public MainWindow()
         {
             InitializeComponent();
@@ -54,6 +53,12 @@ namespace AmbulanceSystem.Login
             LanguageLocalizer.SwitchLanguage();
             SwitchLanguage();
             (MainFrame.Content as ILanguageLocalizable).SwitchLanguage();
+        }
+
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            if (NavigationService.GetNavigationService(this.MainFrame.Content as DependencyObject).CanGoBack)
+                NavigationService.GetNavigationService(MainFrame.Content as DependencyObject).GoBack();
         }
     }
 }

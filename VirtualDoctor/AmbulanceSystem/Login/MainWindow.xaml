@@ -25,7 +25,7 @@
         <Viewbox Stretch="Uniform">
             <Menu Style="{DynamicResource MenuDesign}">
                 <!--Go back-->
-                <MenuItem x:Name="GoBackItem" Header="Go back"/>
+                <MenuItem x:Name="GoBackItem" Header="Go back" Click="GoBack_Click"/>
                 <!--About-->
                 <MenuItem x:Name="AboutItem" Header="About">
                     <MenuItem.ToolTip>
@@ -66,6 +66,6 @@
                 </MenuItem>
             </Menu>
         </Viewbox>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1"></Frame>
+        <Frame x:Name="MainFrame"  NavigationUIVisibility="Hidden" Grid.Row="1"></Frame>
     </Grid>
 </Window>
