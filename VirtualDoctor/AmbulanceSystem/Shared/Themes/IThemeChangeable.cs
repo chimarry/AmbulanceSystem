@@ -11,7 +11,6 @@ namespace AmbulanceSystem.Shared.Themes
         /// Switches between current and the new theme.
         /// </summary>
         /// <param name="newTheme">New theme.</param>
-        /// <returns>True if theme is changes, false if not.</returns>
-        bool ChangeThemeTo(Theme newTheme);
+        void ChangeThemeTo(Theme newTheme);
     }
 }

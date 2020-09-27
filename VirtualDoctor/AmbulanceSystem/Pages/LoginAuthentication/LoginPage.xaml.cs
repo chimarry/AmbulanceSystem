@@ -27,11 +27,10 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
             InitializeComponent();
         }
 
-        public bool ChangeThemeTo(Theme newTheme)
+        public void ChangeThemeTo(Theme newTheme)
         {
             CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
             currentTheme = newTheme;
-            return true;
         }
 
         public void SwitchLanguage()

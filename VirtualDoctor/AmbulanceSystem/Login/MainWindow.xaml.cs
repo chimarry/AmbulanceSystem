@@ -33,21 +33,12 @@ namespace AmbulanceSystem.Login
             AppDomain.CurrentDomain.SetThreadPrincipal(customPrincipal);
         }
 
-        public bool ChangeThemeTo(Theme newTheme)
+        public void ChangeThemeTo(Theme newTheme)
         {
-            try
-            {
-                CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
-                MainImageBrush.ImageSource = newTheme.ToImage();
-                CurrentTheme = newTheme;
-                (MainFrame.Content as IThemeChangeable).ChangeThemeTo(newTheme);
-
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
+            MainImageBrush.ImageSource = newTheme.ToImage();
+            CurrentTheme = newTheme;
+            (MainFrame.Content as IThemeChangeable).ChangeThemeTo(newTheme);
         }
 
         public void SwitchLanguage()
@@ -62,7 +53,7 @@ namespace AmbulanceSystem.Login
         {
             MenuItem clickedTheme = (MenuItem)sender;
             Theme newTheme = (Theme)Enum.Parse(typeof(Theme), clickedTheme.Header.ToString());
-            bool isChanged = ChangeThemeTo(newTheme);
+            ChangeThemeTo(newTheme);
         }
 
         private void SwitchLanguage_Click(object sender, RoutedEventArgs e)

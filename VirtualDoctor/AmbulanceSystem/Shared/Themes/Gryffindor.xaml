@@ -172,6 +172,37 @@
         </Setter>
     </Style>
 
+    <Style x:Key="RoundButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseRoundCornerButton}">
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid" >
+                        <Border x:Name="border" CornerRadius="100" Background="{StaticResource SecondaryColorBrush}" BorderBrush="{StaticResource SecondaryColorBrush}" BorderThickness="0.5">
+                            <StackPanel x:Name="stackPanel">
+                                <Image x:Name="buttonIcon"  Width="80" Height="80"/>
+                                <TextBlock x:Name="content" Style="{StaticResource MainTextBlockStyle}" HorizontalAlignment="Center" FontWeight="Bold"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+                            <Setter Property="RenderTransform">
+                                <Setter.Value>
+                                    <ScaleTransform ScaleX="1.2" ScaleY="1.2"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" TargetName="grid" Value="0.7"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <!--Design list box-->
     <Style x:Key="ListBoxStyle" TargetType="ListBox" BasedOn="{StaticResource BaseListBoxStyle}">
         <Setter Property="Background" Value="{StaticResource PrimaryColorBrush}"/>

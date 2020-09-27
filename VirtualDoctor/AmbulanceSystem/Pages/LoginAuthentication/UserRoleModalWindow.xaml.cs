@@ -13,6 +13,7 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
     public partial class UserRoleModalWindow : Window
     {
         private readonly Window mainWindow;
+        private Theme currentTheme;
 
         public UserRoleModalWindow(CustomPrincipal customPrincipal, Window mainWindow, Theme currentTheme)
         {
@@ -40,6 +41,7 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
         public void Initialize(Theme theme)
         {
             CurrentDictionary.MergedDictionaries[0].Source = theme.ToUri();
+            currentTheme = theme;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
@@ -61,7 +63,7 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
             {
                 case "Doctor": nextPage = new DoctorMainPage(); break;
                 case "OrganizationalAdmin": nextPage = new OrganizationalAdminMainPage(); break;
-                case "AccountsAdmin": nextPage = new AccountAdminMainPage(); break;
+                case "AccountAdmin": nextPage = new AccountAdminMainPage(currentTheme); break;
                 case "PatientAdmin": nextPage = new PatientAdminMainPage(); break;
                 default: nextPage = new LoginPage(); break;
             }

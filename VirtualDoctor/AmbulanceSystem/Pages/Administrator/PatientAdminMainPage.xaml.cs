@@ -15,7 +15,7 @@ namespace AmbulanceSystem.Pages.Administrator
             InitializeComponent();
         }
 
-        public bool ChangeThemeTo(Theme newTheme)
+        public void ChangeThemeTo(Theme newTheme)
         {
             throw new NotImplementedException();
         }

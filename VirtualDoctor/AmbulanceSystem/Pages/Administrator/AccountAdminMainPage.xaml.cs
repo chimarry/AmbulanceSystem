@@ -1,6 +1,12 @@
 ﻿using AmbulanceSystem.Shared;
+using AmbulanceSystem.Shared.Config;
 using AmbulanceSystem.Shared.Themes;
+using AmbulanceSystem.Utils;
+using System;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace AmbulanceSystem.Pages.Administrator
 {
@@ -9,19 +15,44 @@ namespace AmbulanceSystem.Pages.Administrator
     /// </summary>
     public partial class AccountAdminMainPage : Page, IThemeChangeable, ILanguageLocalizable
     {
-        public AccountAdminMainPage()
+        private Theme currentTheme;
+
+        public AccountAdminMainPage(Theme currentTheme)
         {
             InitializeComponent();
+            SwitchLanguage();
+            ChangeThemeTo(currentTheme);
         }
 
-        public bool ChangeThemeTo(Theme newTheme)
+        public void ChangeThemeTo(Theme newTheme)
         {
-            throw new System.NotImplementedException();
+            CurrentDictionary.MergedDictionaries[0].Source = newTheme.ToUri();
+            currentTheme = newTheme;
         }
 
         public void SwitchLanguage()
         {
-            throw new System.NotImplementedException();
+            AccountButton.Content = language.Accounts;
+            OnLoaded();
+        }
+
+        private void AccountButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
+        private void AccountButton_LayoutUpdated(object sender, EventArgs e)
+        {
+            OnLoaded();
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
+            OnLoaded();
+        }
+
+        private void OnLoaded()
+        {
+            if (IsLoaded)
+                AccountButton.SetIconAndText(language.Accounts, "Accounts.png");
         }
     }
 }
