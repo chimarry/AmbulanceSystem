@@ -1,5 +1,6 @@
 ﻿using AmbulanceSystem.Login;
 using System;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -18,18 +19,15 @@ namespace AmbulanceSystem.Utils
 
         public static void SetIconAndText(this Button button, string text, string imageName)
         {
-            try
-            {
-                StackPanel stackPanel = VisualTreeHelper.GetChild(button.Template.FindName("border", button) as DependencyObject, 0) as StackPanel;
-                Image image = stackPanel.Children[0] as Image;
-                image.Source = new BitmapImage(new Uri(imagePrefix + imageName));
-                TextBlock textBlock = stackPanel.Children[1] as TextBlock;
-                textBlock.Text = text;
-            }
-            catch (Exception)
-            {
-
-            }
+            StackPanel stackPanel = VisualTreeHelper.GetChild(button.Template.FindName("border", button) as DependencyObject, 0) as StackPanel;
+            Image image = stackPanel.Children[0] as Image;
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.UriSource = new Uri(imagePrefix + imageName);
+            bitmapImage.EndInit();
+            image.Source = bitmapImage;
+            TextBlock textBlock = stackPanel.Children[1] as TextBlock;
+            textBlock.Text = text;
         }
     }
 }

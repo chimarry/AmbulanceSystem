@@ -170,13 +170,14 @@
 
     <Style x:Key="RoundButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseRoundCornerButton}">
         <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
+        <Setter Property="Margin" Value="10,10,10,10"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Grid x:Name="grid" >
                         <Border x:Name="border" CornerRadius="100" Background="{StaticResource SecondaryColorBrush}" BorderBrush="{StaticResource SecondaryColorBrush}" BorderThickness="0.5">
                             <StackPanel x:Name="stackPanel">
-                                <Image x:Name="buttonIcon" Width="80" Height="80"/>
+                                <Image x:Name="buttonIcon" Width="80" Height="80" RenderOptions.BitmapScalingMode="LowQuality"/>
                                 <TextBlock x:Name="content" Style="{StaticResource MainTextBlockStyle}" HorizontalAlignment="Center" FontWeight="Bold"/>
                             </StackPanel>
                         </Border>

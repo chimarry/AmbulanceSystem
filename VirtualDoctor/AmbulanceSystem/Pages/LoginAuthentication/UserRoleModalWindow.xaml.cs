@@ -62,7 +62,7 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
             switch (role)
             {
                 case "Doctor": nextPage = new DoctorMainPage(); break;
-                case "OrganizationalAdmin": nextPage = new OrganizationalAdminMainPage(); break;
+                case "OrganizationalAdmin": nextPage = new OrganizationalAdminMainPage(currentTheme); break;
                 case "AccountAdmin": nextPage = new AccountAdminMainPage(currentTheme); break;
                 case "PatientAdmin": nextPage = new PatientAdminMainPage(); break;
                 default: nextPage = new LoginPage(); break;
