@@ -58,6 +58,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\DataGridControls\DataGridControl.xaml.cs">
+      <DependentUpon>DataGridControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DataGridControls\DataGridControlElement.cs" />
+    <Compile Include="Controls\IndexControl\IndexControl.xaml.cs">
+      <DependentUpon>IndexControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IndexControl\IndexControlElement.cs" />
     <Compile Include="Pages\Administrator\AccountAdminMainPage.xaml.cs">
       <DependentUpon>AccountAdminMainPage.xaml</DependentUpon>
     </Compile>
@@ -101,6 +109,14 @@
     <Compile Include="Utils\LanguageLocalizer.cs" />
     <Compile Include="Utils\PageUtil.cs" />
     <Compile Include="Utils\ThemeChanger.cs" />
+    <Page Include="Controls\DataGridControls\DataGridControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\IndexControl\IndexControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Login\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -248,7 +264,7 @@
     <Resource Include="Shared\Images\Ambulance.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controls\" />
+    <Folder Include="Pages\Administrator\PlaceCRUD\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AmbulanceDatabase\DatabaseAmbulance.csproj">

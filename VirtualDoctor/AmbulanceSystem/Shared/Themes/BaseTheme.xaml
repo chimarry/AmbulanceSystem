@@ -4,6 +4,13 @@
     <Style x:Key="BaseBorderStyle" TargetType="Border">
         <Setter Property="CornerRadius" Value="10"/>
     </Style>
+    <!--Design label-->
+    <Style x:Key="BaseLabelStyle" TargetType="Label">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
     <!--Design text block-->
     <Style x:Key="BaseTextBlockStyle" TargetType="TextBlock">
         <Setter Property="FontWeight" Value="DemiBold"/>

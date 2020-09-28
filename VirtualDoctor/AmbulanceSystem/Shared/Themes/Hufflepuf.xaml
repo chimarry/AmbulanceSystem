@@ -32,6 +32,11 @@
     <Style x:Key="BorderStyle" TargetType="Border" BasedOn="{StaticResource BaseBorderStyle}">
         <Setter Property="Background" Value="{StaticResource SecondaryColorBrush}"/>
     </Style>
+    <!--Design label-->
+    <Style x:Key="LabelStyle" TargetType="Label" BasedOn="{StaticResource BaseLabelStyle}">
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
+    </Style>
     <!--Design text block-->
     <Style x:Key="MainTextBlockStyle" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlockStyle}">
         <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
