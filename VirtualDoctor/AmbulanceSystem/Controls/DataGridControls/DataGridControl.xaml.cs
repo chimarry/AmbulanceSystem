@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using AmbulanceSystem.Shared.Config;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -29,11 +30,10 @@ namespace AmbulanceSystem.Controls.DataGridControls
 
         private void InitializeButtons()
         {
-            //Helpers.ButtonContentHelper.SetContent(First, language.FirstPageButton);
-            //Helpers.ButtonContentHelper.SetContent(Last, language.LastPageButton);
-            //Helpers.ButtonContentHelper.SetContent(Backwards, language.BackwardsButton);
-            //Helpers.ButtonContentHelper.SetContent(Forward, language.ForwardButton);
-
+            First.Content = language.FirstPageButton;
+            Last.Content = language.LastPageButton;
+            Backwards.Content = language.BackwardsButton;
+            Forward.Content = language.ForwardButton;
         }
 
         private async void Last_Click(object sender, RoutedEventArgs e)

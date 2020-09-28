@@ -38,6 +38,9 @@
     <ApplicationIcon>Ambulance.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=9.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.9.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -58,6 +61,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AutoMapper\Mapping.cs" />
+    <Compile Include="AutoMapper\MappingProfile.cs" />
     <Compile Include="Controls\DataGridControls\DataGridControl.xaml.cs">
       <DependentUpon>DataGridControl.xaml</DependentUpon>
     </Compile>
@@ -74,6 +79,18 @@
     </Compile>
     <Compile Include="Pages\Administrator\PatientAdminMainPage.xaml.cs">
       <DependentUpon>PatientAdminMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\PlaceCRUD\CreateModalWindow.xaml.cs">
+      <DependentUpon>CreateModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\PlaceCRUD\DataGridControlElementPlace.cs" />
+    <Compile Include="Pages\Administrator\PlaceCRUD\DeleteModalWindow.xaml.cs">
+      <DependentUpon>DeleteModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\PlaceCRUD\EditModalWindow.cs" />
+    <Compile Include="Pages\Administrator\PlaceCRUD\IndexControlElementPlace.cs" />
+    <Compile Include="Pages\Administrator\PlaceCRUD\IndexPage.xaml.cs">
+      <DependentUpon>IndexPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginAuthentication\AnonymousIdentity.cs" />
     <Compile Include="Pages\LoginAuthentication\CustomIdentity.cs" />
@@ -109,6 +126,15 @@
     <Compile Include="Utils\LanguageLocalizer.cs" />
     <Compile Include="Utils\PageUtil.cs" />
     <Compile Include="Utils\ThemeChanger.cs" />
+    <Compile Include="ViewModels\ClinicViewModel.cs" />
+    <Compile Include="ViewModels\DoctorClinicViewModel.cs" />
+    <Compile Include="ViewModels\DoctorMedicalTitleViewModel.cs" />
+    <Compile Include="ViewModels\DoctorViewModel.cs" />
+    <Compile Include="ViewModels\LocalAccountViewModel.cs" />
+    <Compile Include="ViewModels\MedicalRecordViewModel.cs" />
+    <Compile Include="ViewModels\MedicalTitleViewModel.cs" />
+    <Compile Include="ViewModels\PlaceViewModel.cs" />
+    <Compile Include="ViewModels\RoleViewModel.cs" />
     <Page Include="Controls\DataGridControls\DataGridControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -138,6 +164,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Administrator\PatientAdminMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\PlaceCRUD\CreateModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\PlaceCRUD\DeleteModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\PlaceCRUD\IndexPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,6 +240,7 @@
       <LastGenOutput>language.sr.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -263,9 +302,7 @@
     <Resource Include="Ambulance.ico" />
     <Resource Include="Shared\Images\Ambulance.ico" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\Administrator\PlaceCRUD\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\AmbulanceDatabase\DatabaseAmbulance.csproj">
       <Project>{50BF236A-6213-4143-B90E-BD835D4C4D66}</Project>

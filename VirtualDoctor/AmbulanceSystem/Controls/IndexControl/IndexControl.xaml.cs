@@ -1,7 +1,11 @@
 ﻿using AmbulanceSystem.Controls.DataGridControls;
+using AmbulanceSystem.Shared;
+using AmbulanceSystem.Shared.Config;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+
 namespace AmbulanceSystem.Controls.IndexControl
 {
     /// <summary>
@@ -31,8 +35,10 @@ namespace AmbulanceSystem.Controls.IndexControl
         public static async Task<IndexControl> CreateIndexControl(IndexControlElement indexControlElement, DataGridControlElement dataGridControlElement,
             Visibility detailsBtnVisibility = Visibility.Hidden, Visibility crudBtnVisibility = Visibility.Visible)
         {
-            IndexControl indexControl = new IndexControl(indexControlElement, detailsBtnVisibility, crudBtnVisibility);
-            indexControl.DataGridControl = await DataGridControl.CreateDataGridControl(dataGridControlElement);
+            IndexControl indexControl = new IndexControl(indexControlElement, detailsBtnVisibility, crudBtnVisibility)
+            {
+                DataGridControl = await DataGridControl.CreateDataGridControl(dataGridControlElement)
+            };
             indexControl.DataContext = indexControl.DataGridControl.DataGrid;
             indexControl.InitializeComponents();
             return indexControl;
@@ -46,26 +52,19 @@ namespace AmbulanceSystem.Controls.IndexControl
 
         private void InitializeDataGrid()
         {
-
-            DataGridControl.DataGrid.IsReadOnly = true;
-
-            DataGridControl.HorizontalAlignment = HorizontalAlignment.Left;
-
-            Grid.Children.Add(DataGridControl);
+            IndexGrid.Children.Add(DataGridControl);
             Grid.SetRow(DataGridControl, 0);
-            Grid.SetColumn(DataGridControl, 1);
-
-            Grid.SetRowSpan(DataGridControl, 2);
-            Grid.SetColumnSpan(DataGridControl, 2);
+            Grid.SetColumn(DataGridControl, 0);
+            Grid.SetColumnSpan(DataGridControl, 3);
+            Grid.SetRowSpan(DataGridControl, 1);
         }
 
         private void InitializeButtons()
         {
-            //ButtonContentHelper.SetContent(CreateButton, language.Create);
-            //ButtonContentHelper.SetContent(DeleteButton, language.Delete);
-            //ButtonContentHelper.SetContent(EditButton, language.Edit);
-            //ButtonContentHelper.SetContent(DetailsButton, language.Details);
-            //ButtonContentHelper.SetStackPaneledButton(GoBack.GoBackButton.Content as StackPanel, GoBack.GoBackText, language.GoBack);
+            CreateButton.Content = language.Create;
+            DeleteButton.Content = language.Delete;
+            EditButton.Content = language.Edit;
+            DetailsButton.Content = language.Details;
             SetButtonsVisibiltiy();
         }
 
@@ -73,14 +72,6 @@ namespace AmbulanceSystem.Controls.IndexControl
         {
             DetailsButton.Visibility = detailsBtnVisibility;
             EditButton.Visibility = CreateButton.Visibility = DeleteButton.Visibility = crudBtnVisibility;
-        }
-
-        public void SetBorder(double height, double width)
-        {
-            Height = height;
-            Width = width;
-            DataGridControl.Width = Width * (2.0 / 3);
-            DataGridControl.Height = Height;
         }
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)

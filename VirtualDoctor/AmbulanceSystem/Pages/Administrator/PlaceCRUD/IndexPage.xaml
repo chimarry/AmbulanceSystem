@@ -1,0 +1,23 @@
+﻿<Page x:Class="AmbulanceSystem.Pages.Administrator.PlaceCRUD.IndexPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AmbulanceSystem.Pages.Administrator.PlaceCRUD"
+  mc:Ignorable="d" Title="Index page"
+      MinWidth="800" MinHeight="450"
+      HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Page.Resources>
+        <ResourceDictionary x:Name="CurrentDictionary">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Name="CurrentThemeDictionary" Source="/Shared/Themes/Gryffindor.xaml"/>
+                <ResourceDictionary Source="/Shared/Themes/BaseTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid x:Name="IndexPageGrid">
+        <Grid.Background>
+            <SolidColorBrush Color="Transparent"/>
+        </Grid.Background>
+    </Grid>
+</Page>
