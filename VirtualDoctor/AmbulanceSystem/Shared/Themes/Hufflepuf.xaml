@@ -217,4 +217,25 @@
         <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
         <Setter Property="BorderThickness" Value="3"/>
     </Style>
+    <!--Design datagrid-->
+    <Style x:Key="DataGridHeaderStyle" TargetType="DataGridColumnHeader">
+        <Setter Property="Background" Value="{StaticResource QuatenaryColorBrush}"/>
+        <Setter Property="SeparatorBrush" Value="{StaticResource FontColorBrush}"/>
+        <Setter Property="SeparatorVisibility" Value="Visible"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="MinHeight" Value="30"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
+    </Style>
+    <Style x:Key="DataGridCellStyle" TargetType="DataGridCell">
+        <Setter Property="Background" Value="{StaticResource SecondaryColorBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DefaultFontFamily}"/>
+    </Style>
+    <Style x:Key="DataGridStyle" TargetType="DataGrid">
+        <Setter Property="Background" Value="{StaticResource SecondaryColorBrush}"/>
+        <Setter Property="ColumnHeaderStyle" Value="{StaticResource DataGridHeaderStyle}"/>
+        <Setter Property="CellStyle" Value="{StaticResource DataGridCellStyle}"/>
+    </Style>
 </ResourceDictionary>

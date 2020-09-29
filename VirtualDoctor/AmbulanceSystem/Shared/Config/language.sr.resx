@@ -185,7 +185,7 @@ jer entitet već postoji u bazi.</value>
     <value>Ženski</value>
   </data>
   <data name="FirstPageButton" xml:space="preserve">
-    <value>&lt;&lt;Prva strana</value>
+    <value>&lt;&lt;Prva</value>
   </data>
   <data name="FoodQuality" xml:space="preserve">
     <value>Kvalitet hrane</value>
@@ -215,7 +215,7 @@ jer entitet već postoji u bazi.</value>
     <value>Prezime</value>
   </data>
   <data name="LastPageButton" xml:space="preserve">
-    <value>&gt;&gt;Zadnja strana</value>
+    <value>&gt;&gt;Zadnja</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Uloguj se</value>

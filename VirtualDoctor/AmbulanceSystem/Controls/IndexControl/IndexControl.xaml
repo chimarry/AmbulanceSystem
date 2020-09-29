@@ -24,12 +24,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1.5*"/>
-            <ColumnDefinition Width="1.5*"/>
-            <ColumnDefinition Width="1.5*"/>
             <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="1.5*"/>
         </Grid.ColumnDefinitions>
-        <Viewbox Grid.Column="3" Grid.Row="0" Stretch="Uniform" Margin="50,50">
+        <Viewbox Grid.Column="3" Grid.Row="0" Stretch="Uniform" Margin="30,50">
             <StackPanel x:Name="ButtonsPanel">
                 <Button x:Name="CreateButton" Style="{DynamicResource RoundCornerButton}" Width="150" Height="33" Margin="0,20" Click="CreateButton_Click">Create</Button>
                 <Button x:Name="EditButton" Style="{DynamicResource RoundCornerButton}" Width="150" Height="33" Margin="0,20" Click="EditButton_Click">Edit</Button>

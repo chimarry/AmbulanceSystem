@@ -184,7 +184,7 @@ exists in database.</value>
     <value>Female</value>
   </data>
   <data name="FirstPageButton" xml:space="preserve">
-    <value>&lt;&lt;Jump to first</value>
+    <value>&lt;&lt; First</value>
   </data>
   <data name="FoodQuality" xml:space="preserve">
     <value>FoodQuality</value>
@@ -214,7 +214,7 @@ exists in database.</value>
     <value>Last name</value>
   </data>
   <data name="LastPageButton" xml:space="preserve">
-    <value>&gt;&gt;Jump to last</value>
+    <value>&gt;&gt; Last</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Log in</value>

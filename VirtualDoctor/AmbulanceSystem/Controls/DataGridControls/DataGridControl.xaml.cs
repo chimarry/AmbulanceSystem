@@ -72,5 +72,10 @@ namespace AmbulanceSystem.Controls.DataGridControls
         {
             await DataGridControlElement.Refresh();
         }
+
+        private void Viewbox_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+
+        }
     }
 }

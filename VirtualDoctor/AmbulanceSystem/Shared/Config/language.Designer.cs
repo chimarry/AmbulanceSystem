@@ -325,7 +325,7 @@ namespace AmbulanceSystem.Shared.Config {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;&lt;Jump to first.
+        ///   Looks up a localized string similar to &lt;&lt; First.
         /// </summary>
         public static string FirstPageButton {
             get {
@@ -424,7 +424,7 @@ namespace AmbulanceSystem.Shared.Config {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &gt;&gt;Jump to last.
+        ///   Looks up a localized string similar to &gt;&gt; Last.
         /// </summary>
         public static string LastPageButton {
             get {

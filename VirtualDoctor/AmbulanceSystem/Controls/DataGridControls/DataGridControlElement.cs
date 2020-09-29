@@ -119,9 +119,7 @@ namespace AmbulanceSystem.Controls.DataGridControls
             ResourceManager rm = new ResourceManager("AmbulanceSystem.Shared.Config.language", Assembly.GetExecutingAssembly());
             CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
             foreach (var x in DataGrid.Columns)
-            {
                 x.Header = rm.GetString(x.SortMemberPath, cultureInfo) ?? x.SortMemberPath;
-            }
             HideColumns();
         }
 
