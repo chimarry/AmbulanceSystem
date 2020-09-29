@@ -22,6 +22,10 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="TextAlignment" Value="Center"/>
     </Style>
+    <Style x:Key="NotAlignedBaseTextBoxStyle" TargetType="TextBox">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
     <!--Design password box-->
     <Style x:Key="BasePasswordBoxStyle" TargetType="PasswordBox">
         <Setter Property="Background" Value="Transparent"/>

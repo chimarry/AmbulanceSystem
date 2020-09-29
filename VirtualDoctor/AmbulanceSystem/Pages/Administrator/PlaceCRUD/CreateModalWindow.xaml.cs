@@ -22,6 +22,10 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
         public CreateModalWindow()
         {
             InitializeComponent();
+            RadiationComboBox.Items.Add("Ok");
+            RadiationComboBox.Items.Add("Not Ok");
+            RadiationComboBox.Items.Add("Fine");
+            RadiationComboBox.Items.Add("Great");
         }
     }
 }

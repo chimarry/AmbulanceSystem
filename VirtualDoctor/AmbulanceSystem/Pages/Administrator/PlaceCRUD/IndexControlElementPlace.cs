@@ -11,7 +11,8 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
     {
         public override void Create()
         {
-            throw new NotImplementedException();
+            CreateModalWindow createModalWindow = new CreateModalWindow();
+            createModalWindow.ShowDialog();
         }
 
         public override void Delete(object selectedItem)
