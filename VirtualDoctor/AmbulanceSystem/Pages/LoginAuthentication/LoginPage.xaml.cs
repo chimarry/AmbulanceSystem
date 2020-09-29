@@ -23,6 +23,8 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
         public LoginPage()
         {
             InitializeComponent();
+            ChangeTheme();
+            SwitchLanguage();
         }
 
         public void ChangeTheme()

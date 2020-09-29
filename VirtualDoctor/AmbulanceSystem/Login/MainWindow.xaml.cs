@@ -60,5 +60,11 @@ namespace AmbulanceSystem.Login
             if (NavigationService.GetNavigationService(this.MainFrame.Content as DependencyObject).CanGoBack)
                 NavigationService.GetNavigationService(MainFrame.Content as DependencyObject).GoBack();
         }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            (MainFrame.Content as IThemeChangeable).ChangeTheme();
+            (MainFrame.Content as ILanguageLocalizable).SwitchLanguage();
+        }
     }
 }

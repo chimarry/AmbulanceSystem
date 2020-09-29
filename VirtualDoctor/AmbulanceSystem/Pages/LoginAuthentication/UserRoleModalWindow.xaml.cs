@@ -1,6 +1,7 @@
 ﻿using AmbulanceSystem.Pages.Administrator;
 using AmbulanceSystem.Pages.MedicalStaff;
 using AmbulanceSystem.Shared;
+using AmbulanceSystem.Shared.Config;
 using AmbulanceSystem.Utils;
 using System.Windows;
 using System.Windows.Controls;
@@ -10,7 +11,7 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
     /// <summary>
     /// Interaction logic for UserRoleModalWindow.xaml
     /// </summary>
-    public partial class UserRoleModalWindow : Window
+    public partial class UserRoleModalWindow : Window, IThemeChangeable, ILanguageLocalizable
     {
         private readonly Window mainWindow;
 
@@ -39,7 +40,9 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
 
         public void Initialize()
         {
-            CurrentDictionary.MergedDictionaries[0].Source = ThemeChanger.GetCurrentTheme().ToUri();
+            ChangeTheme();
+            SwitchLanguage();
+            CancelButton.IsCancel = true;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
@@ -66,6 +69,17 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
                 default: nextPage = new LoginPage(); break;
             }
             mainWindow.NavigateToNextPage(nextPage);
+        }
+
+        public void ChangeTheme()
+        {
+            CurrentDictionary.MergedDictionaries[0].Source = ThemeChanger.GetCurrentTheme().ToUri();
+        }
+
+        public void SwitchLanguage()
+        {
+            LoginButton.Content = language.Login;
+            CancelButton.Content = language.Cancel;
         }
     }
 }

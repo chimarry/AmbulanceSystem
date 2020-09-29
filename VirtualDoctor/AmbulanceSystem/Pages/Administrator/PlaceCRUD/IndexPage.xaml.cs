@@ -22,16 +22,20 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
             IndexPage page = new IndexPage();
             IndexControl control = await IndexControl.CreateIndexControl(new IndexControlElementPlace(), new DataGridControlElementPlace());
             page.IndexPageGrid.Children.Add(control);
+            page.ChangeTheme();
+            page.SwitchLanguage();
             return page;
         }
 
         public void ChangeTheme()
         {
             CurrentDictionary.MergedDictionaries[0].Source = ThemeChanger.GetCurrentTheme().ToUri();
+            (IndexPageGrid.Children[0] as IndexControl).ChangeTheme();
         }
 
         public void SwitchLanguage()
         {
+            (IndexPageGrid.Children[0] as IndexControl).SwitchLanguage();
         }
     }
 }

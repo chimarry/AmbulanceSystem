@@ -1,6 +1,7 @@
 ﻿using AmbulanceSystem.Controls.DataGridControls;
 using AmbulanceSystem.Shared;
 using AmbulanceSystem.Shared.Config;
+using AmbulanceSystem.Utils;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,7 +13,7 @@ namespace AmbulanceSystem.Controls.IndexControl
     /// Interaction logic for IndexControl.xaml
     /// </summary>
     ///
-    public partial class IndexControl : UserControl
+    public partial class IndexControl : UserControl, IThemeChangeable, ILanguageLocalizable
     {
         private readonly Visibility detailsBtnVisibility;
 
@@ -44,6 +45,18 @@ namespace AmbulanceSystem.Controls.IndexControl
             return indexControl;
         }
 
+        public void ChangeTheme()
+        {
+            CurrentDictionary.MergedDictionaries[0].Source = ThemeChanger.GetCurrentTheme().ToUri();
+            DataGridControl.ChangeTheme();
+        }
+
+        public void SwitchLanguage()
+        {
+            SetButtonsLanguage();
+            DataGridControl.SwitchLanguage();
+        }
+
         private void InitializeComponents()
         {
             InitializeDataGrid();
@@ -61,11 +74,16 @@ namespace AmbulanceSystem.Controls.IndexControl
 
         private void InitializeButtons()
         {
+            SetButtonsLanguage();
+            SetButtonsVisibiltiy();
+        }
+
+        private void SetButtonsLanguage()
+        {
             CreateButton.Content = language.Create;
             DeleteButton.Content = language.Delete;
             EditButton.Content = language.Edit;
             DetailsButton.Content = language.Details;
-            SetButtonsVisibiltiy();
         }
 
         private void SetButtonsVisibiltiy()

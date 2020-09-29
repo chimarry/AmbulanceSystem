@@ -66,6 +66,6 @@
                 </MenuItem>
             </Menu>
         </Viewbox>
-        <Frame x:Name="MainFrame"  NavigationUIVisibility="Hidden" Grid.Row="1"></Frame>
+        <Frame x:Name="MainFrame"  NavigationUIVisibility="Hidden" Grid.Row="1" Navigated="MainFrame_Navigated"></Frame>
     </Grid>
 </Window>
