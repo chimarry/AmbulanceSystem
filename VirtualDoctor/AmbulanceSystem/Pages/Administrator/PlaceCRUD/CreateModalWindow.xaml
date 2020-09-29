@@ -18,7 +18,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
-
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -27,10 +26,10 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="0.6*"/>
         </Grid.RowDefinitions>
         <Viewbox Grid.Row="7" Grid.Column="0" Stretch="Uniform">
-            <Button x:Name="SaveButton" Style="{DynamicResource RoundCornerButton}" Width="100" Height="29"  IsDefault="True" Content="Save"/>
+            <Button x:Name="SaveButton" Margin="0 0 0 10" Style="{DynamicResource RoundCornerButton}" Width="100" Height="29"  IsDefault="True" Content="Save"/>
         </Viewbox>
         <Viewbox  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Stretch="Uniform">
             <StackPanel Margin="10 0 0 0">
@@ -50,60 +49,62 @@
                 <TextBox x:Name="PostalCodeBox" Width="100" Height="29" Style="{DynamicResource NotAlignedTextBoxStyle}"/>
             </StackPanel>
         </Viewbox>
-        <Viewbox Grid.Row="4" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Top">
-            <StackPanel Margin="0 5 0 0" Orientation="Horizontal"  >
-                <TextBlock Text="Radiation" x:Name="RadiationTextBlock" Width="80" Style="{DynamicResource SecondaryTextBlockStyle}"/>
-                <ComboBox x:Name="RadiationComboBox"  Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}"/>
-            </StackPanel>
-        </Viewbox>
-        <Viewbox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stretch="Uniform">
-            <StackPanel Margin="0 5 0 0 " Orientation="Horizontal">
-                <TextBlock Text="Air quality" x:Name="AirQualityTextBlock" Width="80" Style="{DynamicResource SecondaryTextBlockStyle}"/>
-                <ComboBox x:Name="AirQualityComboBox" Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
-            </StackPanel>
-        </Viewbox>
+
         <Viewbox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform">
             <StackPanel>
                 <StackPanel Margin="0 5 0 0" Orientation="Horizontal" >
                     <TextBlock Text="Food quality" x:Name="FoodQualityTextBlock" Width="80" Style="{DynamicResource SecondaryTextBlockStyle}"/>
                     <ComboBox Grid.Column="1" x:Name="FoodQualityComboBox" Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
                 </StackPanel>
-            </StackPanel>
-        </Viewbox>
-        <Viewbox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stretch="Uniform">
-            <StackPanel Margin="0 5 0 0"  Orientation="Horizontal" >
-                <TextBlock Text="Drinking water quality" x:Name="DrinkingWaterQualityTextBlock" Style="{StaticResource SecondaryTextBlockStyle}"  Width="80"/>
-                <ComboBox Grid.Column="1" Height="26" x:Name="DrinkingWaterComboBox" Width="60"  Style="{DynamicResource ComboBoxStyle}" />
+                <StackPanel Margin="0 5 0 0"  Orientation="Horizontal" >
+                    <TextBlock Text="Drinking water quality" x:Name="DrinkingWaterQualityTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"  Width="80"/>
+                    <ComboBox Grid.Column="1" Height="26" x:Name="DrinkingWaterComboBox" Width="60"  Style="{DynamicResource ComboBoxStyle}" />
+                </StackPanel>
             </StackPanel>
         </Viewbox>
         <Viewbox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform">
-            <StackPanel Margin="0 5 0 0"  Orientation="Horizontal" >
-                <TextBlock Text="Terrain quality" x:Name="TerrainQualityTextBlock" Width="80"  Style="{DynamicResource SecondaryTextBlockStyle}"/>
-                <ComboBox Grid.Column="1" x:Name="TerrainQualityComboBox"  Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
-            </StackPanel>
-        </Viewbox>
-        <Viewbox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stretch="Uniform">
-            <StackPanel Margin="0 5 0 0"  Orientation="Horizontal" >
-                <TextBlock Text="Recreational water quality" x:Name="RecreationalWaterTextBlock" Style="{StaticResource SecondaryTextBlockStyle}"  Width="80"/>
-                <ComboBox  x:Name="RecreationalWaterComboBox"  Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
+            <StackPanel>
+                <StackPanel Margin="0 5 0 0"  Orientation="Horizontal" >
+                    <TextBlock Text="Terrain quality" x:Name="TerrainQualityTextBlock" Width="80"  Style="{DynamicResource SecondaryTextBlockStyle}"/>
+                    <ComboBox Grid.Column="1" x:Name="TerrainQualityComboBox"  Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0 5 0 0"  Orientation="Horizontal" >
+                    <TextBlock Text="Recreational water quality" x:Name="RecreationalWaterTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"  Width="80"/>
+                    <ComboBox  x:Name="RecreationalWaterComboBox"  Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
+                </StackPanel>
             </StackPanel>
         </Viewbox>
         <Viewbox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform">
-            <StackPanel Margin="0 5 0 0"  Orientation="Horizontal">
-                <TextBlock Text="Inland water quality" x:Name="InlandWaterQualityTextBlock" Style="{StaticResource SecondaryTextBlockStyle}"  Width="80"/>
-                <ComboBox Grid.Column="1" x:Name="InlandWaterQualityComboBox" Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
+            <StackPanel>
+                <StackPanel Margin="0 5 0 0"  Orientation="Horizontal">
+                    <TextBlock Text="Inland water quality" x:Name="InlandWaterQualityTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"  Width="80"/>
+                    <ComboBox Grid.Column="1" x:Name="InlandWaterQualityComboBox" Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
+                </StackPanel>
+                <StackPanel Margin="0 5 0 0 " Orientation="Horizontal">
+                    <TextBlock Text="Air quality" x:Name="AirQualityTextBlock" Width="80" Style="{DynamicResource SecondaryTextBlockStyle}"/>
+                    <ComboBox x:Name="AirQualityComboBox" Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
+                </StackPanel>
             </StackPanel>
         </Viewbox>
-        <Viewbox  Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Stretch="Uniform">
-            <StackPanel Margin="0 5 0 0"  Orientation="Horizontal">
-                <TextBlock Text="Medical vaste information" x:Name="MedicalVasteTextBlock" Style="{StaticResource SecondaryTextBlockStyle}"  Width="80"/>
-                <ComboBox Grid.Column="1" x:Name="MedicalVasteComboBox" Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
+        <Viewbox Grid.Row="4" Grid.Column="1" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel>
+                <StackPanel Margin="0 5 0 0" Orientation="Horizontal"  >
+                    <TextBlock Text="Radiation" x:Name="RadiationTextBlock" Width="80" Style="{DynamicResource SecondaryTextBlockStyle}"/>
+                    <ComboBox x:Name="RadiationComboBox"  Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0 5 0 0"  Orientation="Horizontal">
+                    <TextBlock Text="Medical vaste information" x:Name="MedicalVasteTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"  Width="80"/>
+                    <ComboBox  x:Name="MedicalVasteComboBox" Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
+                </StackPanel>
             </StackPanel>
         </Viewbox>
         <Viewbox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Stretch="Uniform">
-            <StackPanel Margin="0 5 0 0"  Orientation="Horizontal" >
-                <TextBlock Text="Noise information" x:Name="NoiseInformationTextBlock" Style="{StaticResource SecondaryTextBlockStyle}"  Width="80"/>
-                <ComboBox Grid.Column="1" x:Name="NoiseInformationComboBox" Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
+            <StackPanel>
+                <StackPanel Margin="0 5 0 0"  Orientation="Horizontal" >
+                    <TextBlock Text="Noise information" x:Name="NoiseInformationTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}" Width="80"/>
+                    <ComboBox Grid.Column="1" x:Name="NoiseInformationComboBox" Width="60" Height="20" Style="{DynamicResource ComboBoxStyle}" />
+                </StackPanel>
+                <Rectangle Margin="0 5 0 0" Visibility="Hidden" Height="20" Width="80"></Rectangle>
             </StackPanel>
         </Viewbox>
     </Grid>

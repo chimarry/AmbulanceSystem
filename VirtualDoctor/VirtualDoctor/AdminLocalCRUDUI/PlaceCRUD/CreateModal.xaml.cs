@@ -74,15 +74,6 @@ namespace VirtualDoctor.AdminLocalCRUDUI.PlaceCRUD
                 TerrainQualityComboBox.Items.Add(i);
                 InlandWaterQualityComboBox.Items.Add(i);
             }
-            RadiationComboBox.MaxDropDownHeight = MAX_DROP_DOWN_HEIGHT;
-            AirQualityComboBox.MaxDropDownHeight = MAX_DROP_DOWN_HEIGHT;
-            RecreationalWaterComboBox.MaxDropDownHeight = MAX_DROP_DOWN_HEIGHT;
-            DrinkingWaterComboBox.MaxDropDownHeight = MAX_DROP_DOWN_HEIGHT;
-            FoodQualityComboBox.MaxDropDownHeight = MAX_DROP_DOWN_HEIGHT;
-            TerrainQualityComboBox.MaxDropDownHeight = MAX_DROP_DOWN_HEIGHT;
-            MedicalVasteComboBox.MaxDropDownHeight = MAX_DROP_DOWN_HEIGHT;
-            InlandWaterQualityComboBox.MaxDropDownHeight = MAX_DROP_DOWN_HEIGHT;
-            NoiseInformationComboBox.MaxDropDownHeight = MAX_DROP_DOWN_HEIGHT;
         }
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {

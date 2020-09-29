@@ -5,7 +5,7 @@ namespace AmbulanceSystem.ViewModels
 
     public class PlaceViewModel
     {
-        public static readonly int END_SCALE = 100;
+        public static readonly int EndScale = 100;
         public int IdPlace { get; set; }
         public string Name { get; set; }
         public string CountryName { get; set; }
@@ -24,7 +24,7 @@ namespace AmbulanceSystem.ViewModels
 
         public double CalculateAverageQuality()
             => (FoodQuality + DrinkingWaterQuality + RecreationalWaterQuality + AirQuality + TerrainQuality + InlandWaterQuality +
-                END_SCALE - MedicalVasteInformation + END_SCALE - Radiation + END_SCALE - NoiseInformation) / 9.0;
+                EndScale - MedicalVasteInformation + EndScale - Radiation + EndScale - NoiseInformation) / 9.0;
 
         public override bool Equals(object obj) => obj.GetHashCode() == GetHashCode();
 
