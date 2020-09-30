@@ -2,6 +2,7 @@
 using AmbulanceDatabase.Context;
 using AmbulanceServices.Factories;
 using AmbulanceServices.Interfaces;
+using AmbulanceSystem.Controls;
 using AmbulanceSystem.Shared;
 using AmbulanceSystem.Shared.Config;
 using AmbulanceSystem.Utils;
@@ -23,6 +24,7 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
             InitalizeComboBoxes();
             SwitchLanguage();
             ChangeTheme();
+            ModalDialog.SetParent(CreateGrid);
         }
 
         private void InitalizeComboBoxes()
@@ -63,6 +65,7 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
 
             };
             DbStatus status = await placeService.Add(place);
+            ShowModalDialog_Click(status);
             ResetValues();
         }
 
@@ -80,6 +83,16 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
             MedicalVasteComboBox.SelectedItem = null;
             NoiseInformationComboBox.SelectedItem = null;
             RadiationComboBox.SelectedItem = null;
+        }
+
+        private void ShowModalDialog_Click(DbStatus status)
+        {
+            var res = ModalDialog.ShowHandlerDialog(status.ToString());
+            //var resultMessagePrefix = "Result: ";
+            //if (res)
+            //    ResultText.Text = resultMessagePrefix + "Ok";
+            //else
+            //    ResultText.Text = resultMessagePrefix + "Cancel";
         }
 
         public void SwitchLanguage()

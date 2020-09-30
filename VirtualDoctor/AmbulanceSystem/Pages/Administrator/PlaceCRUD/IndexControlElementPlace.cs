@@ -1,9 +1,7 @@
-﻿using AmbulanceSystem.Controls.IndexControl;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AmbulanceSystem.AutoMapper;
+using AmbulanceSystem.Controls.IndexControl;
+using AmbulanceSystem.ViewModels;
+using System.Data;
 
 namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
 {
@@ -11,18 +9,22 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
     {
         public override void Create()
         {
-            CreateModalWindow createModalWindow = new CreateModalWindow();
-            createModalWindow.ShowDialog();
+            new CreateModalWindow().ShowDialog();
         }
 
         public override void Delete(object selectedItem)
         {
-            throw new NotImplementedException();
+            DataRowView item = (DataRowView)selectedItem;
+            PlaceViewModel place = Mapping.Mapper.Map<PlaceViewModel>(item);
+
+            new DeleteModalWindow(place).ShowDialog();
         }
 
         public override void Edit(object selectedItem)
         {
-            throw new NotImplementedException();
+            DataRowView item = (DataRowView)selectedItem;
+            PlaceViewModel place = Mapping.Mapper.Map<PlaceViewModel>(item);
+            new EditModalWindow(place).ShowDialog();
         }
     }
 }
