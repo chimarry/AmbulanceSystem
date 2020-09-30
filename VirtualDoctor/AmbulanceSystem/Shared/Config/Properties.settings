@@ -9,7 +9,7 @@
       <Value Profile="(Default)">Switch to Serbian</Value>
     </Setting>
     <Setting Name="NumberOfRecordsPerPage" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="Language" Type="System.String" Scope="User">
       <Value Profile="(Default)">en-EN</Value>

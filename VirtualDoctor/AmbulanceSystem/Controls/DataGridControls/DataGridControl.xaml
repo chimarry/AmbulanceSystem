@@ -25,11 +25,14 @@
                         <GradientStop Color="{DynamicResource PrimaryColor}" Offset="1"/>
                     </LinearGradientBrush>
                 </StackPanel.Background>
-                <Button x:Name="Backwards" Style="{DynamicResource RoundCornerButton}"  Width="70" Height="20" Margin="10,10" FontSize="10">Backwards</Button>
-                <Button x:Name="First" Style="{DynamicResource RoundCornerButton}" Width="70" Height="20" Margin="10,10" FontSize="10">First</Button>
+                <Button x:Name="Backwards" Style="{DynamicResource RoundCornerButton}"  Width="70" Height="20" Margin="10,10" FontSize="10" Click="Backwards_Click">Backwards</Button>
+                <Button x:Name="First" Style="{DynamicResource RoundCornerButton}" Width="70" Height="20" Margin="10,10" FontSize="10" Click="First_Click">First</Button>
                 <Label x:Name="PageInfo" Style="{DynamicResource LabelStyle}" FontSize="10">Page 10 of 100</Label>
-                <Button x:Name="Last" Style="{DynamicResource RoundCornerButton}" Width="70" Height="20" FontSize="10" Margin="10,10">Last</Button>
-                <Button x:Name="Forward" Style="{DynamicResource RoundCornerButton}"  Width="70" Height="20" FontSize="10" Margin="10,10">Forward</Button>
+                <Button x:Name="Last" Style="{DynamicResource RoundCornerButton}" Width="70" Height="20" FontSize="10" Margin="10,10" Click="Last_Click">Last</Button>
+                <Button x:Name="Forward" Style="{DynamicResource RoundCornerButton}"  Width="70" Height="20" FontSize="10" Margin="10,10" Click="Forward_Click">Forward</Button>
+                <Button Style="{DynamicResource RoundCornerButton}"  Width="30" Height="20" FontSize="10" Margin="10,10" Click="First_Click">
+                    <Image Source="/Shared/Images/Refresh.png"></Image>
+                </Button>
             </StackPanel>
         </Viewbox>
         <Viewbox Stretch="Uniform"

@@ -17,13 +17,8 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
     {
         private readonly IPlaceService placeService = ServicesAmbulanceFactory.GetInstance().CreateIPlaceService();
 
-        public DataGridControlElementPlace()
+        public DataGridControlElementPlace() : base()
         {
-        }
-
-        public DataGridControlElementPlace(DataGrid dataGrid, Label pageInfo, int totalNumberOfItems) : base(dataGrid, pageInfo, totalNumberOfItems)
-        {
-
         }
 
         public override async Task<int> GetNumberOfItems()

@@ -287,6 +287,9 @@
     <Content Include="Shared\Images\HufflepuffEmblem.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Shared\Images\Refresh.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Shared\Images\Revenclaw.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -20,6 +20,8 @@ namespace AmbulanceSystem.Controls.DataGridControls
 
         protected int NextNumber { get; set; } = 0;
 
+        protected int LastNumber { get; set; }
+
         private const int firstNumber = 0;
 
         public DataGrid DataGrid { get; set; }
@@ -31,25 +33,25 @@ namespace AmbulanceSystem.Controls.DataGridControls
         private Pager PagedTable;
 
 
-        public DataGridControlElement(DataGrid dataGrid, Label pageInfo, int totalNumberOfItems)
-        {
-            TotalNumberOfItems = totalNumberOfItems;
-            DataGrid = dataGrid;
-            PageInfo = pageInfo;
-
-        }
+        //public DataGridControlElement(DataGrid dataGrid, Label pageInfo, int totalNumberOfItems)
+        //{
+        //    TotalNumberOfItems = totalNumberOfItems;
+        //    DataGrid = dataGrid;
+        //    PageInfo = pageInfo;
+        //    NextNumber = firstNumber;
+        //    LastNumber = (int)Math.Ceiling((double)TotalNumberOfItems / NumberOfRecordsPerPage);
+        //}
 
         public DataGridControlElement()
         {
             SetTotalNumberOfItems();
-
+            NextNumber = firstNumber;
+            LastNumber = (int)Math.Floor((double)TotalNumberOfItems / NumberOfRecordsPerPage);
         }
 
         public async void SetTotalNumberOfItems()
         {
             TotalNumberOfItems = await GetNumberOfItems();
-            if (TotalNumberOfItems < NumberOfRecordsPerPage)
-                NumberOfRecordsPerPage = TotalNumberOfItems;
         }
 
         public async Task Show()
@@ -59,31 +61,37 @@ namespace AmbulanceSystem.Controls.DataGridControls
                 DataType = GetDataType(),
                 TotalNumberToDisplay = TotalNumberOfItems
             };
-            await SetFields(firstNumber);
+            await SetFields();
             SetPage(PagedTable.First(ListForPage).DefaultView);
         }
 
         public async Task Last_Click(object sender, RoutedEventArgs e)
         {
-            await SetFields(TotalNumberOfItems - NumberOfRecordsPerPage);
+            NextNumber = LastNumber;
+            await SetFields();
             SetPage(PagedTable.Last(ListForPage, NumberOfRecordsPerPage).DefaultView);
         }
 
         public async Task Forward_Click(object sender, RoutedEventArgs e)
         {
-            await SetFields(NumberOfRecordsPerPage + NextNumber);
-            SetPage(PagedTable.Next(ListForPage, NumberOfRecordsPerPage).DefaultView);
+            if (++NextNumber > LastNumber)
+                NextNumber = LastNumber;
+            await SetFields();
+            SetPage(PagedTable.Next(ListForPage).DefaultView);
         }
 
         public async Task Backwards_Click(object sender, RoutedEventArgs e)
         {
-            await SetFields(NextNumber - NumberOfRecordsPerPage);
+            if (--NextNumber < firstNumber)
+                NextNumber = firstNumber;
+            await SetFields();
             SetPage(PagedTable.Previous(ListForPage).DefaultView);
         }
 
         public async Task First_Click(object sender, RoutedEventArgs e)
         {
-            await SetFields(firstNumber);
+            NextNumber = firstNumber;
+            await SetFields();
             SetPage(PagedTable.First(ListForPage).DefaultView);
         }
 
@@ -96,16 +104,13 @@ namespace AmbulanceSystem.Controls.DataGridControls
 
         public string PageNumberDisplay()
         {
-            int PagedNumber = (NextNumber + NumberOfRecordsPerPage) > TotalNumberOfItems ? TotalNumberOfItems : NextNumber + NumberOfRecordsPerPage;
+            int PagedNumber = ((NextNumber + 1) * NumberOfRecordsPerPage) > TotalNumberOfItems ? TotalNumberOfItems : (NextNumber + 1) * NumberOfRecordsPerPage;
             return language.ShowingResults + (PagedNumber + @"/" + TotalNumberOfItems);
         }
 
-        protected async Task SetFields(int nextNumber)
+        protected async Task SetFields()
         {
-            if (nextNumber <= 0)
-                nextNumber = 0;
-            NextNumber = nextNumber;
-            ListForPage = await GetData(NextNumber, NumberOfRecordsPerPage);
+            ListForPage = await GetData(NextNumber * NumberOfRecordsPerPage, (NextNumber + 1) * NumberOfRecordsPerPage);
         }
 
         protected void SetPage(DataView dataViewToDisplay)
@@ -141,11 +146,9 @@ namespace AmbulanceSystem.Controls.DataGridControls
 
             private DataTable PagedList = new DataTable();
 
-            public DataTable Next(IList ListToPage, int RecordsPerPage)
+            public DataTable Next(IList ListToPage)
             {
                 PageIndex++;
-                if (PageIndex >= TotalNumberToDisplay / RecordsPerPage)
-                    PageIndex = TotalNumberToDisplay / RecordsPerPage;
                 PagedList = PageTable(ListToPage);
                 return PagedList;
             }
@@ -153,8 +156,6 @@ namespace AmbulanceSystem.Controls.DataGridControls
             public DataTable Previous(IList ListToPage)
             {
                 PageIndex--;
-                if (PageIndex <= firstNumber)
-                    PageIndex = firstNumber;
                 PagedList = PageTable(ListToPage);
                 return PagedList;
             }
@@ -169,7 +170,7 @@ namespace AmbulanceSystem.Controls.DataGridControls
 
             public DataTable Last(IList ListToPage, int RecordsPerPage)
             {
-                PageIndex = ListToPage.Count / RecordsPerPage;
+                PageIndex = (int)Math.Floor((double)TotalNumberToDisplay / RecordsPerPage);
                 PagedList = PageTable(ListToPage);
                 return PagedList;
             }
