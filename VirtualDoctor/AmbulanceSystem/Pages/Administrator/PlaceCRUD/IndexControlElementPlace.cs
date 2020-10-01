@@ -9,14 +9,15 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
     {
         public override void Create()
         {
-            new CreateModalWindow().ShowDialog();
+            CreateModalWindow modalWindow = new CreateModalWindow();
+            _ = modalWindow.ShowDialog();
+            DataGridControl.InformAboutStatus(modalWindow.OperationStatus);
         }
 
         public override void Delete(object selectedItem)
         {
             DataRowView item = (DataRowView)selectedItem;
             PlaceViewModel place = Mapping.Mapper.Map<PlaceViewModel>(item);
-
             new DeleteModalWindow(place).ShowDialog();
         }
 

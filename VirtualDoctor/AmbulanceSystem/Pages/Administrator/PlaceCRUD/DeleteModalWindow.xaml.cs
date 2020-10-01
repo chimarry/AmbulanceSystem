@@ -5,6 +5,7 @@ using AmbulanceServices.Interfaces;
 using AmbulanceSystem.AutoMapper;
 using AmbulanceSystem.Shared;
 using AmbulanceSystem.Shared.Config;
+using AmbulanceSystem.Shared.OperationStatusHandling;
 using AmbulanceSystem.Utils;
 using AmbulanceSystem.ViewModels;
 using System.Windows;
@@ -16,6 +17,8 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
     /// </summary>
     public partial class DeleteModalWindow : Window, IThemeChangeable, ILanguageLocalizable
     {
+        public OperationStatus OperationStatus { get; private set; }
+
         private readonly IPlaceService placeService = ServicesAmbulanceFactory.GetInstance().CreateIPlaceService();
         private readonly PlaceViewModel placeViewModel;
 
@@ -42,6 +45,7 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
         private async void YesButton_Click(object sender, RoutedEventArgs e)
         {
             DbStatus status = await placeService.Delete(Mapping.Mapper.Map<Place>(placeViewModel));
+            OperationStatus = StatusHandler.Handle(OperationType.Delete, status);
             Close();
         }
 

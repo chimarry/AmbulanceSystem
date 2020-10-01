@@ -149,9 +149,7 @@ je prošlo uspješno.</value>
     <value>Dodaj</value>
   </data>
   <data name="DatabaseError" xml:space="preserve">
-    <value>Desila se greška u radu sa bazom podataka.
-Za više informacija, pogledajte
-log fajl.</value>
+    <value>Desila se greška u radu sa bazom. Više u log fajlu.</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Obriši</value>
@@ -169,8 +167,7 @@ log fajl.</value>
     <value>Email adresa</value>
   </data>
   <data name="EntityExists" xml:space="preserve">
-    <value>Operacija nije prošla uspješno,
-jer entitet već postoji u bazi.</value>
+    <value>Objekat nije kreiran, jer već postoji.</value>
   </data>
   <data name="EntityNotFound" xml:space="preserve">
     <value>Nema rezultata</value>

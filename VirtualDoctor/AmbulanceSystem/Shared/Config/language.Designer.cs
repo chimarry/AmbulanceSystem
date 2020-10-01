@@ -205,8 +205,7 @@ namespace AmbulanceSystem.Shared.Config {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There has been database error. 
-        ///Detailed message is in log file..
+        ///   Looks up a localized string similar to There has been a database error. Detailed information is in log file..
         /// </summary>
         public static string DatabaseError {
             get {
@@ -278,9 +277,7 @@ namespace AmbulanceSystem.Shared.Config {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The operation could not be
-        ///performed, because item already
-        ///exists in database..
+        ///   Looks up a localized string similar to Item was not added, because it already exists!.
         /// </summary>
         public static string EntityExists {
             get {

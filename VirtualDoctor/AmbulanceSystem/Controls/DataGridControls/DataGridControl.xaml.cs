@@ -1,9 +1,11 @@
 ﻿using AmbulanceSystem.Shared;
 using AmbulanceSystem.Shared.Config;
+using AmbulanceSystem.Shared.OperationStatusHandling;
 using AmbulanceSystem.Utils;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace AmbulanceSystem.Controls.DataGridControls
 {
@@ -41,6 +43,19 @@ namespace AmbulanceSystem.Controls.DataGridControls
             await DataGridControlElement.Refresh();
         }
 
+        public void InformAboutStatus(OperationStatus status)
+        {
+            SolidColorBrush solidColorBrush = new SolidColorBrush();
+            switch (status.AlertType)
+            {
+                case AlertType.Success: solidColorBrush = CurrentDictionary.MergedDictionaries[0]["PrimaryColorBrush"] as SolidColorBrush; break;
+                case AlertType.Error: solidColorBrush.Color = Colors.Red; break;
+            }
+            MessageBorder.Background = solidColorBrush;
+            MessageLabel.Content = status.Message;
+            MessageViewBox.Visibility = Visibility.Visible;
+        }
+
         public void ChangeTheme()
         {
             CurrentDictionary.MergedDictionaries[0].Source = ThemeChanger.GetCurrentTheme().ToUri();
@@ -58,6 +73,11 @@ namespace AmbulanceSystem.Controls.DataGridControls
             Last.Content = language.LastPageButton;
             Backwards.Content = language.BackwardsButton;
             Forward.Content = language.ForwardButton;
+        }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageViewBox.Visibility = Visibility.Collapsed;
         }
 
         private async void Last_Click(object sender, RoutedEventArgs e)

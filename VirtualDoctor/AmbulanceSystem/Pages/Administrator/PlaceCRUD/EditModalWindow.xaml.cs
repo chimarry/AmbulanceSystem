@@ -4,6 +4,7 @@ using AmbulanceServices.Factories;
 using AmbulanceServices.Interfaces;
 using AmbulanceSystem.Shared;
 using AmbulanceSystem.Shared.Config;
+using AmbulanceSystem.Shared.OperationStatusHandling;
 using AmbulanceSystem.Utils;
 using AmbulanceSystem.ViewModels;
 using System.Windows;
@@ -15,6 +16,8 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
     /// </summary>
     public partial class EditModalWindow : Window, IThemeChangeable, ILanguageLocalizable
     {
+        public OperationStatus OperationStatus { get; private set; }
+
         private readonly IPlaceService placeService = ServicesAmbulanceFactory.GetInstance().CreateIPlaceService();
         private readonly PlaceViewModel placeViewModel;
 
@@ -89,6 +92,8 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
 
             };
             DbStatus status = await placeService.Update(place);
+            OperationStatus = StatusHandler.Handle(OperationType.Edit, status);
+            Close();
         }
 
         private void InitalizeComboBoxes()

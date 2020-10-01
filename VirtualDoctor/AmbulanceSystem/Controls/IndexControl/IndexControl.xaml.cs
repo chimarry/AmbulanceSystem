@@ -5,7 +5,6 @@ using AmbulanceSystem.Utils;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Media;
 
 namespace AmbulanceSystem.Controls.IndexControl
 {
@@ -41,6 +40,7 @@ namespace AmbulanceSystem.Controls.IndexControl
                 DataGridControl = await DataGridControl.CreateDataGridControl(dataGridControlElement)
             };
             indexControl.DataContext = indexControl.DataGridControl.DataGrid;
+            indexControl.IndexControlElement.DataGridControl = indexControl.DataGridControl;
             indexControl.InitializeComponents();
             return indexControl;
         }

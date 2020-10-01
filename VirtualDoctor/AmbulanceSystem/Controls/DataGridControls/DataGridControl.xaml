@@ -14,6 +14,21 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel Margin="50,50">
+        <Viewbox Stretch="Uniform" Name="MessageViewBox" >
+            <Border x:Name="MessageBorder" Width="482" Background="{DynamicResource PrimaryColorBrush}" BorderThickness="1" Height="30">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="18*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="MessageLabel" Style="{DynamicResource LabelStyle}" Content="Your adding was succesfull!" FontSize="12"></Label>
+                    <Button Grid.Column="2" x:Name="CloseButton" Background="Transparent" Click="CloseButton_Click">
+                        <Image Source="/Shared/Images/Cross.png" Width="20" Height="20"/>
+                    </Button>
+                </Grid>
+            </Border>
+        </Viewbox>
         <Viewbox Stretch="Uniform">
             <StackPanel   Height="40" Orientation='Horizontal' HorizontalAlignment='Center'>
                 <StackPanel.Effect>

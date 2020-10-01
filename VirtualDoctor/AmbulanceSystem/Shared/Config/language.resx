@@ -148,8 +148,7 @@
     <value>Create</value>
   </data>
   <data name="DatabaseError" xml:space="preserve">
-    <value>There has been database error. 
-Detailed message is in log file.</value>
+    <value>There has been a database error. Detailed information is in log file.</value>
   </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
@@ -167,9 +166,7 @@ Detailed message is in log file.</value>
     <value>Email</value>
   </data>
   <data name="EntityExists" xml:space="preserve">
-    <value>The operation could not be
-performed, because item already
-exists in database.</value>
+    <value>Item was not added, because it already exists!</value>
   </data>
   <data name="EntityNotFound" xml:space="preserve">
     <value>No results found.</value>

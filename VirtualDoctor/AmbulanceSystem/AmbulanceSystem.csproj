@@ -71,9 +71,6 @@
       <DependentUpon>IndexControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\IndexControl\IndexControlElement.cs" />
-    <Compile Include="Controls\ModalDialogUserControl.xaml.cs">
-      <DependentUpon>ModalDialogUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\Administrator\AccountAdminMainPage.xaml.cs">
       <DependentUpon>AccountAdminMainPage.xaml</DependentUpon>
     </Compile>
@@ -109,6 +106,7 @@
     <Compile Include="Pages\MedicalStaff\DoctorMainPage.xaml.cs">
       <DependentUpon>DoctorMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Shared\OperationResultHandling.cs" />
     <Compile Include="Shared\ButtonIcon.cs" />
     <Compile Include="Shared\ILanguageLocalizable.cs" />
     <Compile Include="Shared\IThemeChangeable.cs" />
@@ -147,10 +145,6 @@
     <Page Include="Controls\IndexControl\IndexControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\ModalDialogUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Login\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -286,6 +280,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Shared\Images\Buttons\Roles.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shared\Images\Cross.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Shared\Images\Gryffindor.png">
