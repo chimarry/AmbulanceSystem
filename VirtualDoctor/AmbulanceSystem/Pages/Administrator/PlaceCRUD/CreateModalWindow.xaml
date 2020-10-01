@@ -32,17 +32,18 @@
             </Grid.RowDefinitions>
 
             <Button Grid.Row="7" x:Name="SaveButton" Margin="0 0 0 10" Style="{DynamicResource RoundCornerButton}" Width="100" Height="29"  IsDefault="True" Content="Save" Click="SaveButton_Click"/>
+            <Label x:Name="ErrorLabel" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" Foreground="Red" FontWeight="Bold" Content="All values must be defined!" Visibility="Collapsed"/>
             <StackPanel  Grid.Row="1" Margin="10 0 0 0">
-                <Label Content="Name" x:Name="NameLabel" Style="{DynamicResource SecondaryLabelStyle}"/>
-                <TextBox x:Name="NameBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"   Width="100" />
+                <Label Content="Name" x:Name="NameLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="NameBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"   Width="100" PreviewTextInput="TextBox_PreviewTextInput" />
             </StackPanel>
             <StackPanel Grid.Row="2" HorizontalAlignment="Center" Margin="10 0 0 0">
                 <Label Content="Country Name" x:Name="CountryNameLabel" Style="{DynamicResource SecondaryLabelStyle}"/>
-                <TextBox  Style="{DynamicResource NotAlignedTextBoxStyle}" Height="29" Width="100" Grid.Row="2" x:Name="CountryNameBox"/>
+                <TextBox  Style="{DynamicResource NotAlignedTextBoxStyle}" Height="29" Width="100" Grid.Row="2" x:Name="CountryNameBox" PreviewTextInput="TextBox_PreviewTextInput"/>
             </StackPanel>
             <StackPanel HorizontalAlignment="Center" Margin="10 0 0 0" Grid.Row="3">
                 <Label Content="Postal code" x:Name="PostalCodeLabel" Style="{DynamicResource SecondaryLabelStyle}"/>
-                <TextBox x:Name="PostalCodeBox" Width="100" Height="29" Style="{DynamicResource NotAlignedTextBoxStyle}"/>
+                <TextBox x:Name="PostalCodeBox" Width="100" Height="29" Style="{DynamicResource NotAlignedTextBoxStyle}" PreviewTextInput="TextBox_PreviewTextInput"/>
             </StackPanel>
 
             <Rectangle Grid.Column="1" Width="30" Visibility="Hidden"></Rectangle>

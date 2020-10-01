@@ -44,9 +44,10 @@ namespace AmbulanceSystem.Pages.Administrator
             OnLoaded();
         }
 
-        private void Clinic_Click(object sender, RoutedEventArgs e)
+        private async void Clinic_Click(object sender, RoutedEventArgs e)
         {
-
+            ClinicCRUD.IndexPage page = await ClinicCRUD.IndexPage.CreateIndexPage();
+            PageUtil.NavigateToNextPage(Window.GetWindow(this), page);
         }
 
         private async void Place_Click(object sender, RoutedEventArgs e)

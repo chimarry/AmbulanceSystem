@@ -683,6 +683,15 @@ namespace AmbulanceSystem.Shared.Config {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All attibutes must be defined!.
+        /// </summary>
+        public static string SelectValues {
+            get {
+                return ResourceManager.GetString("SelectValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Showing results.
         /// </summary>
         public static string ShowingResults {

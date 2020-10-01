@@ -18,14 +18,18 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
         {
             DataRowView item = (DataRowView)selectedItem;
             PlaceViewModel place = Mapping.Mapper.Map<PlaceViewModel>(item);
-            new DeleteModalWindow(place).ShowDialog();
+            DeleteModalWindow modalWindow = new DeleteModalWindow(place);
+            _ = modalWindow.ShowDialog();
+            DataGridControl.InformAboutStatus(modalWindow.OperationStatus);
         }
 
         public override void Edit(object selectedItem)
         {
             DataRowView item = (DataRowView)selectedItem;
             PlaceViewModel place = Mapping.Mapper.Map<PlaceViewModel>(item);
-            new EditModalWindow(place).ShowDialog();
+            EditModalWindow modalWindow = new EditModalWindow(place);
+            _ = modalWindow.ShowDialog();
+            DataGridControl.InformAboutStatus(modalWindow.OperationStatus);
         }
     }
 }

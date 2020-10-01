@@ -121,8 +121,7 @@
     <value>Nalog</value>
   </data>
   <data name="AddingSuccess" xml:space="preserve">
-    <value>Dodavanje u bazu
-je prošlo uspješno.</value>
+    <value>Uspješno dodano!</value>
   </data>
   <data name="AirQuality" xml:space="preserve">
     <value>Kvalitet vazduha</value>
@@ -365,5 +364,8 @@ Radi bezbjednosti naloga kom pokušavate da pristupite,
   </data>
   <data name="Welcome" xml:space="preserve">
     <value>Dobrodošli!</value>
+  </data>
+  <data name="SelectValues" xml:space="preserve">
+    <value>Svi atributi moraju biti definisani!</value>
   </data>
 </root>

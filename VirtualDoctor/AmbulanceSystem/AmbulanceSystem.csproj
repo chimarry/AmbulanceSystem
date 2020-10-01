@@ -74,6 +74,20 @@
     <Compile Include="Pages\Administrator\AccountAdminMainPage.xaml.cs">
       <DependentUpon>AccountAdminMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Administrator\ClinicCRUD\CreateModalWindow.xaml.cs">
+      <DependentUpon>CreateModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\ClinicCRUD\DataGridControlElementClinic.cs" />
+    <Compile Include="Pages\Administrator\ClinicCRUD\DeleteModalWindow.xaml.cs">
+      <DependentUpon>DeleteModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\ClinicCRUD\EditModalWindow.xaml.cs">
+      <DependentUpon>EditModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\ClinicCRUD\IndexControlElementClinic.cs" />
+    <Compile Include="Pages\Administrator\ClinicCRUD\IndexPage.xaml.cs">
+      <DependentUpon>IndexPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Administrator\OrganizationalAdminMainPage.xaml.cs">
       <DependentUpon>OrganizationalAdminMainPage.xaml</DependentUpon>
     </Compile>
@@ -126,6 +140,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Shared\Theme.cs" />
+    <Compile Include="Utils\FieldValidation.cs" />
     <Compile Include="Utils\LanguageLocalizer.cs" />
     <Compile Include="Utils\PageUtil.cs" />
     <Compile Include="Utils\ThemeChanger.cs" />
@@ -159,6 +174,22 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\Administrator\AccountAdminMainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\ClinicCRUD\CreateModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\ClinicCRUD\DeleteModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\ClinicCRUD\EditModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\ClinicCRUD\IndexPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

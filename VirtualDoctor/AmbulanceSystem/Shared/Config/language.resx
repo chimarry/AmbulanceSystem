@@ -367,4 +367,7 @@ not be given.</value>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome!</value>
   </data>
+  <data name="SelectValues" xml:space="preserve">
+    <value>All attibutes must be defined!</value>
+  </data>
 </root>

@@ -45,15 +45,18 @@ namespace AmbulanceSystem.Controls.DataGridControls
 
         public void InformAboutStatus(OperationStatus status)
         {
-            SolidColorBrush solidColorBrush = new SolidColorBrush();
-            switch (status.AlertType)
+            if (status != null)
             {
-                case AlertType.Success: solidColorBrush = CurrentDictionary.MergedDictionaries[0]["PrimaryColorBrush"] as SolidColorBrush; break;
-                case AlertType.Error: solidColorBrush.Color = Colors.Red; break;
+                SolidColorBrush solidColorBrush = new SolidColorBrush();
+                switch (status.AlertType)
+                {
+                    case AlertType.Success: solidColorBrush = CurrentDictionary.MergedDictionaries[0]["PrimaryColorBrush"] as SolidColorBrush; break;
+                    case AlertType.Error: solidColorBrush.Color = Colors.Red; break;
+                }
+                MessageBorder.Background = solidColorBrush;
+                MessageLabel.Content = status.Message;
+                MessageViewBox.Visibility = Visibility.Visible;
             }
-            MessageBorder.Background = solidColorBrush;
-            MessageLabel.Content = status.Message;
-            MessageViewBox.Visibility = Visibility.Visible;
         }
 
         public void ChangeTheme()

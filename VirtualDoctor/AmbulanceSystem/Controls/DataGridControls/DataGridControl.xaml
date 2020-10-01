@@ -14,7 +14,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <StackPanel Margin="50,50">
-        <Viewbox Stretch="Uniform" Name="MessageViewBox" >
+        <Viewbox Stretch="Uniform" Name="MessageViewBox" Visibility="Collapsed" >
             <Border x:Name="MessageBorder" Width="482" Background="{DynamicResource PrimaryColorBrush}" BorderThickness="1" Height="30">
                 <Grid>
                     <Grid.ColumnDefinitions>

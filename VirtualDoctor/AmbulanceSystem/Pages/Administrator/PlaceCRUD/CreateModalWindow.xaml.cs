@@ -8,6 +8,7 @@ using AmbulanceSystem.Shared.Config;
 using AmbulanceSystem.Shared.OperationStatusHandling;
 using AmbulanceSystem.Utils;
 using AmbulanceSystem.ViewModels;
+using System;
 using System.Windows;
 
 namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
@@ -73,25 +74,43 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            Place place = new Place()
+            if (FormIsValid())
             {
-                Name = NameBox.Text,
-                CountryName = CountryNameBox.Text,
-                PostalCode = PostalCodeBox.Text,
-                FoodQuality = (int)FoodQualityComboBox.SelectedItem,
-                AirQuality = (int)AirQualityComboBox.SelectedItem,
-                DrinkingWaterQuality = (int)DrinkingWaterComboBox.SelectedItem,
-                RecreationalWaterQuality = (int)RecreationalWaterComboBox.SelectedItem,
-                TerrainQuality = (int)TerrainQualityComboBox.SelectedItem,
-                InlandWaterQuality = (int)InlandWaterQualityComboBox.SelectedItem,
-                MedicalVasteInformation = (int)MedicalVasteComboBox.SelectedItem,
-                NoiseInformation = (int)NoiseInformationComboBox.SelectedItem,
-                Radiation = (int)RadiationComboBox.SelectedItem
+                Place place = new Place()
+                {
+                    Name = NameBox.Text,
+                    CountryName = CountryNameBox.Text,
+                    PostalCode = PostalCodeBox.Text,
+                    FoodQuality = (int)FoodQualityComboBox.SelectedItem,
+                    AirQuality = (int)AirQualityComboBox.SelectedItem,
+                    DrinkingWaterQuality = (int)DrinkingWaterComboBox.SelectedItem,
+                    RecreationalWaterQuality = (int)RecreationalWaterComboBox.SelectedItem,
+                    TerrainQuality = (int)TerrainQualityComboBox.SelectedItem,
+                    InlandWaterQuality = (int)InlandWaterQualityComboBox.SelectedItem,
+                    MedicalVasteInformation = (int)MedicalVasteComboBox.SelectedItem,
+                    NoiseInformation = (int)NoiseInformationComboBox.SelectedItem,
+                    Radiation = (int)RadiationComboBox.SelectedItem
+                };
+                DbStatus status = await placeService.Add(place);
+                OperationStatus = StatusHandler.Handle(OperationType.Create, status);
+                Close();
+            }
+            else
+                FieldValidation.WriteMessage(ErrorLabel, language.SelectValues);
+        }
 
-            };
-            DbStatus status = await placeService.Add(place);
-            OperationStatus = StatusHandler.Handle(OperationType.Create, status);
-            Close();
+        private void TextBox_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+        {
+            e.Handled = !FieldValidation.IsValidChar(e.Text);
+        }
+
+        private bool FormIsValid()
+        {
+            bool selectedComboBoxes = FieldValidation.AreSelected(FoodQualityComboBox.SelectedIndex, AirQualityComboBox.SelectedIndex
+                                             , DrinkingWaterComboBox.SelectedIndex, TerrainQualityComboBox.SelectedIndex
+                                             , InlandWaterQualityComboBox.SelectedIndex, MedicalVasteComboBox.SelectedIndex, RadiationComboBox.SelectedIndex, RecreationalWaterComboBox.SelectedIndex);
+            bool inputedText = FieldValidation.NotNullOrEmpty(NameBox.Text, CountryNameBox.Text, PostalCodeBox.Text);
+            return selectedComboBoxes && inputedText;
         }
     }
 }
