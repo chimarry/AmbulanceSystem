@@ -20,19 +20,19 @@ namespace VirtualDoctor.AdminLocalCRUDUI.MedicalTitleCRUD
         {
             InitializeComponent();
             InitializeComponents();
-
         }
-
 
         private void InitializeComponents()
         {
             InitializeLabels();
             ButtonContentHelper.SetContent(SaveButton, language.Save);
         }
+
         private void InitializeLabels()
         {
             SetLabelsContent();
         }
+
         private void SetLabelsContent()
         {
             LabelHelper.SetLabelContent(NameLabel, language.MedicalTitle);

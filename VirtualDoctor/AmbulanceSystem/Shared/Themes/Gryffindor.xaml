@@ -13,6 +13,7 @@
     <Color x:Key="QuatenaryColor">#b79114</Color>
     <Color x:Key="LightSecondaryColor">#7a2d2d</Color>
     <Color x:Key="FontColor">#ffffff</Color>
+    <Color x:Key="CalendarColor">#f3c11b</Color>
 
     <!--Define color brushes-->
     <SolidColorBrush x:Key="PrimaryColorBrush" Color="{StaticResource PrimaryColor}"/>
@@ -21,6 +22,7 @@
     <SolidColorBrush x:Key="QuatenaryColorBrush" Color="{StaticResource QuatenaryColor}"/>
     <SolidColorBrush x:Key="LightSecondaryColorBrush" Color="{StaticResource LightSecondaryColor}"/>
     <SolidColorBrush x:Key="FontColorBrush" Color="{StaticResource FontColor}"/>
+    <SolidColorBrush x:Key="CalendarColorBrush" Color="{StaticResource CalendarColor}"/>
     <LinearGradientBrush x:Key="MainGradient" EndPoint="0,1" StartPoint="0,0">
         <GradientStop Color="{StaticResource SecondaryColor}" Offset="0.528" />
         <GradientStop Color="{StaticResource PrimaryColor}" Offset="0.1" />
@@ -427,5 +429,26 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <!--Design datepicker-->
+    <Style x:Key="DatePickerStyle" TargetType="DatePicker">
+        <Setter Property="Background" Value="{StaticResource PrimaryColorBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource CalendarColorBrush}"/>
+    </Style>
+    <Style x:Key="StyleCalendar" TargetType="{x:Type Calendar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Calendar}">
+                    <CalendarItem x:Name="PART_CalendarItem" 
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}" FontStretch="Expanded"  >
+                    </CalendarItem>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="{StaticResource CalendarColorBrush}"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
 </ResourceDictionary>

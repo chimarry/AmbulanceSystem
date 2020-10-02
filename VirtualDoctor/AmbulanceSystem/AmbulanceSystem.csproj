@@ -104,6 +104,20 @@
       <DependentUpon>IndexPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Administrator\LocalAccountCRUD\LocalAccountRolesDataSource.cs" />
+    <Compile Include="Pages\Administrator\MedicalRecordCRUD\CreateModalWindow.xaml.cs">
+      <DependentUpon>CreateModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\MedicalRecordCRUD\DataGridControlElementMedicalRecord.cs" />
+    <Compile Include="Pages\Administrator\MedicalRecordCRUD\DeleteModalWindow.xaml.cs">
+      <DependentUpon>DeleteModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\MedicalRecordCRUD\EditModalWindow.xaml.cs">
+      <DependentUpon>EditModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\MedicalRecordCRUD\IndexControlElementMedicalRecord.cs" />
+    <Compile Include="Pages\Administrator\MedicalRecordCRUD\IndexPage.xaml.cs">
+      <DependentUpon>IndexPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Administrator\MedicalTitleCRUD\CreateModalWindow.xaml.cs">
       <DependentUpon>CreateModalWindow.xaml</DependentUpon>
     </Compile>
@@ -250,6 +264,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Administrator\LocalAccountCRUD\IndexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\MedicalRecordCRUD\CreateModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\MedicalRecordCRUD\DeleteModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\MedicalRecordCRUD\EditModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\MedicalRecordCRUD\IndexPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

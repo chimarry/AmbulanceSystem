@@ -30,9 +30,10 @@ namespace AmbulanceSystem.Pages.Administrator
             OnLoaded();
         }
 
-        private void MedicalRecordButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        private async void MedicalRecordButton_Click(object sender, System.Windows.RoutedEventArgs e)
         {
-
+            MedicalRecordCRUD.IndexPage page = await MedicalRecordCRUD.IndexPage.CreateIndexPage();
+            PageUtil.NavigateToNextPage(Window.GetWindow(this), page);
         }
 
         private void MedicalRecordButton_LayoutUpdated(object sender, EventArgs e)
