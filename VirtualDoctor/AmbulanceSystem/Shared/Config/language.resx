@@ -370,4 +370,10 @@ not be given.</value>
   <data name="SelectValues" xml:space="preserve">
     <value>All attibutes must be defined!</value>
   </data>
+  <data name="PasswordsDontMatch" xml:space="preserve">
+    <value>Passwords do not match!</value>
+  </data>
+  <data name="RepeatPassword" xml:space="preserve">
+    <value>Repeat password</value>
+  </data>
 </root>

@@ -368,4 +368,10 @@ Radi bezbjednosti naloga kom pokušavate da pristupite,
   <data name="SelectValues" xml:space="preserve">
     <value>Svi atributi moraju biti definisani!</value>
   </data>
+  <data name="PasswordsDontMatch" xml:space="preserve">
+    <value>Lozinke se ne slažu!</value>
+  </data>
+  <data name="RepeatPassword" xml:space="preserve">
+    <value>Ponovite lozinku</value>
+  </data>
 </root>

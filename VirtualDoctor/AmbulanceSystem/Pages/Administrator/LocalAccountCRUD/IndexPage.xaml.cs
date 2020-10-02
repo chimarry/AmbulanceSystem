@@ -4,7 +4,7 @@ using AmbulanceSystem.Utils;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace AmbulanceSystem.Pages.Administrator.ClinicCRUD
+namespace AmbulanceSystem.Pages.Administrator.LocalAccountCRUD
 {
     /// <summary>
     /// Interaction logic for IndexPage.xaml
@@ -19,7 +19,7 @@ namespace AmbulanceSystem.Pages.Administrator.ClinicCRUD
         public static async Task<IndexPage> CreateIndexPage()
         {
             IndexPage page = new IndexPage();
-            IndexControl control = await IndexControl.CreateIndexControl(new IndexControlElementClinic(), new DataGridControlElementClinic());
+            IndexControl control = await IndexControl.CreateIndexControl(new IndexControlElementLocalAccount(), new DataGridControlElementLocalAccount());
             page.IndexPageGrid.Children.Add(control);
             page.ChangeTheme();
             page.SwitchLanguage();

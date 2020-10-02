@@ -30,9 +30,12 @@ namespace AmbulanceSystem.Pages.Administrator
             OnLoaded();
         }
 
-        private void AccountButton_Click(object sender, RoutedEventArgs e)
+        private async void AccountButton_Click(object sender, RoutedEventArgs e)
         {
+            LocalAccountCRUD.IndexPage page = await LocalAccountCRUD.IndexPage.CreateIndexPage();
+            PageUtil.NavigateToNextPage(Window.GetWindow(this), page);
         }
+
         private void AccountButton_LayoutUpdated(object sender, EventArgs e)
         {
             OnLoaded();

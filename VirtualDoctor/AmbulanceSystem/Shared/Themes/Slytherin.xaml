@@ -71,6 +71,10 @@
         <Setter Property="BorderBrush" Value="{StaticResource PrimaryColorBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
     </Style>
+    <Style x:Key="SecondaryPasswordBoxStyle" TargetType="PasswordBox" BasedOn="{StaticResource BasePasswordBoxStyle}">
+        <Setter Property="BorderBrush" Value="{StaticResource SecondaryColorBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
+    </Style>
     <!--Design button-->
     <Style x:Key="RoundCornerButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseRoundCornerButton}">
         <Setter Property="Foreground" Value="{StaticResource FontColorBrush}"/>
