@@ -31,9 +31,9 @@
         <Viewbox Grid.Column="3" Grid.Row="0" Stretch="Uniform" Margin="30,50">
             <StackPanel x:Name="ButtonsPanel">
                 <Button x:Name="CreateButton" Style="{DynamicResource RoundCornerButton}" Width="150" Height="33" Margin="0,20" Click="CreateButton_Click">Create</Button>
-                <Button x:Name="EditButton" Style="{DynamicResource RoundCornerButton}" Width="150" Height="33" Margin="0,20" Click="EditButton_Click">Edit</Button>
-                <Button x:Name="DetailsButton" Style="{DynamicResource RoundCornerButton}" Width="150" Height="33" Margin="0,20" Click="DetailsButton_Click">Details</Button>
-                <Button x:Name="DeleteButton" Style="{DynamicResource CancelCornerButton}" Width="150" Height="33" Margin="0,20" Click="DeleteButton_Click">Delete</Button>
+                <Button x:Name="EditButton" IsEnabled="{Binding SelectedItems.Count}" Style="{DynamicResource RoundCornerButton}" Width="150" Height="33" Margin="0,20" Click="EditButton_Click">Edit</Button>
+                <Button x:Name="DetailsButton" IsEnabled="{Binding SelectedItems.Count}" Style="{DynamicResource RoundCornerButton}" Width="150" Height="33" Margin="0,20" Click="DetailsButton_Click">Details</Button>
+                <Button x:Name="DeleteButton" IsEnabled="{Binding SelectedItems.Count}" Style="{DynamicResource CancelCornerButton}" Width="150" Height="33" Margin="0,20" Click="DeleteButton_Click">Delete</Button>
             </StackPanel>
         </Viewbox>
     </Grid>
