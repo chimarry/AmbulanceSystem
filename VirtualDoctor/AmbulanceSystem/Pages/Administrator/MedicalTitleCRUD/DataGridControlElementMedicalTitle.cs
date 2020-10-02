@@ -16,7 +16,7 @@ namespace AmbulanceSystem.Pages.Administrator.MedicalTitleCRUD
     {
         private readonly IMedicalTitleService medicalTitleService = ServicesAmbulanceFactory.GetInstance().CreateIMedicalTitleService();
 
-        public DataGridControlElementMedicalTitle()
+        public DataGridControlElementMedicalTitle() : base()
         {
         }
 

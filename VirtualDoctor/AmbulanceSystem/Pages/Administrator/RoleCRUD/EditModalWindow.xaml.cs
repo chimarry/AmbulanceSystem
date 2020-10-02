@@ -1,5 +1,5 @@
-﻿using AmbulanceDatabase;
-using AmbulanceDatabase.Context;
+﻿using AmbulanceDatabase.Context;
+using AmbulanceDatabase.Entities;
 using AmbulanceServices.Factories;
 using AmbulanceServices.Interfaces;
 using AmbulanceSystem.Shared;
@@ -7,24 +7,35 @@ using AmbulanceSystem.Shared.Config;
 using AmbulanceSystem.Shared.OperationStatusHandling;
 using AmbulanceSystem.Utils;
 using AmbulanceSystem.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
-namespace AmbulanceSystem.Pages.Administrator.MedicalTitleCRUD
+namespace AmbulanceSystem.Pages.Administrator.RoleCRUD
 {
     /// <summary>
     /// Interaction logic for EditModalWindow.xaml
     /// </summary>
     public partial class EditModalWindow : Window, IThemeChangeable, ILanguageLocalizable
     {
-        private readonly IMedicalTitleService medicalTitleService = ServicesAmbulanceFactory.GetInstance().CreateIMedicalTitleService();
-        private readonly MedicalTitleViewModel medicalTitle;
+        private readonly IRoleService roleService = ServicesAmbulanceFactory.GetInstance().CreateIRoleService();
+        private readonly RoleViewModel roleViewModel;
 
         public OperationStatus OperationStatus { get; private set; }
 
-        public EditModalWindow(MedicalTitleViewModel medicalTitleViewModel)
+        public EditModalWindow(RoleViewModel role)
         {
-            medicalTitle = medicalTitleViewModel;
+            this.roleViewModel = role;
             InitializeComponent();
             ChangeTheme();
             SwitchLanguage();
@@ -37,7 +48,7 @@ namespace AmbulanceSystem.Pages.Administrator.MedicalTitleCRUD
 
         public void SwitchLanguage()
         {
-            NameLabel.Content = language.MedicalTitle;
+            NameLabel.Content = language.RoleName;
             SaveButton.Content = language.Save;
         }
 
@@ -45,11 +56,10 @@ namespace AmbulanceSystem.Pages.Administrator.MedicalTitleCRUD
         {
             if (IsValidForm())
             {
-                DbStatus status = await medicalTitleService.Update(new MedicalTitle()
+                DbStatus status = await roleService.Update(new Role()
                 {
-                    Name = NameBox.Text,
-                    IdMedicalTitle = medicalTitle.IdMedicalTitle
-
+                    RoleName = NameBox.Text,
+                    IdRole = roleViewModel.IdRole
                 });
                 OperationStatus = StatusHandler.Handle(OperationType.Edit, status);
                 Close();

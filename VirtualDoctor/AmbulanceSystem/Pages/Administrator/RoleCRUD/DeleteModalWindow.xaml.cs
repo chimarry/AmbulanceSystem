@@ -1,5 +1,5 @@
-﻿using AmbulanceDatabase;
-using AmbulanceDatabase.Context;
+﻿using AmbulanceDatabase.Context;
+using AmbulanceDatabase.Entities;
 using AmbulanceServices.Factories;
 using AmbulanceServices.Interfaces;
 using AmbulanceSystem.AutoMapper;
@@ -10,24 +10,24 @@ using AmbulanceSystem.Utils;
 using AmbulanceSystem.ViewModels;
 using System.Windows;
 
-namespace AmbulanceSystem.Pages.Administrator.ClinicCRUD
+namespace AmbulanceSystem.Pages.Administrator.RoleCRUD
 {
     /// <summary>
     /// Interaction logic for DeleteModalWindow.xaml
     /// </summary>
-    public partial class DeleteModalWindow : Window, ILanguageLocalizable, IThemeChangeable
+    public partial class DeleteModalWindow : Window, IThemeChangeable, ILanguageLocalizable
     {
-        private readonly IClinicService clinicService = ServicesAmbulanceFactory.GetInstance().CreateIClinicService();
-        private readonly ClinicViewModel clinicViewModel;
+        private readonly IRoleService roleService = ServicesAmbulanceFactory.GetInstance().CreateIRoleService();
+        private readonly RoleViewModel roleViewModel;
 
         public OperationStatus OperationStatus { get; private set; }
 
-        public DeleteModalWindow(ClinicViewModel clinicViewModel)
+        public DeleteModalWindow(RoleViewModel model)
         {
-            this.clinicViewModel = clinicViewModel;
+            this.roleViewModel = model;
             InitializeComponent();
-            SwitchLanguage();
             ChangeTheme();
+            SwitchLanguage();
         }
 
         public void SwitchLanguage()
@@ -44,7 +44,7 @@ namespace AmbulanceSystem.Pages.Administrator.ClinicCRUD
 
         private async void YesButton_Click(object sender, RoutedEventArgs e)
         {
-            DbStatus status = await clinicService.Delete(Mapping.Mapper.Map<Clinic>(clinicViewModel));
+            DbStatus status = await roleService.Delete(Mapping.Mapper.Map<Role>(roleViewModel));
             OperationStatus = StatusHandler.Handle(OperationType.Delete, status);
             Close();
         }

@@ -34,9 +34,10 @@ namespace AmbulanceSystem.Pages.Administrator
             OnLoaded();
         }
 
-        private void Role_Click(object sender, RoutedEventArgs e)
+        private async void Role_Click(object sender, RoutedEventArgs e)
         {
-
+            RoleCRUD.IndexPage page = await RoleCRUD.IndexPage.CreateIndexPage();
+            PageUtil.NavigateToNextPage(Window.GetWindow(this), page);
         }
 
         private void Role_LayoutUpdated(object sender, EventArgs e)
