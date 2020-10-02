@@ -88,6 +88,20 @@
     <Compile Include="Pages\Administrator\ClinicCRUD\IndexPage.xaml.cs">
       <DependentUpon>IndexPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Administrator\MedicalTitleCRUD\CreateModalWindow.xaml.cs">
+      <DependentUpon>CreateModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\MedicalTitleCRUD\DataGridControlElementMedicalTitle.cs" />
+    <Compile Include="Pages\Administrator\MedicalTitleCRUD\DeleteModalWindow.xaml.cs">
+      <DependentUpon>DeleteModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\MedicalTitleCRUD\EditModalWindow.xaml.cs">
+      <DependentUpon>EditModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\MedicalTitleCRUD\IndexControlElementMedicalTitle.cs" />
+    <Compile Include="Pages\Administrator\MedicalTitleCRUD\IndexPage.xaml.cs">
+      <DependentUpon>IndexPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Administrator\OrganizationalAdminMainPage.xaml.cs">
       <DependentUpon>OrganizationalAdminMainPage.xaml</DependentUpon>
     </Compile>
@@ -190,6 +204,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Administrator\ClinicCRUD\IndexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\MedicalTitleCRUD\CreateModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\MedicalTitleCRUD\DeleteModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\MedicalTitleCRUD\EditModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\MedicalTitleCRUD\IndexPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
