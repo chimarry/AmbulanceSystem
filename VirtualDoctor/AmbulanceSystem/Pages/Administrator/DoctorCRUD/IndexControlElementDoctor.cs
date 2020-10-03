@@ -4,12 +4,7 @@ using AmbulanceServices.Interfaces;
 using AmbulanceSystem.AutoMapper;
 using AmbulanceSystem.Controls.IndexControl;
 using AmbulanceSystem.ViewModels;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AmbulanceSystem.Pages.Administrator.DoctorCRUD
 {
@@ -31,9 +26,9 @@ namespace AmbulanceSystem.Pages.Administrator.DoctorCRUD
 
             doctor = await doctorService.GetByPrimaryKey(doctor);
 
-            //DeleteModalWindow deleteModal = new DeleteModalWindow(Mapping.Mapper.Map<DoctorViewModel>(doctor));
-            //_ = deleteModal.ShowDialog();
-            //  DataGridControl.InformAboutStatus(modalCreate.OperationStatus);
+            DeleteModalWindow deleteModal = new DeleteModalWindow(Mapping.Mapper.Map<DoctorViewModel>(doctor));
+            _ = deleteModal.ShowDialog();
+            DataGridControl.InformAboutStatus(deleteModal.OperationStatus);
         }
 
         public async override void Edit(object selectedItem)
