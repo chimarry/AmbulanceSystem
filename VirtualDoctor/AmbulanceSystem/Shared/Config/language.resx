@@ -385,4 +385,7 @@ system, and you have non.</value>
   <data name="WorkPlaceError" xml:space="preserve">
     <value>Work place is not defined.</value>
   </data>
+  <data name="UnhandledException" xml:space="preserve">
+    <value>Unexpected error just occured. Please contact our support for more details.</value>
+  </data>
 </root>

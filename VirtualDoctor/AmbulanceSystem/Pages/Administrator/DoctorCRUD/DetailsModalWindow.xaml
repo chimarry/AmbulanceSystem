@@ -27,29 +27,41 @@
             <RowDefinition/>
             <RowDefinition Height="0.5*"/>
         </Grid.RowDefinitions>
-        <StackPanel  Grid.Row="0" Margin="13">
-            <Label Content="First name" x:Name="FirstNameLabel" Style="{DynamicResource SecondaryLabelStyle}" />
-            <TextBox x:Name="FirstNameBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150" />
-        </StackPanel>
-        <StackPanel  Grid.Row="1" Margin="13">
-            <Label Content="Last name" x:Name="LastNameLabel" Style="{DynamicResource SecondaryLabelStyle}" />
-            <TextBox x:Name="LastNameBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150"/>
-        </StackPanel>
-        <StackPanel  Grid.Row="2" Margin="13">
-            <Label Content="Work experience" x:Name="WorkExperienceLabel" Style="{DynamicResource SecondaryLabelStyle}" />
-            <TextBox x:Name="WorkExperienceBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150"  />
-        </StackPanel>
-        <StackPanel Grid.Row="3" Grid.Column="0" Margin="13">
-            <TextBlock TextAlignment="Center"  Text="Account" x:Name="AccountTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"/>
-            <ComboBox x:Name="AccountComboBox" Height="29" Style="{DynamicResource ComboBoxStyle}" IsEnabled="False" Margin="44,0,22,0"/>
-        </StackPanel>
-        <StackPanel Margin="0 10 10 0" Grid.Row="0"  Grid.Column="2" Grid.RowSpan="4" >
-            <TextBlock TextAlignment="Center"  Text="Work clinics" x:Name="AddedClinicsTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"/>
-            <ListBox x:Name="ClinicsListBox" Style="{DynamicResource ListBoxStyle}"  Width="200" Height="300" VerticalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
-        </StackPanel>
-        <StackPanel Margin="0 10 10 0" Grid.Row="0"  Grid.Column="1" Grid.RowSpan="4" >
-            <TextBlock TextAlignment="Center"  Text="Has medical titles" x:Name="AddedTitlesTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"/>
-            <ListBox x:Name="TitlesListBox"  Style="{DynamicResource ListBoxStyle}" Width="200" Height="300" VerticalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
-        </StackPanel>
+        <Viewbox Stretch="Uniform" Grid.Row="0" Margin="20">
+            <StackPanel>
+                <Label Content="First name" x:Name="FirstNameLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="FirstNameBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150" />
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Stretch="Uniform" Grid.Row="1"  Margin="20">
+            <StackPanel  >
+                <Label Content="Last name" x:Name="LastNameLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="LastNameBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150"/>
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Stretch="Uniform"   Grid.Row="2" Margin="20">
+            <StackPanel>
+                <Label Content="Work experience" x:Name="WorkExperienceLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="WorkExperienceBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150"  />
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Stretch="Uniform" Grid.Row="3" Grid.Column="0">
+            <StackPanel >
+                <TextBlock TextAlignment="Center"  Text="Account" x:Name="AccountTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"/>
+                <ComboBox x:Name="AccountComboBox" Height="29" Style="{DynamicResource ComboBoxStyle}" IsEnabled="False" Margin="44,0,22,0" Width="149"/>
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Stretch="Uniform" Margin="0 20 20 0" Grid.Row="0"  Grid.Column="2" Grid.RowSpan="4">
+            <StackPanel  >
+                <TextBlock TextAlignment="Center"  Text="Work clinics" x:Name="AddedClinicsTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"/>
+                <ListBox x:Name="ClinicsListBox" Style="{DynamicResource ListBoxStyle}"  Width="200" Height="300" VerticalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
+            </StackPanel>
+        </Viewbox>
+        <Viewbox Stretch="Uniform"  Margin="0 20 20 0" Grid.Row="0"  Grid.Column="1" Grid.RowSpan="4" >
+            <StackPanel>
+                <TextBlock TextAlignment="Center"  Text="Has medical titles" x:Name="AddedTitlesTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"/>
+                <ListBox x:Name="TitlesListBox"  Style="{DynamicResource ListBoxStyle}" Width="200" Height="300" VerticalContentAlignment="Stretch" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.HorizontalScrollBarVisibility="Visible"/>
+            </StackPanel>
+        </Viewbox>
     </Grid>
 </Window>

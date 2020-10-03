@@ -95,7 +95,7 @@ namespace AmbulanceSystem.Controls.DataGridControls
         public string PageNumberDisplay()
         {
             int PagedNumber = ((NextNumber + 1) * NumberOfRecordsPerPage) > TotalNumberOfItems ? TotalNumberOfItems : (NextNumber + 1) * NumberOfRecordsPerPage;
-            return language.ShowingResults + (PagedNumber + @"/" + TotalNumberOfItems);
+            return language.ShowingResults + (PagedNumber + @" / " + TotalNumberOfItems);
         }
 
         protected async Task SetFields()

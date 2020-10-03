@@ -24,7 +24,6 @@ namespace AmbulanceSystem.Utils
 
             else
                 Shared.Config.Properties.Default.Language = SERBIAN_LANGUAGE;
-
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(Shared.Config.Properties.Default.Language);
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(Shared.Config.Properties.Default.Language);
         }

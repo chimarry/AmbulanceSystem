@@ -292,7 +292,7 @@
     <value>Sačuvaj</value>
   </data>
   <data name="ShowingResults" xml:space="preserve">
-    <value>Prikzivanje rezultata</value>
+    <value>Prikazivanje rezultata</value>
   </data>
   <data name="TerrainQuality" xml:space="preserve">
     <value>Kvalitet zemljišta</value>
@@ -384,5 +384,8 @@
   </data>
   <data name="WorkPlaceError" xml:space="preserve">
     <value>Radno mjesto nije dobro definisano.</value>
+  </data>
+  <data name="UnhandledException" xml:space="preserve">
+    <value>Desila se nepredviđena greška. Molimo Vas, da se obratite korisničkoj službi.</value>
   </data>
 </root>
