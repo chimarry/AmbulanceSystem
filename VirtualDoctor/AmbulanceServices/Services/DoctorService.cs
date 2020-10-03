@@ -222,16 +222,15 @@ namespace AmbulanceServices.Services
 
         public async Task<string> GetTitlesName(int idDoctor, int idMedicalTitle)
         {
-            InputDbParameter inParam1 = new InputDbParameter("IdDoctorParam", MySqlDbType.Int32, idDoctor);
-            InputDbParameter inParam2 = new InputDbParameter("IdMedicalTitleParam", MySqlDbType.Int32, idMedicalTitle);
+            InputDbParameter inParam1 = new InputDbParameter("IdMedicalTitleParam", MySqlDbType.Int32, idMedicalTitle);
 
-            DbStoredProcedure storedProcedure = new GetTitlesNameDbStoredProcedure(new InputDbParameter[] { inParam1, inParam2 });
+            DbStoredProcedure storedProcedure = new GetTitlesNameDbStoredProcedure(new InputDbParameter[] { inParam1 });
             return (string)(await storedProcedure.ExecuteCommand());
         }
 
         public async Task<IList<DoctorsView>> GetRangeViews(int begin, int count)
         {
-            return await ServiceHelper<DoctorsView>.ExecuteSelectCommand(new SelectWithRangeCommand<DoctorsView>(begin, count,"Name"));
+            return await ServiceHelper<DoctorsView>.ExecuteSelectCommand(new SelectWithRangeCommand<DoctorsView>(begin, count, "Name"));
         }
 
         public async Task<int> GetTotalNumberOfItems()
