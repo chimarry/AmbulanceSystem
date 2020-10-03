@@ -171,7 +171,7 @@
   <data name="EntityNotFound" xml:space="preserve">
     <value>Nema rezultata</value>
   </data>
-  <data name="FathersName" xml:space="preserve">
+  <data name="FathersFullName" xml:space="preserve">
     <value>Očevo puno ime</value>
   </data>
   <data name="FathersProfession" xml:space="preserve">
@@ -234,7 +234,7 @@
   <data name="MedicalVasteInformation" xml:space="preserve">
     <value>Stopa medicinskog otpada</value>
   </data>
-  <data name="MothersName" xml:space="preserve">
+  <data name="MothersFullName" xml:space="preserve">
     <value>Majčino puno  ime</value>
   </data>
   <data name="MothersProfession" xml:space="preserve">
@@ -279,7 +279,7 @@
   <data name="RecreationalWaterQuality" xml:space="preserve">
     <value>Kvalitet vode za rekreaciju</value>
   </data>
-  <data name="ResidancePlace" xml:space="preserve">
+  <data name="ResidenceName" xml:space="preserve">
     <value>Mjesto prebivališta</value>
   </data>
   <data name="RoleName" xml:space="preserve">

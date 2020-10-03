@@ -11,7 +11,7 @@ namespace AmbulanceSystem.Pages.Administrator.MedicalRecordCRUD
         {
             CreateModalWindow modalWindow = await CreateModalWindow.Create();
             _ = modalWindow.ShowDialog();
-            //  DataGridControl.InformAboutStatus(modalWindow.OperationStatus);
+            DataGridControl.InformAboutStatus(modalWindow.OperationStatus);
         }
 
         public override void Delete(object selectedItem)
@@ -19,19 +19,19 @@ namespace AmbulanceSystem.Pages.Administrator.MedicalRecordCRUD
             DataRowView item = (DataRowView)selectedItem;
             MedicalRecordViewModel model = Mapping.Mapper.Map<MedicalRecordViewModel>(item);
 
-            //DeleteModalWindow modalWindow = new DeleteModalWindow(place);
-            //_ = modalWindow.ShowDialog();
-            //DataGridControl.InformAboutStatus(modalWindow.OperationStatus);
+            DeleteModalWindow modalWindow = new DeleteModalWindow(model);
+            _ = modalWindow.ShowDialog();
+            DataGridControl.InformAboutStatus(modalWindow.OperationStatus);
         }
 
-        public override void Edit(object selectedItem)
+        public override async void Edit(object selectedItem)
         {
             DataRowView item = (DataRowView)selectedItem;
             MedicalRecordViewModel model = Mapping.Mapper.Map<MedicalRecordViewModel>(item);
 
-            //EditModalWindow modalWindow = new EditModalWindow(place);
-            //_ = modalWindow.ShowDialog();
-            //DataGridControl.InformAboutStatus(modalWindow.OperationStatus);
+            EditModalWindow modalWindow = await EditModalWindow.Create(model);
+            _ = modalWindow.ShowDialog();
+            DataGridControl.InformAboutStatus(modalWindow.OperationStatus);
         }
     }
 }

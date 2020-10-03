@@ -171,7 +171,7 @@
   <data name="EntityNotFound" xml:space="preserve">
     <value>No results found.</value>
   </data>
-  <data name="FathersName" xml:space="preserve">
+  <data name="FathersFullName" xml:space="preserve">
     <value>Fathers full name</value>
   </data>
   <data name="FathersProfession" xml:space="preserve">
@@ -234,7 +234,7 @@
   <data name="MedicalVasteInformation" xml:space="preserve">
     <value>Medical vaste information</value>
   </data>
-  <data name="MothersName" xml:space="preserve">
+  <data name="MothersFullName" xml:space="preserve">
     <value>Mothers  full name</value>
   </data>
   <data name="MothersProfession" xml:space="preserve">
@@ -280,7 +280,7 @@ system, and you have non.</value>
   <data name="RecreationalWaterQuality" xml:space="preserve">
     <value>Recreational water quality</value>
   </data>
-  <data name="ResidancePlace" xml:space="preserve">
+  <data name="ResidenceName" xml:space="preserve">
     <value>Residance place</value>
   </data>
   <data name="RoleName" xml:space="preserve">

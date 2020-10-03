@@ -27,6 +27,7 @@ namespace AmbulanceSystem.Pages.Administrator.MedicalRecordCRUD
         private CreateModalWindow()
         {
             InitializeComponent();
+            InitializeDatePicker();
             SwitchLanguage();
             ChangeTheme();
         }
@@ -47,17 +48,22 @@ namespace AmbulanceSystem.Pages.Administrator.MedicalRecordCRUD
             BirthPlaceLabel.Content = language.BirthPlace;
             GenderLabel.Content = language.Gender;
             MarriageStatusLabel.Content = language.MarriageStatus;
-            MothersNameLabel.Content = language.MothersName;
+            MothersNameLabel.Content = language.MothersFullName;
             MothersProfessionLabel.Content = language.MothersProfession;
-            FathersNameLabel.Content = language.FathersName;
+            FathersNameLabel.Content = language.FathersFullName;
             FathersProfessionLabel.Content = language.FathersProfession;
             InsuranceNumberLabel.Content = language.InsuranceNumber;
-            ResidancePlaceTextBlock.Text = language.ResidancePlace;
+            ResidancePlaceTextBlock.Text = language.ResidenceName;
         }
 
         public void ChangeTheme()
         {
             CurrentDictionary.MergedDictionaries[0].Source = ThemeChanger.GetCurrentTheme().ToUri();
+        }
+
+        private void InitializeDatePicker()
+        {
+            BirthDatePicker.SelectedDate = new System.DateTime(1997, 01, 01);
         }
 
         private async Task InitializeComboBox()

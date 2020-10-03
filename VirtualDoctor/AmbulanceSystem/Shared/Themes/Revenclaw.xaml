@@ -430,8 +430,8 @@
 
     <!--Design datepicker-->
     <Style x:Key="DatePickerStyle" TargetType="DatePicker">
-        <Setter Property="Background" Value="{StaticResource PrimaryColorBrush}"/>
-        <Setter Property="Foreground" Value="{StaticResource CalendarColorBrush}"/>
+        <Setter Property="Background" Value="{StaticResource CalendarColorBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource PrimaryColorBrush}"/>
     </Style>
     <Style x:Key="StyleCalendar" TargetType="{x:Type Calendar}">
         <Setter Property="Template">

@@ -297,9 +297,9 @@ namespace AmbulanceSystem.Shared.Config {
         /// <summary>
         ///   Looks up a localized string similar to Fathers full name.
         /// </summary>
-        public static string FathersName {
+        public static string FathersFullName {
             get {
-                return ResourceManager.GetString("FathersName", resourceCulture);
+                return ResourceManager.GetString("FathersFullName", resourceCulture);
             }
         }
         
@@ -504,9 +504,9 @@ namespace AmbulanceSystem.Shared.Config {
         /// <summary>
         ///   Looks up a localized string similar to Mothers  full name.
         /// </summary>
-        public static string MothersName {
+        public static string MothersFullName {
             get {
-                return ResourceManager.GetString("MothersName", resourceCulture);
+                return ResourceManager.GetString("MothersFullName", resourceCulture);
             }
         }
         
@@ -667,9 +667,9 @@ namespace AmbulanceSystem.Shared.Config {
         /// <summary>
         ///   Looks up a localized string similar to Residance place.
         /// </summary>
-        public static string ResidancePlace {
+        public static string ResidenceName {
             get {
-                return ResourceManager.GetString("ResidancePlace", resourceCulture);
+                return ResourceManager.GetString("ResidenceName", resourceCulture);
             }
         }
         

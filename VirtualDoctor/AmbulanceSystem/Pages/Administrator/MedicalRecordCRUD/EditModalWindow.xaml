@@ -5,8 +5,86 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AmbulanceSystem.Pages.Administrator.MedicalRecordCRUD"
         mc:Ignorable="d"
-        Title="EditModalWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary x:Name="CurrentDictionary">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Name="CurrentThemeDictionary" Source="/Shared/Themes/Gryffindor.xaml"/>
+                <ResourceDictionary Source="/Shared/Themes/BaseTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Viewbox Stretch="Uniform" StretchDirection="Both" >
+        <Grid Background="{DynamicResource PrimaryColorBrush}" x:Name="EditGrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label x:Name="ErrorLabel" Margin="10" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2" Foreground="Red" FontWeight="Bold" Content="All values must be defined!"  Visibility="Collapsed"/>
+            <StackPanel  Grid.Row="0" Margin="13">
+                <Label Content="First name" x:Name="FirstNameLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="FirstNameBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150" PreviewTextInput="TextBox_PreviewTextInput" />
+            </StackPanel>
+            <StackPanel  Grid.Row="1" Margin="13">
+                <Label Content="Last name" x:Name="LastNameLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="LastNameBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150" PreviewTextInput="TextBox_PreviewTextInput" />
+            </StackPanel>
+            <StackPanel  Grid.Row="2" Margin="13">
+                <Label Content="UNB" x:Name="UNBLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="UNBBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150" PreviewTextInput="TextBox_PreviewTextInput" />
+            </StackPanel>
+            <StackPanel  Grid.Row="3" Margin="13">
+                <Label Content="Insurance number" x:Name="InsuranceNumberLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="InsuranceNumberBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150" PreviewTextInput="TextBox_PreviewTextInput" />
+            </StackPanel>
+            <StackPanel  Grid.Row="0" Grid.Column="1" Margin="13">
+                <Label Content="Mother's name" x:Name="MothersNameLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="MothersNameBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150" PreviewTextInput="TextBox_PreviewTextInput" />
+            </StackPanel>
+            <StackPanel  Grid.Row="1" Grid.Column="1" Margin="13">
+                <Label Content="Mother's profession" x:Name="MothersProfessionLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="MothersProfessionBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150" PreviewTextInput="TextBox_PreviewTextInput" />
+            </StackPanel>
+            <StackPanel  Grid.Row="2" Grid.Column="1" Margin="13">
+                <Label Content="Father's name" x:Name="FathersNameLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="FathersNameBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150" PreviewTextInput="TextBox_PreviewTextInput" />
+            </StackPanel>
+            <StackPanel  Grid.Row="3" Grid.Column="1" Margin="13">
+                <Label Content="Father's profession" x:Name="FathersProfessionLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="FathersProfessionBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150" PreviewTextInput="TextBox_PreviewTextInput" />
+            </StackPanel>
+            <StackPanel Grid.Row="0" Grid.Column="2" Margin="13">
+                <Label x:Name="BirthDateLabel" Content="Date of birth" Style="{DynamicResource SecondaryLabelStyle}"/>
+                <DatePicker x:Name="BirthDatePicker" CalendarStyle="{DynamicResource StyleCalendar}" Style="{DynamicResource DatePickerStyle}" Height="26" Width="150"/>
+            </StackPanel>
+            <StackPanel  Grid.Row="1" Grid.Column="2" Margin="13">
+                <Label Content="Birth place" x:Name="BirthPlaceLabel" Style="{DynamicResource SecondaryLabelStyle}" />
+                <TextBox x:Name="BirthPlaceBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="29"  Width="150" PreviewTextInput="TextBox_PreviewTextInput" />
+            </StackPanel>
+            <StackPanel Grid.Row="2" Grid.Column="2" Margin="13">
+                <TextBlock TextAlignment="Center"  Text="Residance place" x:Name="ResidancePlaceTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"/>
+                <ComboBox x:Name="ResidancePlaceComboBox" Width="150" Height="29" Style="{DynamicResource ComboBoxStyle}" />
+            </StackPanel>
+            <StackPanel Grid.Column="3" Margin="13">
+                <Label Content="GenderLabel" x:Name="GenderLabel" Width="150" Style="{DynamicResource SecondaryLabelStyle}"/>
+                <CheckBox Margin="0 0 0 10" x:Name="MaleCheckBox" FontFamily="{DynamicResource DefaultFontFamily}" Foreground="{DynamicResource FontColorBrush}" Content="Male" HorizontalAlignment="Left" Checked="Male_Checked" Unchecked="Male_Unchecked"/>
+                <CheckBox x:Name="FemaleCheckBox" Content="Female" FontFamily="{DynamicResource DefaultFontFamily}" Foreground="{DynamicResource FontColorBrush}" HorizontalAlignment="Left" Checked="Female_Checked" Unchecked="Female_Unchecked"/>
+            </StackPanel>
+            <StackPanel Grid.Column="3" Grid.Row="1" Margin="13">
+                <Label x:Name="MarriageStatusLabel" Content="Marriage status" Width="150" Style="{DynamicResource SecondaryLabelStyle}"/>
+                <CheckBox Margin="0 0 0 10" x:Name="MarriedCheckBox" Content="Married" FontFamily="{DynamicResource DefaultFontFamily}" Foreground="{DynamicResource FontColorBrush}"  HorizontalAlignment="Left" Checked="MarriedCheckBox_Checked" Unchecked="MarriedCheckBox_Unchecked"/>
+                <CheckBox x:Name="NotMarriedCheckBox" Content="Not married" FontFamily="{DynamicResource DefaultFontFamily}" Foreground="{DynamicResource FontColorBrush}" HorizontalAlignment="Left" Checked="NotMarriedCheckBox_Checked" Unchecked="NotMarriedCheckBox_Unchecked"/>
+            </StackPanel>
+            <Button Grid.Row="4" Grid.Column="3" Margin="2" x:Name="SaveButton"  Style="{DynamicResource RoundCornerButton}" Width="100" Height="29"  IsDefault="True" Content="Save" Click="SaveButton_Click"/>
+        </Grid>
+    </Viewbox>
 </Window>
