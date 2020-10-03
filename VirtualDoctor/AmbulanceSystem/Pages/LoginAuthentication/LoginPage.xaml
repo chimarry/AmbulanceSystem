@@ -35,10 +35,11 @@
                 <StackPanel>
                     <TextBlock Style="{DynamicResource MainTextBlockStyle}" Foreground="{DynamicResource PrimaryColorBrush}" x:Name="WelcomeTextBlock" Text="Welcome!" HorizontalAlignment="Center" FontSize="25"/>
                     <Separator Margin="0 5 0 5"></Separator>
-                    <TextBlock Style="{DynamicResource MainTextBlockStyle}" FontSize="16" x:Name="UsernameBlock" Text="Username:" Margin="10,10"/>
-                    <TextBox Style="{DynamicResource MainTextBoxStyle}"  MinWidth="410" x:Name="UsernameBox" MinHeight="33" FontSize="16" Margin="10,0"/>
+                    <TextBlock Style="{DynamicResource MainTextBlockStyle}" FontSize="16" x:Name="UsernameBlock" Text="Email:" Margin="10,10" />
+                    <TextBox Style="{DynamicResource MainTextBoxStyle}"  MinWidth="410" x:Name="UsernameBox" MinHeight="33" FontSize="16" Margin="10,0" KeyUp="CollapseErrorIndicator"/>
                     <TextBlock Style="{DynamicResource MainTextBlockStyle}" FontSize="16" x:Name="PasswordBlock" Text="Password:" Margin="10,10"/>
-                    <PasswordBox Style="{DynamicResource PasswordBoxStyle}" MinWidth="410" x:Name="PasswordBox" MinHeight="33" FontSize="16" Margin="10,0"/>
+                    <PasswordBox Style="{DynamicResource PasswordBoxStyle}" MinWidth="410" x:Name="PasswordBox" MinHeight="33" FontSize="16" Margin="10,0" KeyUp="CollapseErrorIndicator"/>
+                    <TextBlock x:Name="Error"  TextAlignment="Center" Height="30" FontSize="14" TextWrapping="Wrap" Foreground="Red" Style="{DynamicResource MainTextBlockStyle}" Visibility="Collapsed"></TextBlock>
                     <Button x:Name="LoginButton" Width="200" Height="33" Margin="0,20" Style="{DynamicResource RoundCornerButton}" IsDefault="True"  Content="Log in" FontSize="16" Click="LoginButton_Click"/>
                 </StackPanel>
             </Viewbox>

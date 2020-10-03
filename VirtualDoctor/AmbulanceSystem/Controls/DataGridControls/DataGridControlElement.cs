@@ -32,16 +32,6 @@ namespace AmbulanceSystem.Controls.DataGridControls
 
         private Pager PagedTable;
 
-
-        //public DataGridControlElement(DataGrid dataGrid, Label pageInfo, int totalNumberOfItems)
-        //{
-        //    TotalNumberOfItems = totalNumberOfItems;
-        //    DataGrid = dataGrid;
-        //    PageInfo = pageInfo;
-        //    NextNumber = firstNumber;
-        //    LastNumber = (int)Math.Ceiling((double)TotalNumberOfItems / NumberOfRecordsPerPage);
-        //}
-
         public DataGridControlElement()
         {
             SetTotalNumberOfItems();

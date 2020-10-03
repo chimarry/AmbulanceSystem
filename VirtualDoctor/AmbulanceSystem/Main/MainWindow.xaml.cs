@@ -7,7 +7,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Navigation;
 
-namespace AmbulanceSystem.Login
+namespace AmbulanceSystem.Main
 {
     /// <summary>
     /// Interaction logic for LoginWindow.xaml

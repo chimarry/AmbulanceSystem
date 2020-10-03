@@ -127,7 +127,7 @@
     <value>Kvalitet vazduha</value>
   </data>
   <data name="BackwardsButton" xml:space="preserve">
-    <value>Nazad</value>
+    <value>&lt; Prethodna</value>
   </data>
   <data name="BirthDate" xml:space="preserve">
     <value>Datum rođenja</value>
@@ -308,8 +308,7 @@
   </data>
   <data name="WrongPasswordOrEmail" xml:space="preserve">
     <value>Unos podataka je pogrešan.
-Radi bezbjednosti naloga kom pokušavate da pristupite,
- tačna greška nije navedena.</value>
+</value>
   </data>
   <data name="Yes" xml:space="preserve">
     <value>Da</value>

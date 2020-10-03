@@ -845,10 +845,7 @@ namespace AmbulanceSystem.Shared.Config {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Given data is not valid.
-        ///For safety of the account you are
-        ///trying to access, the exact error will
-        ///not be given..
+        ///   Looks up a localized string similar to Given data is not valid..
         /// </summary>
         public static string WrongPasswordOrEmail {
             get {

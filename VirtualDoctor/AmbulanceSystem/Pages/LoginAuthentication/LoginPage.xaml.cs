@@ -51,21 +51,29 @@ namespace AmbulanceSystem.Pages.LoginAuthentication
         private async Task<CustomIdentity> GetUserPrincipal()
         {
             LocalAccount localAccount = await userAuthenticationService.ValidateUser(UsernameBox.Text, PasswordBox.Password);
-            //if (localAccount == null)
-            //{
-            //    WindowHelper.WriteMessage(language.WrongPasswordOrEmail, ErrorLabel, false);
-            //    return new AnonymousIdentity();
-            //}
+            if (localAccount == null)
+            {
+                Error.Text = language.WrongPasswordOrEmail;
+                Error.Visibility = Visibility.Visible;
+                return new AnonymousIdentity();
+            }
 
             List<Role> roleNames = localAccount.GetRoles();
-            //if (roleNames == null)
-            //{
-            //    WindowHelper.WriteMessage(language.NoKnownRoles, ErrorLabel, false);
-            //    return new AnonymousIdentity();
-            //}
+            if (roleNames == null)
+            {
+                Error.Text = language.NoKnownRoles;
+                Error.Visibility = Visibility.Visible;
+                return new AnonymousIdentity();
+            }
+            Error.Visibility = Visibility.Collapsed;
             string[] accountRoles = roleNames.Select(x => x.RoleName).ToArray();
             CustomIdentity customIdentity = new CustomIdentity(localAccount.FullName, localAccount.Email, accountRoles, localAccount.PasswordHash);
             return customIdentity;
+        }
+
+        private void CollapseErrorIndicator(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            Error.Visibility = Visibility.Collapsed;
         }
     }
 }
