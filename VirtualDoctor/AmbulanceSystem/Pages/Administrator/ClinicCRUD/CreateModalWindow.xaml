@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AmbulanceSystem.Pages.Administrator.ClinicCRUD"
         mc:Ignorable="d"
-        Title="" Height="300" Width="400" WindowStartupLocation="CenterScreen">
+        Title="" Height="300" MinHeight="200" MinWidth="300" Width="400" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary x:Name="CurrentDictionary">
             <ResourceDictionary.MergedDictionaries>

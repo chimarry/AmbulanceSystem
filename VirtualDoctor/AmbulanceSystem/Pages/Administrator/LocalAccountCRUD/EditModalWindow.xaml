@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:AmbulanceSystem.Pages.Administrator.LocalAccountCRUD"
         xmlns:src="clr-namespace:CustomControls;assembly=MultiComboBox"
         mc:Ignorable="d"
-        Title="" Height="300" Width="400" WindowStartupLocation="CenterScreen">
+        Title="" Height="300" Width="400" MinHeight="300" MinWidth="400" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <ResourceDictionary x:Name="CurrentDictionary">
             <ResourceDictionary.MergedDictionaries>
