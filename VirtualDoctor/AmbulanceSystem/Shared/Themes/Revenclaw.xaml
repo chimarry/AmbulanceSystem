@@ -10,9 +10,9 @@
     <Color x:Key="SecondaryColor">#725438</Color>
     <Color x:Key="TernaryColor">#a67a53</Color>
     <Color x:Key="PrimaryColor">#0b304a</Color>
-    <Color x:Key="LightSecondaryColor">#7a2d2d</Color>
+    <Color x:Key="LightSecondaryColor">#b37c49</Color>
     <Color x:Key="FontColor">#ffffff</Color>
-    <Color x:Key="CalendarColor">#f3c11b</Color>
+    <Color x:Key="CalendarColor">#4b7fa3</Color>
 
     <!--Define color brushes-->
     <SolidColorBrush x:Key="PrimaryColorBrush" Color="{StaticResource PrimaryColor}"/>
