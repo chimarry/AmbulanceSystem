@@ -6,6 +6,9 @@ namespace AmbulanceSystem.ViewModels
 {
     public class ClinicViewModel
     {
+        public const string DefaultFormat = "{0} : {1}";
+
+        public string Format { get; set; } = DefaultFormat;
         public int IdClinic { get; set; }
         public string Name { get; set; }
         public string Place { get; set; }
@@ -26,7 +29,7 @@ namespace AmbulanceSystem.ViewModels
 
         public override string ToString()
         {
-            return Name + " : " + Place;
+            return string.Format(Format, Name, Place);
         }
     }
 }

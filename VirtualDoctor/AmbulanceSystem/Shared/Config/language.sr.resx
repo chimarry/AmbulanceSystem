@@ -374,4 +374,10 @@ Radi bezbjednosti naloga kom pokušavate da pristupite,
   <data name="RepeatPassword" xml:space="preserve">
     <value>Ponovite lozinku</value>
   </data>
+  <data name="CurrentTitles" xml:space="preserve">
+    <value>Trenutna medicinska zvanja</value>
+  </data>
+  <data name="WorkClinics" xml:space="preserve">
+    <value>Radno iskustvo u klinikama</value>
+  </data>
 </root>

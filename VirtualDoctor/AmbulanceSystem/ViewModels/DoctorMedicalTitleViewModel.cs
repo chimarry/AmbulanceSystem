@@ -18,6 +18,7 @@ namespace AmbulanceSystem.ViewModels
         {
             MedicalTitleName = await doctorService.GetTitlesName(IdDoctor, IdMedicalTitle);
         }
+
         public override bool Equals(object obj)
         {
             return obj.GetHashCode() == GetHashCode();

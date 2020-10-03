@@ -57,9 +57,10 @@ namespace AmbulanceSystem.Pages.Administrator
             PageUtil.NavigateToNextPage(Window.GetWindow(this), page);
         }
 
-        private void Doctor_Click(object sender, RoutedEventArgs e)
+        private async void Doctor_Click(object sender, RoutedEventArgs e)
         {
-
+            DoctorCRUD.IndexPage page = await DoctorCRUD.IndexPage.CreateIndexPage();
+            PageUtil.NavigateToNextPage(Window.GetWindow(this), page);
         }
 
         private async void MedicalTitle_Click(object sender, RoutedEventArgs e)

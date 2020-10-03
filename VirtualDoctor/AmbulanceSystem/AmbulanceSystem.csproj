@@ -89,6 +89,24 @@
     <Compile Include="Pages\Administrator\ClinicCRUD\IndexPage.xaml.cs">
       <DependentUpon>IndexPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Administrator\DoctorCRUD\CreateModalWindow.xaml.cs">
+      <DependentUpon>CreateModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\DoctorCRUD\DataGridControlElementDoctor.cs" />
+    <Compile Include="Pages\Administrator\DoctorCRUD\DeleteModalWindow.xaml.cs">
+      <DependentUpon>DeleteModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\DoctorCRUD\DetailsModalWindow.xaml.cs">
+      <DependentUpon>DetailsModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\DoctorCRUD\DoctorClinicAndMedicalTitleUtil.cs" />
+    <Compile Include="Pages\Administrator\DoctorCRUD\EditModalWindow.xaml.cs">
+      <DependentUpon>EditModalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Administrator\DoctorCRUD\IndexControlElementDoctor.cs" />
+    <Compile Include="Pages\Administrator\DoctorCRUD\IndexPage.xaml.cs">
+      <DependentUpon>IndexPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Administrator\LocalAccountCRUD\CreateModalWindow.xaml.cs">
       <DependentUpon>CreateModalWindow.xaml</DependentUpon>
     </Compile>
@@ -248,6 +266,26 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Administrator\ClinicCRUD\IndexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\DoctorCRUD\CreateModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\DoctorCRUD\DeleteModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\DoctorCRUD\DetailsModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\DoctorCRUD\EditModalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Administrator\DoctorCRUD\IndexPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -448,6 +486,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Shared\Images\HufflepuffEmblem.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shared\Images\Pointers\GryffindorPointer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shared\Images\Pointers\HufflepufPointer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shared\Images\Pointers\RevenclawPointer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shared\Images\Pointers\SlytherinPointer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Shared\Images\Refresh.png">

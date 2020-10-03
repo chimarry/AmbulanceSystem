@@ -205,6 +205,15 @@ namespace AmbulanceSystem.Shared.Config {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Current medical titles.
+        /// </summary>
+        public static string CurrentTitles {
+            get {
+                return ResourceManager.GetString("CurrentTitles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to There has been a database error. Detailed information is in log file..
         /// </summary>
         public static string DatabaseError {
@@ -796,6 +805,15 @@ namespace AmbulanceSystem.Shared.Config {
         public static string Welcome {
             get {
                 return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work(ed) in clinics.
+        /// </summary>
+        public static string WorkClinics {
+            get {
+                return ResourceManager.GetString("WorkClinics", resourceCulture);
             }
         }
         

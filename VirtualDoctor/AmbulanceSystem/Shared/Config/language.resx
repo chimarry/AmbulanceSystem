@@ -376,4 +376,10 @@ not be given.</value>
   <data name="RepeatPassword" xml:space="preserve">
     <value>Repeat password</value>
   </data>
+  <data name="CurrentTitles" xml:space="preserve">
+    <value>Current medical titles</value>
+  </data>
+  <data name="WorkClinics" xml:space="preserve">
+    <value>Work(ed) in clinics</value>
+  </data>
 </root>

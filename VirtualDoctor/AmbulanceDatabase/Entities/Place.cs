@@ -6,6 +6,7 @@ namespace AmbulanceDatabase
 {
     public class Place : IDeleteable, IDbTableAssociate, IUniquelyIdentifiable
     {
+        private string format = "{0} : {1}";
 
         public int IdPlace { get; set; }
         public string Name { get; set; }
@@ -39,7 +40,6 @@ namespace AmbulanceDatabase
         {
             return obj.GetHashCode() == GetHashCode();
         }
-
         public override int GetHashCode()
         {
             var hashCode = 1906746711;
@@ -51,7 +51,12 @@ namespace AmbulanceDatabase
 
         public override string ToString()
         {
-            return Name + ":" + CountryName;
+            return string.Format(format, Name, CountryName);
+        }
+
+        public void SetFormat(string format)
+        {
+            this.format = format;
         }
     }
 }

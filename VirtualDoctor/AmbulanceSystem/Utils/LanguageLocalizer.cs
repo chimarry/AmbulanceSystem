@@ -27,7 +27,6 @@ namespace AmbulanceSystem.Utils
 
             Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(Shared.Config.Properties.Default.Language);
             Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(Shared.Config.Properties.Default.Language);
-            //  WindowHelper.Refresh(Window.GetWindow(this) as IRefreshable);
         }
     }
 }
