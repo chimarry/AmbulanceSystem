@@ -19,7 +19,7 @@ namespace AmbulanceSystem.Pages.Administrator.DoctorCRUD
         public static async Task<IndexPage> CreateIndexPage()
         {
             IndexPage page = new IndexPage();
-            IndexControl control = await IndexControl.CreateIndexControl(new IndexControlElementDoctor(), new DataGridControlElementDoctor());
+            IndexControl control = await IndexControl.CreateIndexControl(new IndexControlElementDoctor(), new DataGridControlElementDoctor(), detailsBtnVisibility: System.Windows.Visibility.Visible);
             page.IndexPageGrid.Children.Add(control);
             page.ChangeTheme();
             page.SwitchLanguage();

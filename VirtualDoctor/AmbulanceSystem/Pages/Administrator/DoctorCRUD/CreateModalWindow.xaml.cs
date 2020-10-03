@@ -105,7 +105,9 @@ namespace AmbulanceSystem.Pages.Administrator.DoctorCRUD
 
         private bool IsValidForm()
         {
-            return true;
+            bool areFilled = FieldValidation.NotNullOrEmpty(FirstNameBox.Text, LastNameBox.Text, WorkExperienceBox.Text);
+            bool isSelected = FieldValidation.IsSelected(AccountComboBox.SelectedIndex);
+            return areFilled && isSelected;
         }
 
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -115,17 +117,27 @@ namespace AmbulanceSystem.Pages.Administrator.DoctorCRUD
 
         private void WorkExperienceBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-
+            e.Handled = !FieldValidation.IsNumber(e.Text);
         }
 
         private void AddClinicButton_Click(object sender, RoutedEventArgs e)
         {
-            doctorUtil.WorkInClinic(SinceDatePicker, UntilDatePicker, DeleteClinicButton_Click);
+            if (SinceDatePicker.SelectedDate.HasValue && FieldValidation.AreSelected(ClinicComboBox.SelectedIndex))
+            {
+                ErrorLabel.Content = language.WorkPlaceError.Equals(ErrorLabel.Content) ? string.Empty : ErrorLabel.Content;
+                doctorUtil.WorkInClinic(SinceDatePicker, UntilDatePicker, DeleteClinicButton_Click);
+            }
+            else FieldValidation.WriteMessage(ErrorLabel, language.WorkPlaceError);
         }
 
         private void AddTitleButton_Click(object sender, RoutedEventArgs e)
         {
-            doctorUtil.HasMedicalTitle(GettingTitleDatePicker, DeleteMedicalTitleButton_Click);
+            if (GettingTitleDatePicker.SelectedDate.HasValue && FieldValidation.AreSelected(MedicalTitleComboBox.SelectedIndex))
+            {
+                ErrorLabel.Content = language.MedicalTitleError.Equals(ErrorLabel.Content) ? string.Empty : ErrorLabel.Content;
+                doctorUtil.HasMedicalTitle(GettingTitleDatePicker, DeleteMedicalTitleButton_Click);
+            }
+            else FieldValidation.WriteMessage(ErrorLabel, language.MedicalTitleError);
         }
 
         private void DeleteMedicalTitleButton_Click(object sender, RoutedEventArgs e)
@@ -136,6 +148,11 @@ namespace AmbulanceSystem.Pages.Administrator.DoctorCRUD
         private void DeleteClinicButton_Click(object sender, RoutedEventArgs e)
         {
             doctorUtil.DeleteClinic(e);
+        }
+
+        private void SinceDatePicker_SelectedDateChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            UntilDatePicker.DisplayDateStart = SinceDatePicker.SelectedDate?.AddDays(1);
         }
     }
 }

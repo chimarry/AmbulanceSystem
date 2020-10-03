@@ -20,6 +20,12 @@ namespace AmbulanceSystem.Utils
             return regex.IsMatch(c);
         }
 
+        public static bool IsNumber(string c)
+        {
+            Regex regex = new Regex("\\d");
+            return regex.IsMatch(c);
+        }
+
         public static void WriteMessage(Label label, string message)
         {
             label.Content = message;

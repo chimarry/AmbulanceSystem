@@ -52,7 +52,7 @@
                 <TextBlock TextAlignment="Center"  Text="Clinic" x:Name="ClinicTextBlock" Style="{DynamicResource SecondaryTextBlockStyle}"/>
                 <ComboBox x:Name="ClinicComboBox" Width="150" Height="29" Style="{DynamicResource ComboBoxStyle}" />
                 <Label x:Name="SinceLabel" Content="Since" Style="{DynamicResource SecondaryLabelStyle}"/>
-                <DatePicker x:Name="SinceDatePicker" CalendarStyle="{DynamicResource StyleCalendar}" Style="{DynamicResource DatePickerStyle}" Height="26" Width="150"/>
+                <DatePicker x:Name="SinceDatePicker" CalendarStyle="{DynamicResource StyleCalendar}" Style="{DynamicResource DatePickerStyle}" Height="26" Width="150" SelectedDateChanged="SinceDatePicker_SelectedDateChanged"/>
                 <Label x:Name="UntilLabel" Content="Until" Style="{DynamicResource SecondaryLabelStyle}"/>
                 <DatePicker x:Name="UntilDatePicker" CalendarStyle="{DynamicResource StyleCalendar}" Style="{DynamicResource DatePickerStyle}" Height="26" Width="150"/>
             </StackPanel>

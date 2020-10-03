@@ -493,6 +493,15 @@ namespace AmbulanceSystem.Shared.Config {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Medical title is not defined..
+        /// </summary>
+        public static string MedicalTitleError {
+            get {
+                return ResourceManager.GetString("MedicalTitleError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Medical titles.
         /// </summary>
         public static string MedicalTitles {
@@ -823,6 +832,15 @@ namespace AmbulanceSystem.Shared.Config {
         public static string WorkExperience {
             get {
                 return ResourceManager.GetString("WorkExperience", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work place is not defined..
+        /// </summary>
+        public static string WorkPlaceError {
+            get {
+                return ResourceManager.GetString("WorkPlaceError", resourceCulture);
             }
         }
         

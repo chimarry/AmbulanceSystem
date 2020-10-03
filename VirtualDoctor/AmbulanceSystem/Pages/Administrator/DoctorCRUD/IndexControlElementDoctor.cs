@@ -43,9 +43,9 @@ namespace AmbulanceSystem.Pages.Administrator.DoctorCRUD
 
             doctor = await doctorService.GetByPrimaryKey(doctor);
 
-            // EditModalWindow editModal = new EditModalWindow(Mapping.Mapper.Map<DoctorViewModel>(doctor));
-            // _ = editModal.ShowDialog();
-            //  DataGridControl.InformAboutStatus(modalCreate.OperationStatus);
+            EditModalWindow editModal = await EditModalWindow.Create(Mapping.Mapper.Map<DoctorViewModel>(doctor));
+            _ = editModal.ShowDialog();
+            DataGridControl.InformAboutStatus(editModal.OperationStatus);
         }
 
         public async override void Details(object selectedItem)
@@ -55,9 +55,9 @@ namespace AmbulanceSystem.Pages.Administrator.DoctorCRUD
 
             doctor = await doctorService.GetByPrimaryKey(doctor);
 
-            // DetailsModalWindow editModal = new DetailsModalWindow(Mapping.Mapper.Map<DoctorViewModel>(doctor));
-            // _ = editModal.ShowDialog();
-            //  DataGridControl.InformAboutStatus(modalCreate.OperationStatus);
+            DetailsModalWindow modal = await DetailsModalWindow.Create(Mapping.Mapper.Map<DoctorViewModel>(doctor));
+            _ = modal.ShowDialog();
+            DataGridControl.InformAboutStatus(modal.OperationStatus);
         }
     }
 }

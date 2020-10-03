@@ -380,4 +380,10 @@ Radi bezbjednosti naloga kom pokušavate da pristupite,
   <data name="WorkClinics" xml:space="preserve">
     <value>Radno iskustvo u klinikama</value>
   </data>
+  <data name="MedicalTitleError" xml:space="preserve">
+    <value>Zvanje nije dobro definisano.</value>
+  </data>
+  <data name="WorkPlaceError" xml:space="preserve">
+    <value>Radno mjesto nije dobro definisano.</value>
+  </data>
 </root>

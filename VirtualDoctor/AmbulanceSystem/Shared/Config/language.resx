@@ -382,4 +382,10 @@ not be given.</value>
   <data name="WorkClinics" xml:space="preserve">
     <value>Work(ed) in clinics</value>
   </data>
+  <data name="MedicalTitleError" xml:space="preserve">
+    <value>Medical title is not defined.</value>
+  </data>
+  <data name="WorkPlaceError" xml:space="preserve">
+    <value>Work place is not defined.</value>
+  </data>
 </root>
