@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualDoctor", "VirtualDoctor\VirtualDoctor.csproj", "{2F3167F5-C9DF-4DDD-BCD6-C55BED71025B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseAmbulance", "AmbulanceDatabase\DatabaseAmbulance.csproj", "{50BF236A-6213-4143-B90E-BD835D4C4D66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesAmbulance", "AmbulanceServices\ServicesAmbulance.csproj", "{BA2F9C00-EB67-4B83-9E8B-8FA7E5E791CB}"
@@ -23,14 +21,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2F3167F5-C9DF-4DDD-BCD6-C55BED71025B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F3167F5-C9DF-4DDD-BCD6-C55BED71025B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F3167F5-C9DF-4DDD-BCD6-C55BED71025B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{2F3167F5-C9DF-4DDD-BCD6-C55BED71025B}.Debug|x86.Build.0 = Debug|Any CPU
-		{2F3167F5-C9DF-4DDD-BCD6-C55BED71025B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F3167F5-C9DF-4DDD-BCD6-C55BED71025B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F3167F5-C9DF-4DDD-BCD6-C55BED71025B}.Release|x86.ActiveCfg = Release|Any CPU
-		{2F3167F5-C9DF-4DDD-BCD6-C55BED71025B}.Release|x86.Build.0 = Release|Any CPU
 		{50BF236A-6213-4143-B90E-BD835D4C4D66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{50BF236A-6213-4143-B90E-BD835D4C4D66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50BF236A-6213-4143-B90E-BD835D4C4D66}.Debug|x86.ActiveCfg = Debug|Any CPU
