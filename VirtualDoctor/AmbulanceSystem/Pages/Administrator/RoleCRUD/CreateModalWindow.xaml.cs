@@ -23,6 +23,8 @@ namespace AmbulanceSystem.Pages.Administrator.RoleCRUD
         public CreateModalWindow()
         {
             InitializeComponent();
+            ChangeTheme();
+            SwitchLanguage();
         }
 
         public void ChangeTheme()

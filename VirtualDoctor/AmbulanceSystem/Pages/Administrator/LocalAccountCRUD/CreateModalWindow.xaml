@@ -35,7 +35,7 @@
         </Viewbox>
         <Viewbox Stretch="Uniform"  Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Margin="10">
-                <Label Content="Full name" x:Name="FullNameLabel" Style="{DynamicResource SecondaryLabelStyle}" Width="100" />
+                <TextBlock TextAlignment="Center" Text="Full name" x:Name="FullNameLabel" Style="{DynamicResource SecondaryTextBlockStyle}" Width="100"  TextWrapping="Wrap" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
                 <TextBox x:Name="FullNameBox" Style="{DynamicResource NotAlignedTextBoxStyle}"  Height="26" Width="170" PreviewTextInput="TextBox_PreviewTextInput" />
             </StackPanel>
         </Viewbox>
