@@ -48,12 +48,12 @@
                             <Image Source="/Shared/Images/GryffindorEmblem.png" Width="20" Height="20"></Image>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem x:Name="RevenclawThemeItem" Header="Revenclaw" Background="#a67a53" Foreground="DarkBlue" Click="SwitchTheme_Click">
+                    <MenuItem x:Name="RevenclawThemeItem" Header="Ravenclaw" Background="#a67a53" Foreground="DarkBlue" Click="SwitchTheme_Click">
                         <MenuItem.Icon>
                             <Image Source="/Shared/Images/RevenclawEmblem.png" Width="20" Height="20"></Image>
                         </MenuItem.Icon>
                     </MenuItem>
-                    <MenuItem x:Name="HufflepufThemeItem" Header="Hufflepuf" Background="Yellow" Foreground="Black" Click="SwitchTheme_Click">
+                    <MenuItem x:Name="HufflepufThemeItem" Header="Hufflepuff" Background="Yellow" Foreground="Black" Click="SwitchTheme_Click">
                         <MenuItem.Icon>
                             <Image Source="/Shared/Images/HufflepuffEmblem.png" Width="20" Height="20"></Image>
                         </MenuItem.Icon>

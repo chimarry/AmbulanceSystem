@@ -64,7 +64,7 @@
         </Viewbox>
         <Viewbox Stretch="Uniform"  Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
             <StackPanel Margin="10">
-                <Label Content="Repeat password" x:Name="RepeatPasswordLabel" Style="{DynamicResource SecondaryLabelStyle}" Width="100" />
+                <Label Content="Repeat password" x:Name="RepeatPasswordLabel" Style="{DynamicResource SecondaryLabelStyle}" Width="120" />
                 <PasswordBox x:Name="RepeatPasswordBox" Style="{DynamicResource SecondaryPasswordBoxStyle}"  Height="26" Width="170"/>
             </StackPanel>
         </Viewbox>

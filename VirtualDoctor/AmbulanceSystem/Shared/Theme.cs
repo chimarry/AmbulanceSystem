@@ -9,9 +9,9 @@ namespace AmbulanceSystem.Shared
     public enum Theme
     {
         Gryffindor,
-        Hufflepuf,
+        Hufflepuff,
         Slytherin,
-        Revenclaw
+        Ravenclaw
     }
 
     public static class ThemeExtensionMethods
@@ -31,8 +31,8 @@ namespace AmbulanceSystem.Shared
             {
                 case Theme.Gryffindor: return new Uri(themePrefix + "Gryffindor.xaml");
                 case Theme.Slytherin: return new Uri(themePrefix + "Slytherin.xaml");
-                case Theme.Hufflepuf: return new Uri(themePrefix + "Hufflepuf.xaml");
-                case Theme.Revenclaw: return new Uri(themePrefix + "Revenclaw.xaml");
+                case Theme.Hufflepuff: return new Uri(themePrefix + "Hufflepuf.xaml");
+                case Theme.Ravenclaw: return new Uri(themePrefix + "Revenclaw.xaml");
                 default:
                     return new Uri(defaultTheme);
             }
@@ -44,8 +44,8 @@ namespace AmbulanceSystem.Shared
             {
                 case Theme.Gryffindor: return new BitmapImage(new Uri(imagePrefix + "Gryffindor.png"));
                 case Theme.Slytherin: return new BitmapImage(new Uri(imagePrefix + "Slytherin.png"));
-                case Theme.Hufflepuf: return new BitmapImage(new Uri(imagePrefix + "Hufflepuff.png"));
-                case Theme.Revenclaw: return new BitmapImage(new Uri(imagePrefix + "Revenclaw.png"));
+                case Theme.Hufflepuff: return new BitmapImage(new Uri(imagePrefix + "Hufflepuff.png"));
+                case Theme.Ravenclaw: return new BitmapImage(new Uri(imagePrefix + "Revenclaw.png"));
                 default: return new BitmapImage(new Uri(defaultImage));
             }
         }
