@@ -518,7 +518,9 @@
     <Resource Include="Ambulance.ico" />
     <Resource Include="Shared\Images\Ambulance.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Documentation\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AmbulanceDatabase\DatabaseAmbulance.csproj">
       <Project>{50BF236A-6213-4143-B90E-BD835D4C4D66}</Project>
