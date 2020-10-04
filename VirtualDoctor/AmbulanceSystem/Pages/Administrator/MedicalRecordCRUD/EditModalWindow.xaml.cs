@@ -44,19 +44,19 @@ namespace AmbulanceSystem.Pages.Administrator.MedicalRecordCRUD
 
         public void SwitchLanguage()
         {
-            FirstNameLabel.Content = language.Name;
-            LastNameLabel.Content = language.LastName;
-            UNBLabel.Content = language.UBN;
-            BirthDateLabel.Content = language.BirthDate;
-            BirthPlaceLabel.Content = language.BirthPlace;
-            GenderLabel.Content = language.Gender;
-            MarriageStatusLabel.Content = language.MarriageStatus;
-            MothersNameLabel.Content = language.MothersFullName;
-            MothersProfessionLabel.Content = language.MothersProfession;
-            FathersNameLabel.Content = language.FathersFullName;
-            FathersProfessionLabel.Content = language.FathersProfession;
-            InsuranceNumberLabel.Content = language.InsuranceNumber;
-            ResidancePlaceTextBlock.Text = language.ResidenceName;
+            FirstNameLabel.Content = language.Name.Mandatory();
+            LastNameLabel.Content = language.LastName.Mandatory();
+            UNBLabel.Content = language.UBN.Mandatory();
+            BirthDateLabel.Content = language.BirthDate.Mandatory();
+            BirthPlaceLabel.Content = language.BirthPlace.Mandatory();
+            GenderLabel.Content = language.Gender.Mandatory();
+            MarriageStatusLabel.Content = language.MarriageStatus.Mandatory();
+            MothersNameLabel.Content = language.MothersFullName.Mandatory();
+            MothersProfessionLabel.Content = language.MothersProfession.Mandatory();
+            FathersNameLabel.Content = language.FathersFullName.Mandatory();
+            FathersProfessionLabel.Content = language.FathersProfession.Mandatory();
+            InsuranceNumberLabel.Content = language.InsuranceNumber.Mandatory();
+            ResidancePlaceTextBlock.Text = language.ResidenceName.Mandatory();
         }
 
         public void ChangeTheme()

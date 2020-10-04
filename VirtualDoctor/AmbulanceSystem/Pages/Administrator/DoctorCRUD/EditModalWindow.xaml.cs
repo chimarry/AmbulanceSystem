@@ -60,16 +60,16 @@ namespace AmbulanceSystem.Pages.Administrator.DoctorCRUD
 
         public void SwitchLanguage()
         {
-            FirstNameLabel.Content = language.Name;
-            LastNameLabel.Content = language.LastName;
-            AccountTextBlock.Text = language.Account;
-            WorkExperienceLabel.Content = language.WorkExperience;
+            FirstNameLabel.Content = language.Name.Mandatory();
+            LastNameLabel.Content = language.LastName.Mandatory();
+            AccountTextBlock.Text = language.Account.Mandatory();
+            WorkExperienceLabel.Content = language.WorkExperience.Mandatory();
             AddedClinicsTextBlock.Text = language.WorkClinics;
             AddedTitlesTextBlock.Text = language.CurrentTitles;
-            ClinicTextBlock.Text = language.Clinic;
-            MedicalTitleTextBlock.Text = language.MedicalTitle;
-            GettingTitleLabel.Content = language.GettingTitleDate;
-            SinceLabel.Content = language.Since;
+            ClinicTextBlock.Text = language.Clinic.Mandatory();
+            MedicalTitleTextBlock.Text = language.MedicalTitle.Mandatory();
+            GettingTitleLabel.Content = language.GettingTitleDate.Mandatory();
+            SinceLabel.Content = language.Since.Mandatory();
             UntilLabel.Content = language.Until;
             SaveButton.Content = language.Save;
         }
@@ -82,7 +82,7 @@ namespace AmbulanceSystem.Pages.Administrator.DoctorCRUD
                     Place place = await placeService.GetByPrimaryKey(new Place() { IdPlace = x.IdPlace });
                     place.SetFormat("{0}, {1}");
                     x.Place = place.ToString();
-                    x.Format = "{0}, {1}";
+                    x.SetFormat("{0}, {1}");
                     ClinicComboBox.Items.Add(x);
                 });
             (await medicalTitleService.GetAll()).Select(x => Mapping.Mapper.Map<MedicalTitleViewModel>(x))?.ToList()?.

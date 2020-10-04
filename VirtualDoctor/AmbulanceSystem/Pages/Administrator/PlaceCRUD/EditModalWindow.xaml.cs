@@ -38,20 +38,20 @@ namespace AmbulanceSystem.Pages.Administrator.PlaceCRUD
 
         public void SwitchLanguage()
         {
-            NameLabel.Content = language.Name;
-            RadiationTextBlock.Text = language.Radiation;
-            CountryNameLabel.Content = language.CountryName;
-            PostalCodeLabel.Content = language.PostalCode;
+            NameLabel.Content = language.Name.Mandatory();
+            RadiationTextBlock.Text = language.Radiation.Mandatory();
+            CountryNameLabel.Content = language.CountryName.Mandatory();
+            PostalCodeLabel.Content = language.PostalCode.Mandatory();
 
-            TerrainQualityTextBlock.Text = language.TerrainQuality;
-            FoodQualityTextBlock.Text = language.FoodQuality;
-            RecreationalWaterTextBlock.Text = language.RecreationalWaterQuality;
-            DrinkingWaterQualityTextBlock.Text = language.DrinkingWaterQuality;
-            MedicalVasteTextBlock.Text = language.MedicalVasteInformation;
-            InlandWaterQualityTextBlock.Text = language.InlandWaterQualtiy;
-            NoiseInformationTextBlock.Text = language.InlandWaterQualtiy;
-            NoiseInformationTextBlock.Text = language.NoiseInformation;
-            AirQualityTextBlock.Text = language.AirQuality;
+            TerrainQualityTextBlock.Text = language.TerrainQuality.Mandatory();
+            FoodQualityTextBlock.Text = language.FoodQuality.Mandatory();
+            RecreationalWaterTextBlock.Text = language.RecreationalWaterQuality.Mandatory();
+            DrinkingWaterQualityTextBlock.Text = language.DrinkingWaterQuality.Mandatory();
+            MedicalVasteTextBlock.Text = language.MedicalVasteInformation.Mandatory();
+            InlandWaterQualityTextBlock.Text = language.InlandWaterQualtiy.Mandatory();
+            NoiseInformationTextBlock.Text = language.InlandWaterQualtiy.Mandatory();
+            NoiseInformationTextBlock.Text = language.NoiseInformation.Mandatory();
+            AirQualityTextBlock.Text = language.AirQuality.Mandatory();
 
             SaveButton.Content = language.Save;
         }

@@ -34,7 +34,7 @@ namespace AmbulanceSystem.Pages.Administrator.RoleCRUD
 
         public void SwitchLanguage()
         {
-            NameLabel.Content = language.RoleName;
+            NameLabel.Content = language.RoleName.Mandatory();
             SaveButton.Content = language.Save;
         }
 

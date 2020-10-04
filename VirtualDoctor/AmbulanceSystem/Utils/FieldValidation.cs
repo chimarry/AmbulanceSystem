@@ -31,5 +31,8 @@ namespace AmbulanceSystem.Utils
             label.Content = message;
             label.Visibility = System.Windows.Visibility.Visible;
         }
+
+        public static string Mandatory(this string item) =>
+            string.Concat(item, "*");
     }
 }

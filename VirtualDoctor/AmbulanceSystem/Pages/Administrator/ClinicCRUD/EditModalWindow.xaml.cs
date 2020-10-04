@@ -57,8 +57,8 @@ namespace AmbulanceSystem.Pages.Administrator.ClinicCRUD
 
         public void SwitchLanguage()
         {
-            NameLabel.Content = language.Name;
-            PlaceTextBlock.Text = language.Place;
+            NameLabel.Content = language.Name.Mandatory();
+            PlaceTextBlock.Text = language.Place.Mandatory();
         }
 
         private async void SaveButton_Click(object sender, RoutedEventArgs e)

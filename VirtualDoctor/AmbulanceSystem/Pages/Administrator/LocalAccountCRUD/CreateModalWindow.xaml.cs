@@ -41,10 +41,10 @@ namespace AmbulanceSystem.Pages.Administrator.LocalAccountCRUD
 
         public void SwitchLanguage()
         {
-            FullNameLabel.Text = language.FullName;
-            EmailLabel.Content = language.Email;
-            PasswordLabel.Content = language.Password;
-            RepeatPasswordLabel.Content = language.RepeatPassword;
+            FullNameLabel.Text = language.FullName.Mandatory();
+            EmailLabel.Content = language.Email.Mandatory();
+            PasswordLabel.Content = language.Password.Mandatory();
+            RepeatPasswordLabel.Content = language.RepeatPassword.Mandatory();
             RolesTextBlock.Text = language.Roles;
             SaveButton.Content = language.Save;
         }

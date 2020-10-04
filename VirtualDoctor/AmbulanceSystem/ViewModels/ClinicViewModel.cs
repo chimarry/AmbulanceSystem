@@ -1,14 +1,13 @@
-﻿using AmbulanceServices.Factories;
-using AmbulanceServices.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace AmbulanceSystem.ViewModels
 {
     public class ClinicViewModel
     {
-        public const string DefaultFormat = "{0} : {1}";
+        private const string DefaultFormat = "{0} : {1}";
 
-        public string Format { get; set; } = DefaultFormat;
+        private string format = DefaultFormat;
+
         public int IdClinic { get; set; }
         public string Name { get; set; }
         public string Place { get; set; }
@@ -29,7 +28,12 @@ namespace AmbulanceSystem.ViewModels
 
         public override string ToString()
         {
-            return string.Format(Format, Name, Place);
+            return string.Format(format, Name, Place);
+        }
+
+        public void SetFormat(string format)
+        {
+            this.format = format;
         }
     }
 }

@@ -33,7 +33,7 @@ namespace AmbulanceSystem.Pages.Administrator.MedicalTitleCRUD
 
         public void SwitchLanguage()
         {
-            NameLabel.Content = language.MedicalTitle;
+            NameLabel.Content = language.MedicalTitle.Mandatory();
             SaveButton.Content = language.Save;
         }
 
