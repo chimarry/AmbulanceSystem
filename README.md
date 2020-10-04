@@ -4,11 +4,10 @@ Tehnologies:
 - MySql Database using MySqlClient provider     for .NET applications
 - WPF application (.NET) using C# and XAML .NET Framework 4.7.2
 - .NET Core class libraries
-- Neo4
 - Automapper
 
 System purpose:
-VirtualDoctor introduces new digital ways for manipulating healthcare informations, like personal health records, doctors, patients, ambulances with list of doctors who work there, possible doctor's specializations and titles. Also, each place has list of qualities. It gives support for future upgrade, with Neo4j database, that would allow user to check for symptoms and doctors to get list og all possible diseases that SATISFY specific criteria. That way patients can check if they really need to go to doctor and list of possible doctors for disease and doctors can get list of possible diseases for patient he examines. Symptom checker is not implemented in this version of system, so there is no connectiom between global and ambulance database.
+VirtualDoctor introduces new digital ways for manipulating healthcare informations, like personal health records, doctors, patients, ambulances with list of doctors who work there, possible doctor's specializations and titles. Also, each place has list of qualities, that can be used to relate disease with specific living conditions.
 
 Users:Depending on type of users, different features are enabled. Users are:
 Doctors, Admins for places, ambulances, titles, specializations and doctors, Admins for health records, Patients
